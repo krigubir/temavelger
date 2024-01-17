@@ -80,10 +80,6 @@ export const SiteConfig = {
               name: 'Bidra med design',
               url: 'grunnleggende/for-designere/bidra-i-figma',
             },
-            {
-              name: 'Temavelger',
-              url: 'grunnleggende/for-designere/temavelger',
-            },
           ],
         },
         {
