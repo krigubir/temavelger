@@ -7,11 +7,12 @@ import {
   ToggleGroup,
 } from '@digdir/design-system-react';
 import CompositeComponent from '../../components/CompositeComponent/CompositeComponent';
+import styles from './ComponentsPreviewLayout.module.css';
 
 const ComponentsPreviewLayout = () => {
   return (
-    <section className='componentsPreviewSection'>
-      <div className='tagComponent'>
+    <section className={styles.componentsPreviewContainer}>
+      <div className={styles.tagComponent}>
         <Tag
           color='info'
           size='medium'
@@ -45,7 +46,7 @@ const ComponentsPreviewLayout = () => {
           <ToggleGroup.Item>Mest populære</ToggleGroup.Item>
         </ToggleGroup>
       </div>
-      <div className='cardComponent'>
+      <div className={styles.cardComponent}>
         <Card
           color='first'
           style={{
@@ -135,17 +136,6 @@ const ComponentsPreviewLayout = () => {
             Third color
           </option>
         </NativeSelect>
-      </div>
-      <div className='paginationComponent'>
-        <Pagination
-          currentPage={1}
-          itemLabel={function noRefCheck() {}}
-          nextLabel='Neste'
-          onChange={function noRefCheck() {}}
-          previousLabel='Forrige'
-          size='medium'
-          totalPages={10}
-        />
       </div>
     </section>
   );

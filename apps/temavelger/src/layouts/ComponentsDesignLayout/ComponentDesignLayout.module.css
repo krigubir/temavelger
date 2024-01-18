@@ -1,0 +1,12 @@
+.designMenuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 35%;
+  height: 100%;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}

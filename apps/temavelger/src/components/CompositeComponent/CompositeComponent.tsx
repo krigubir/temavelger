@@ -1,8 +1,9 @@
 import { Button, Radio } from '@digdir/design-system-react';
+import styles from './CompositeComponent.module.css';
 
 const CompositeComponent = () => {
   return (
-    <div className='compositeComponent'>
+    <div className={styles.compositeComponentContainer}>
       <h2>Bare et eksempel</h2>
       <p>Eksempel på et arrangement du kan melde deg på</p>
       <Radio.Group
