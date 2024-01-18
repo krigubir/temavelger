@@ -1,12 +1,11 @@
 .componentsPreviewContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
   height: 100%;
   background-color: white;
   padding: 0;
-  margin: 0;
+  margin: 5rem;
   overflow: hidden;
 }
 
@@ -16,4 +15,5 @@
 
 .cardComponent {
   display: flex;
+  justify-content: space-around;
 }

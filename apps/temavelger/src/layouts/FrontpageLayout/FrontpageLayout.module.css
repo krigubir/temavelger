@@ -1,4 +1,5 @@
 .frontpageContainer {
   display: flex;
   justify-content: space-between;
+  background: #efefef;
 }

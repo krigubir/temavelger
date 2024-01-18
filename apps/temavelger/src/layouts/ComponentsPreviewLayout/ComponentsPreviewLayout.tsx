@@ -1,31 +1,26 @@
-import {
-  Card,
-  Heading,
-  NativeSelect,
-  Tag,
-  ToggleGroup,
-} from '@digdir/design-system-react';
+import { NativeSelect, Tag, ToggleGroup } from '@digdir/design-system-react';
 import CompositeComponent from '../../components/CompositeComponent/CompositeComponent';
 import styles from './ComponentsPreviewLayout.module.css';
+import CardComponent from '../../components/CardComponent/CardComponent';
 
 const ComponentsPreviewLayout = () => {
   return (
     <section className={styles.componentsPreviewContainer}>
       <div className={styles.tagComponent}>
         <Tag
-          color='info'
+          color='neutral'
           size='medium'
         >
           Beta
         </Tag>
         <Tag
-          color='second'
+          color='neutral'
           size='medium'
         >
           NY
         </Tag>
         <Tag
-          color='success'
+          color='neutral'
           size='medium'
         >
           Tag
@@ -46,69 +41,9 @@ const ComponentsPreviewLayout = () => {
         </ToggleGroup>
       </div>
       <div className={styles.cardComponent}>
-        <Card
-          color='first'
-          style={{
-            width: '320px',
-          }}
-        >
-          <Card.Media>
-            <img
-              src='https://storybook.designsystemet.no/static/media/Cat%201.3c16ca2e.jpg'
-              alt='kattepus'
-            />
-          </Card.Media>
-          <Card.Header>
-            <Heading size='small'>Card Title</Heading>
-          </Card.Header>
-          <Card.Content>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Card.Content>
-        </Card>
-        <Card
-          color='second'
-          style={{
-            width: '320px',
-          }}
-        >
-          <Card.Media>
-            <img
-              src='https://storybook.designsystemet.no/static/media/Cat%201.3c16ca2e.jpg'
-              alt='kattepus'
-            />
-          </Card.Media>
-          <Card.Header>
-            <Heading size='small'>Second Color</Heading>
-          </Card.Header>
-          <Card.Content>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Card.Content>
-        </Card>
-        <Card
-          color='third'
-          style={{
-            width: '320px',
-          }}
-        >
-          <Card.Media>
-            <img
-              src='https://storybook.designsystemet.no/static/media/Cat%201.3c16ca2e.jpg'
-              alt='kattepus'
-            />
-          </Card.Media>
-          <Card.Header>
-            <Heading size='small'>Third Color</Heading>
-          </Card.Header>
-          <Card.Content>
-            Most provide as with carried business are much better more the
-            perfected designer. Writing slightly explain desk unable at
-            supposedly about this
-          </Card.Content>
-        </Card>
+        <CardComponent cardVariant='first'></CardComponent>
+        <CardComponent cardVariant='second'></CardComponent>
+        <CardComponent cardVariant='third'></CardComponent>
       </div>
       <div className='nativeSelectComponent'>
         <NativeSelect size='medium'>
