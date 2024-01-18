@@ -2,7 +2,6 @@ import {
   Card,
   Heading,
   NativeSelect,
-  Pagination,
   Tag,
   ToggleGroup,
 } from '@digdir/design-system-react';
