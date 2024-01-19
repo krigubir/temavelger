@@ -1,8 +1,13 @@
 import { Button, Modal, Paragraph } from '@digdir/design-system-react';
 import { useRef } from 'react';
 
-const CodeGenerator = () => {
+interface CodeGeneratorProps {
+  variables: string[];
+}
+
+const CodeGenerator: React.FC<CodeGeneratorProps> = ({ variables }) => {
   const modalRef = useRef<HTMLDialogElement>(null);
+
   return (
     <div className='copyCode'>
       <Button onClick={() => modalRef.current?.showModal()}>Copy code</Button>
@@ -10,16 +15,16 @@ const CodeGenerator = () => {
         ref={modalRef}
         onInteractOutside={() => modalRef.current?.close()}
       >
-        <Modal.Header>
-          Modal med closeOnBackdropClick og en veldig lang tittel
-        </Modal.Header>
+        <Modal.Header>Design-tokens</Modal.Header>
         <Modal.Content>
           <Paragraph>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
+            :root {'{'}
+            {variables.map((variable, index) => {
+              return <Paragraph key={index}>{variable}</Paragraph>;
+            })}
+            {'}'}
           </Paragraph>
         </Modal.Content>
-        <Modal.Footer>Footer</Modal.Footer>
       </Modal>
     </div>
   );

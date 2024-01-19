@@ -4,14 +4,24 @@ import ColorPicker from '../../components/ColorPicker/ColorPicker';
 import styles from './ComponentDesignLayout.module.css';
 
 const ComponentDesignLayout = () => {
+  const designTokens = [
+    '--fds-semantic-surface-first-light',
+    '--fds-semantic-surface-second-light',
+    '--fds-semantic-surface-third-light',
+  ];
   return (
     <aside className={styles.designMenuContainer}>
       <h1>Temavelger</h1>
-      <ColorPicker designToken='--fds-semantic-surface-first-light'></ColorPicker>
-      <ColorPicker designToken='--fds-semantic-surface-second-light'></ColorPicker>
-      <ColorPicker designToken='--fds-semantic-surface-third-light'></ColorPicker>
+      {designTokens.map((designToken, index) => {
+        return (
+          <ColorPicker
+            key={index}
+            designToken={designToken}
+          ></ColorPicker>
+        );
+      })}
       <ActionColorSelect></ActionColorSelect>
-      <CodeGenerator></CodeGenerator>
+      <CodeGenerator variables={designTokens}></CodeGenerator>
     </aside>
   );
 };
