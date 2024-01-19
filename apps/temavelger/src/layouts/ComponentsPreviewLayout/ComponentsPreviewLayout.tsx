@@ -1,26 +1,27 @@
-import { NativeSelect, Tag, ToggleGroup } from '@digdir/design-system-react';
+import { Tag, ToggleGroup } from '@digdir/design-system-react';
 import CompositeComponent from '../../components/CompositeComponent/CompositeComponent';
 import styles from './ComponentsPreviewLayout.module.css';
 import CardComponent from '../../components/CardComponent/CardComponent';
+import NativeSelectComponent from '../../components/NativeSelectComponent/NativeSelectComponent';
 
 const ComponentsPreviewLayout = () => {
   return (
     <section className={styles.componentsPreviewContainer}>
       <div className={styles.tagComponent}>
         <Tag
-          color='neutral'
+          color='first'
           size='medium'
         >
           Beta
         </Tag>
         <Tag
-          color='neutral'
+          color='second'
           size='medium'
         >
           NY
         </Tag>
         <Tag
-          color='neutral'
+          color='third'
           size='medium'
         >
           Tag
@@ -45,31 +46,10 @@ const ComponentsPreviewLayout = () => {
         <CardComponent cardVariant='second'></CardComponent>
         <CardComponent cardVariant='third'></CardComponent>
       </div>
-      <div className='nativeSelectComponent'>
-        <NativeSelect size='medium'>
-          <option
-            value='blank'
-            color='first'
-          >
-            First color
-          </option>
-        </NativeSelect>
-        <NativeSelect size='medium'>
-          <option
-            value='blank'
-            color='second'
-          >
-            Second color
-          </option>
-        </NativeSelect>
-        <NativeSelect size='medium'>
-          <option
-            value='blank'
-            color='third'
-          >
-            Third color
-          </option>
-        </NativeSelect>
+      <div className={styles.nativeSelectComponent}>
+        <NativeSelectComponent variant='First'></NativeSelectComponent>
+        <NativeSelectComponent variant='Second'></NativeSelectComponent>
+        <NativeSelectComponent variant='Third'></NativeSelectComponent>
       </div>
     </section>
   );

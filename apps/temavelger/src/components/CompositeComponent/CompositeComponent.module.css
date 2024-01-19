@@ -1,5 +1,5 @@
 .compositeComponentContainer {
   width: 100%;
-  background-color: antiquewhite;
+  background-color: var(--fds-semantic-surface-second-light);
   padding: 2rem;
 }

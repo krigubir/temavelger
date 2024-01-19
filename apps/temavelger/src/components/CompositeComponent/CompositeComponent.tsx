@@ -1,4 +1,4 @@
-import { Button, Radio } from '@digdir/design-system-react';
+import { Button, Radio, Textfield } from '@digdir/design-system-react';
 import styles from './CompositeComponent.module.css';
 
 const CompositeComponent = () => {
@@ -15,7 +15,15 @@ const CompositeComponent = () => {
         <Radio value='ukentlig'>Ukentlig</Radio>
         <Radio value='månedlig'>Månedlig</Radio>
       </Radio.Group>
-      <Button>Meld meg på</Button>
+      <div className='textContainer'>
+        <Textfield
+          description=''
+          label='Epost'
+          size='small'
+          htmlSize={10}
+        />
+        <Button size='small'>Meld meg på</Button>
+      </div>
     </div>
   );
 };
