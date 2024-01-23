@@ -7,12 +7,22 @@ import {
   DesignTokenContext,
   initialDesignTokens,
 } from './ComponentDesignContext';
+import { Button } from '@digdir/design-system-react';
 
 const ComponentDesignLayout = () => {
   const [designTokens, setDesignTokens] = useState(initialDesignTokens);
+  const [tokenList, setTokenList] = useState([
+    '--fds-semantic-surface-first-light',
+    '--fds-semantic-surface-second-light',
+    '--fds-semantic-surface-third-light',
+  ]);
 
   const setTokenValue = (token: string, value: string) => {
     setDesignTokens({ ...designTokens, [token]: value });
+  };
+
+  const addColorPicker = (newDesignToken: string) => {
+    setTokenList([...tokenList, newDesignToken]);
   };
 
   return (
@@ -21,9 +31,17 @@ const ComponentDesignLayout = () => {
     >
       <aside className={styles.designMenuContainer}>
         <h1>Temavelger</h1>
-        <ColorPicker token='--fds-semantic-surface-first-light'></ColorPicker>
-        <ColorPicker token='--fds-semantic-surface-second-light'></ColorPicker>
-        <ColorPicker token='--fds-semantic-surface-third-light'></ColorPicker>
+        {tokenList.map((token, index) => (
+          <ColorPicker
+            key={index}
+            token={token}
+          ></ColorPicker>
+        ))}
+        <Button
+          onClick={() => addColorPicker('--fds-semantic-surface-fourth-light')}
+        >
+          Legg til farge
+        </Button>
         <ActionColorSelect></ActionColorSelect>
         <CodeGenerator></CodeGenerator>
       </aside>
