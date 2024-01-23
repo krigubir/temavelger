@@ -1,13 +1,10 @@
 import { Button, Modal, Paragraph } from '@digdir/design-system-react';
 import { useRef } from 'react';
+import { useDesignTokenContext } from '../../layouts/ComponentsDesignLayout/ComponentDesignContext';
 
-interface CodeGeneratorProps {
-  variables: string[];
-}
-
-const CodeGenerator: React.FC<CodeGeneratorProps> = ({ variables }) => {
+const CodeGenerator = () => {
   const modalRef = useRef<HTMLDialogElement>(null);
-
+  const { designTokens } = useDesignTokenContext();
   return (
     <div className='copyCode'>
       <Button onClick={() => modalRef.current?.showModal()}>Copy code</Button>
@@ -19,9 +16,11 @@ const CodeGenerator: React.FC<CodeGeneratorProps> = ({ variables }) => {
         <Modal.Content>
           <Paragraph>
             :root {'{'}
-            {variables.map((variable, index) => {
-              return <Paragraph key={index}>{variable}</Paragraph>;
-            })}
+            {Object.entries(designTokens).map(([designToken, value]) => (
+              <Paragraph
+                key={designToken}
+              >{`${designToken}: ${value};`}</Paragraph>
+            ))}
             {'}'}
           </Paragraph>
         </Modal.Content>

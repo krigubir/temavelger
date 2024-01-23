@@ -1,14 +1,21 @@
 import { useState } from 'react';
+import { useDesignTokenContext } from '../../layouts/ComponentsDesignLayout/ComponentDesignContext';
 
 interface ColorPickerProps {
-  designToken: string;
+  token: string;
 }
-const ColorPicker: React.FC<ColorPickerProps> = ({ designToken }) => {
+
+const ColorPicker: React.FC<ColorPickerProps> = ({ token }) => {
   const [color, setColor] = useState('#ffffff');
+  const { setTokenValue } = useDesignTokenContext();
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // set color of color-picker
     setColor(e?.target.value);
-    document.documentElement.style.setProperty(designToken, e?.target.value);
+    // change the color of the elements
+    document.documentElement.style.setProperty(token, e?.target.value);
+    // update the designTokenContext
+    setTokenValue(token, e?.target.value);
   };
 
   return (
