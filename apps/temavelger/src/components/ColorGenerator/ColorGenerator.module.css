@@ -1,0 +1,8 @@
+.colorShade {
+  width: 30px;
+  height: 30px;
+}
+
+.colorGenerator {
+  display: flex;
+}

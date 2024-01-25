@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useDesignTokenContext } from '../../layouts/ComponentsDesignLayout/ComponentDesignContext';
+import styles from './ColorPicker.module.css';
+import ColorGenerator from '../ColorGenerator/ColorGenerator';
 
 interface ColorPickerProps {
   token: string;
@@ -19,7 +21,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ token }) => {
   };
 
   return (
-    <div className='colorPickerMenu'>
+    <div className={styles.colorPicker}>
       <label htmlFor='colorPicker'>Velg farge</label>
       <input
         id='colorPicker'
@@ -30,6 +32,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ token }) => {
           handleColorChange(e)
         }
       />
+      <ColorGenerator baseColor={color}></ColorGenerator>
     </div>
   );
 };

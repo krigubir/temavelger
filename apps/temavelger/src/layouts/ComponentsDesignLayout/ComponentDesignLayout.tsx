@@ -31,17 +31,26 @@ const ComponentDesignLayout = () => {
     >
       <aside className={styles.designMenuContainer}>
         <h1>Temavelger</h1>
-        {tokenList.map((token, index) => (
-          <ColorPicker
-            key={index}
-            token={token}
-          ></ColorPicker>
-        ))}
-        <Button
-          onClick={() => addColorPicker('--fds-semantic-surface-fourth-light')}
-        >
-          Legg til farge
-        </Button>
+        <div className='colorPickerMenu'>
+          {tokenList.map((token, index) => (
+            <>
+              <div className={styles.colorPickerContainer}>
+                <ColorPicker
+                  key={index}
+                  token={token}
+                ></ColorPicker>
+              </div>
+            </>
+          ))}
+          <Button
+            onClick={() =>
+              addColorPicker('--fds-semantic-surface-fourth-light')
+            } // TO-DO: add a random string generator
+          >
+            Legg til farge
+          </Button>
+        </div>
+
         <ActionColorSelect></ActionColorSelect>
         <CodeGenerator></CodeGenerator>
       </aside>

@@ -9,3 +9,7 @@
   margin: 0;
   overflow: hidden;
 }
+
+.colorPickerContainer {
+  margin: 1rem;
+}
