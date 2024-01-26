@@ -2,4 +2,5 @@
   width: 100%;
   background-color: var(--fds-semantic-surface-second-light);
   padding: 2rem;
+  color: var(--fds-semantic-text-neutral-default);
 }

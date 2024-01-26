@@ -3,6 +3,7 @@ import { useDesignTokenContext } from '../../layouts/ComponentsDesignLayout/Comp
 import styles from './ColorPicker.module.css';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScale from '../../utils/generateColorScale';
+import checkColorContrast from '../../utils/checkColorContrast';
 
 interface ColorPickerProps {
   token: string;
@@ -20,7 +21,11 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ token, initialColor }) => {
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setColorScale(generateColorScale(e.target.value));
     // change the color of the elements
-    document.documentElement.style.setProperty(token, e.target.value);
+    document.documentElement.style.setProperty(token, colorScale[1]);
+    document.documentElement.style.setProperty(
+      '--fds-semantic-text-neutral-default',
+      checkColorContrast(colorScale[1]) ? 'black' : 'white',
+    );
     // update the designTokenContext
     setTokenValue(token, e?.target.value);
   };

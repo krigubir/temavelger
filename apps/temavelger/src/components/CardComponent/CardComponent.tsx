@@ -26,8 +26,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardVariant }) => {
         </Card.Header>
         <Card.Content>
           Most provide as with carried business are much better more the
-          perfected designer. Writing slightly explain desk unable at supposedly
-          about this
+          perfected designer.
         </Card.Content>
       </Card>
     </div>
