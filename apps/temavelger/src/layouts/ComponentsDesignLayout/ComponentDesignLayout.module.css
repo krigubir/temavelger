@@ -13,3 +13,14 @@
 .colorPickerContainer {
   margin: 1rem;
 }
+
+.colorPickerMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.addColorPickerButton {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}

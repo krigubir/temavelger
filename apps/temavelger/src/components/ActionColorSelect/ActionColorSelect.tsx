@@ -1,9 +1,10 @@
 import { NativeSelect } from '@digdir/design-system-react';
+import styles from './ActionColorSelect.module.css';
 
 const ActionColorSelect = () => {
   return (
-    <div className='actionSelectMenu'>
-      <div className='actionFirstSelect'>
+    <div className={styles.actionSelectMenu}>
+      <div className={styles.actionFirstSelect}>
         <NativeSelect label='Hvilken farge skal brukes for Action First'>
           <option value='first-100'>First - 100</option>
           <option value='first-200'>First - 200</option>
@@ -16,7 +17,7 @@ const ActionColorSelect = () => {
           <option value='first-900'>First - 900</option>
         </NativeSelect>
       </div>
-      <div className='actionSecondSelect'>
+      <div className={styles.actionSecondSelect}>
         <NativeSelect label='Hvilken farge skal brukes for Action Second'>
           <option value='second-100'>Second - 100</option>
           <option value='second-200'>Second - 200</option>

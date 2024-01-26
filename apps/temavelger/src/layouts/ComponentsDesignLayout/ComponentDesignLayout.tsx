@@ -30,25 +30,30 @@ const ComponentDesignLayout = () => {
       value={{ designTokens: designTokens, setTokenValue }}
     >
       <aside className={styles.designMenuContainer}>
-        <h1>Temavelger</h1>
-        <div className='colorPickerMenu'>
-          {tokenList.map((token, index) => (
-            <>
-              <div className={styles.colorPickerContainer}>
-                <ColorPicker
-                  key={index}
-                  token={token}
-                ></ColorPicker>
-              </div>
-            </>
-          ))}
-          <Button
-            onClick={() =>
-              addColorPicker('--fds-semantic-surface-fourth-light')
-            } // TO-DO: add a random string generator
-          >
-            Legg til farge
-          </Button>
+        <h1 style={{ marginBottom: '1rem', fontSize: '2em' }}>Temavelger</h1>
+        <div className={styles.colorPickerMenu}>
+          <ColorPicker
+            token={tokenList[0]}
+            initialColor='#7D81DB'
+          ></ColorPicker>
+          <ColorPicker
+            token={tokenList[1]}
+            initialColor='#FFB178'
+          ></ColorPicker>
+          <ColorPicker
+            token={tokenList[2]}
+            initialColor='#7DB5A5'
+          ></ColorPicker>
+          <div className={styles.addColorPickerButton}>
+            <Button
+              variant='secondary'
+              onClick={() =>
+                addColorPicker('--fds-semantic-surface-fourth-light')
+              }
+            >
+              Legg til farge
+            </Button>
+          </div>
         </div>
 
         <ActionColorSelect></ActionColorSelect>

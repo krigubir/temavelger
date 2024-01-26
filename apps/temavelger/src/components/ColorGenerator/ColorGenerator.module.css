@@ -1,8 +1,15 @@
-.colorShade {
-  width: 30px;
-  height: 30px;
+.colorBox {
+  width: 42px;
+  height: 42px;
 }
 
 .colorGenerator {
   display: flex;
+}
+
+.colorGeneratorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
 }
