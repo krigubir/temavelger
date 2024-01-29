@@ -1,4 +1,4 @@
-import { Tag, ToggleGroup } from '@digdir/design-system-react';
+import { Pagination, Tag, ToggleGroup } from '@digdir/design-system-react';
 import CompositeComponent from '../../components/CompositeComponent/CompositeComponent';
 import styles from './ComponentsPreviewLayout.module.css';
 import CardComponent from '../../components/CardComponent/CardComponent';
@@ -7,28 +7,34 @@ import NativeSelectComponent from '../../components/NativeSelectComponent/Native
 const ComponentsPreviewLayout = () => {
   return (
     <section className={styles.componentsPreviewContainer}>
-      <div className={styles.tagComponent}>
-        <Tag
-          color='first'
-          size='medium'
-        >
-          Beta
-        </Tag>
-        <Tag
-          color='second'
-          size='medium'
-        >
-          NY
-        </Tag>
-        <Tag
-          color='third'
-          size='medium'
-        >
-          Tag
-        </Tag>
+      <div className={styles.tagComponentContainer}>
+        <div className={styles.tagComponent}>
+          <Tag
+            color='first'
+            size='small'
+          >
+            Beta
+          </Tag>
+        </div>
+        <div className={styles.tagComponent}>
+          <Tag
+            color='second'
+            size='small'
+          >
+            NY
+          </Tag>
+        </div>
+        <div className={styles.tagComponent}>
+          <Tag
+            color='third'
+            size='small'
+          >
+            Tag
+          </Tag>
+        </div>
       </div>
       <CompositeComponent></CompositeComponent>
-      <div className='toggleGroupComponent'>
+      <div className={styles.toggleGroupComponent}>
         <ToggleGroup
           defaultValue='Alle arrangementer'
           name='toggle-group-arrangementer'
@@ -50,6 +56,17 @@ const ComponentsPreviewLayout = () => {
         <NativeSelectComponent variant='First'></NativeSelectComponent>
         <NativeSelectComponent variant='Second'></NativeSelectComponent>
         <NativeSelectComponent variant='Third'></NativeSelectComponent>
+      </div>
+      <div className={styles.paginationContainer}>
+        <Pagination
+          currentPage={3}
+          itemLabel={(page) => `Side ${page}`}
+          nextLabel='Neste'
+          onChange={function noRefCheck() {}}
+          previousLabel='Forrige'
+          size='small'
+          totalPages={10}
+        />
       </div>
     </section>
   );

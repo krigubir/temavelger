@@ -15,14 +15,16 @@ const CompositeComponent = () => {
         <Radio value='ukentlig'>Ukentlig</Radio>
         <Radio value='månedlig'>Månedlig</Radio>
       </Radio.Group>
-      <div className='textContainer'>
+      <div className={styles.textContainer}>
         <Textfield
           description=''
           label='Epost'
           size='small'
-          htmlSize={10}
+          htmlSize={34}
         />
-        <Button size='small'>Meld meg på</Button>
+        <div className={styles.buttonContainer}>
+          <Button size='small'>Meld meg på</Button>
+        </div>
       </div>
     </div>
   );

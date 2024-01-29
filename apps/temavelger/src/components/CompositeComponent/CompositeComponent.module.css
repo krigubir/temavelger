@@ -1,6 +1,15 @@
 .compositeComponentContainer {
-  width: 100%;
   background-color: var(--fds-semantic-surface-second-light);
   padding: 2rem;
   color: var(--fds-semantic-text-neutral-default);
+}
+
+.buttonContainer {
+  align-self: end;
+}
+
+.textContainer {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
 }

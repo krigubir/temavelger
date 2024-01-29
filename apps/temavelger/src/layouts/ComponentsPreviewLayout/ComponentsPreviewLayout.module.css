@@ -10,11 +10,37 @@
   width: 70%;
 }
 
-.tagComponent {
+.tagComponentContainer {
   display: flex;
+  justify-content: end;
+  margin: 5px;
+}
+
+.tagComponent {
+  margin: 0.5rem;
 }
 
 .cardComponent {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.toggleGroupComponent {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
+}
+
+.nativeSelectComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.paginationContainer {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
 }
