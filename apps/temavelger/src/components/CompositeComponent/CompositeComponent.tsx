@@ -6,6 +6,7 @@ const CompositeComponent = () => {
     <div className={styles.compositeComponentContainer}>
       <h2>Bare et eksempel</h2>
       <p>Eksempel på et arrangement du kan melde deg på</p>
+
       <Radio.Group
         error=''
         legend='Hvor ofte vil du delta?'

@@ -13,3 +13,8 @@
   width: 55%;
   justify-content: space-between;
 }
+
+.triangle {
+  position: relative;
+  rotate: 180deg;
+}
