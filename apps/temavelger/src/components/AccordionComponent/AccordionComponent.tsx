@@ -1,0 +1,19 @@
+import { Accordion, AccordionItem } from '@digdir/design-system-react';
+import styles from './AccordionComponent.module.css';
+
+interface AccordionComponentProps {
+  color: 'first' | 'second' | 'third' | 'neutral' | 'subtle' | undefined;
+}
+
+const AccordionComponent: React.FC<AccordionComponentProps> = ({ color }) => {
+  return (
+    <div className={styles.accordionComponent}>
+      <Accordion color={color}>
+        <AccordionItem>
+          <Accordion.Header level={3}>First color</Accordion.Header>
+        </AccordionItem>
+      </Accordion>
+    </div>
+  );
+};
+export default AccordionComponent;

@@ -2,7 +2,7 @@ import { Pagination, Tag, ToggleGroup } from '@digdir/design-system-react';
 import CompositeComponent from '../../components/CompositeComponent/CompositeComponent';
 import styles from './ComponentsPreviewLayout.module.css';
 import CardComponent from '../../components/CardComponent/CardComponent';
-import NativeSelectComponent from '../../components/NativeSelectComponent/NativeSelectComponent';
+import AccordionComponent from '../../components/AccordionComponent/AccordionComponent';
 
 const ComponentsPreviewLayout = () => {
   return (
@@ -52,10 +52,10 @@ const ComponentsPreviewLayout = () => {
         <CardComponent cardVariant='second'></CardComponent>
         <CardComponent cardVariant='third'></CardComponent>
       </div>
-      <div className={styles.nativeSelectComponent}>
-        <NativeSelectComponent variant='First'></NativeSelectComponent>
-        <NativeSelectComponent variant='Second'></NativeSelectComponent>
-        <NativeSelectComponent variant='Third'></NativeSelectComponent>
+      <div className={styles.accordionComponentContainer}>
+        <AccordionComponent color='first'></AccordionComponent>
+        <AccordionComponent color='second'></AccordionComponent>
+        <AccordionComponent color='third'></AccordionComponent>
       </div>
       <div className={styles.paginationContainer}>
         <Pagination
