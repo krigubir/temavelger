@@ -8,10 +8,14 @@ const ColorGenerator: React.FC<ColorGeneratorProps> = ({ colorScale }) => {
   return (
     <div className={styles.colorGenerator}>
       {colorScale.map((color: string, index: number) => (
-        <div className={styles.colorGeneratorContainer}>
+        <div
+          key={index}
+          className={styles.colorGeneratorContainer}
+        >
           <div
-            key={index}
-            className={styles.colorBox}
+            className={
+              index === 4 ? styles.highlightedColorBox : styles.colorBox
+            }
             style={{ backgroundColor: color }}
           ></div>
           <div>{`${index + 1}00`}</div>
