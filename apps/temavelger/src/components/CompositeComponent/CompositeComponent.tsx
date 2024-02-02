@@ -28,16 +28,34 @@ const CompositeComponent = () => {
         </div>
       </div>
       <div className={styles.svgContainer}>
-        <img
+        <svg
           className={styles.svgImage}
-          src='../../../../triangleImage1.svg'
-        />
+          xmlns='http://www.w3.org/2000/svg'
+          width='311'
+          height='435'
+          viewBox='0 0 311 435'
+          fill='none'
+        >
+          <path
+            d='M320 -11V435H0L320 -11Z'
+            fill={'var(--fds-brand-alt2-200)'}
+          />
+        </svg>
       </div>
       <div className={styles.svgContainer}>
-        <img
+        <svg
           className={styles.svgImage}
-          src='../../../../triangleImage2.svg'
-        />
+          xmlns='http://www.w3.org/2000/svg'
+          width='215'
+          height='431'
+          viewBox='0 0 215 431'
+          fill='none'
+        >
+          <path
+            d='M217 0V431H0L217 0Z'
+            fill={'var(--fds-brand-alt2-300)'}
+          />
+        </svg>
       </div>
     </div>
   );

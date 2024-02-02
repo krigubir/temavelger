@@ -45,7 +45,7 @@ const ComponentDesignLayout = () => {
           <ColorPicker
             token={tokenList[2]}
             initialColor='#7DB5A5'
-            altColorNumber='3'
+            altColorNumber=''
           ></ColorPicker>
           <div className={styles.addColorPickerButton}>
             <Button

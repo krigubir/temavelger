@@ -1,5 +1,5 @@
 .compositeComponentContainer {
-  background-color: #ffeee1;
+  background-color: var(--fds-brand-alt2-100);
   padding: 2rem;
   color: var(--fds-semantic-text-neutral-default);
   display: flex;
