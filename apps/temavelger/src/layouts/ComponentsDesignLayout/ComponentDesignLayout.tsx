@@ -14,7 +14,7 @@ const ComponentDesignLayout = () => {
     const newColorPicker = {
       token: '',
       initialColor: '#8f8f8f8f',
-      altColorNumber: `{tokenList.length + 1}`,
+      altColorNumber: colorPickerList.length + 1,
     };
     setColorPickerList([...colorPickerList, newColorPicker]);
   };

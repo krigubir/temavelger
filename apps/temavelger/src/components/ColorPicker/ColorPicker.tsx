@@ -8,7 +8,7 @@ import { useColorScale } from '../../contexts/useColorScale';
 interface ColorPickerProps {
   token: string;
   initialColor: string;
-  altColorNumber: string;
+  altColorNumber: number;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({
