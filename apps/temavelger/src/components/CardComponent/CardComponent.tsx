@@ -17,8 +17,8 @@ const CardComponent: React.FC<CardComponentProps> = ({ cardVariant }) => {
       >
         <Card.Media>
           <img
-            src='https://storybook.designsystemet.no/static/media/Cat%201.3c16ca2e.jpg'
-            alt='kattepus'
+            src={`../../../../${cardVariant}BrandAltImage.svg`}
+            alt='brand color image'
           />
         </Card.Media>
         <Card.Header>

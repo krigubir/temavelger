@@ -27,6 +27,18 @@ const CompositeComponent = () => {
           <Button size='small'>Meld meg på</Button>
         </div>
       </div>
+      <div className={styles.svgContainer}>
+        <img
+          className={styles.svgImage}
+          src='../../../../triangleImage1.svg'
+        />
+      </div>
+      <div className={styles.svgContainer}>
+        <img
+          className={styles.svgImage}
+          src='../../../../triangleImage2.svg'
+        />
+      </div>
     </div>
   );
 };
