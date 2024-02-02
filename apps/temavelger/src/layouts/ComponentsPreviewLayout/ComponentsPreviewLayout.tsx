@@ -1,8 +1,10 @@
 import { Pagination, Tag, ToggleGroup } from '@digdir/design-system-react';
 import CompositeComponent from '../../components/CompositeComponent/CompositeComponent';
 import styles from './ComponentsPreviewLayout.module.css';
-import CardComponent from '../../components/CardComponent/CardComponent';
 import AccordionComponent from '../../components/AccordionComponent/AccordionComponent';
+import CardComponentAlt1 from '../../components/CardComponentAlt1/CardComponentAlt1';
+import CardComponentAlt2 from '../../components/CardComponentAlt2/CardComponentAlt2';
+import CardComponentAlt3 from '../../components/CardComponentAlt3/CardComponentAlt3';
 
 const ComponentsPreviewLayout = () => {
   return (
@@ -48,9 +50,9 @@ const ComponentsPreviewLayout = () => {
         </ToggleGroup>
       </div>
       <div className={styles.cardComponent}>
-        <CardComponent cardVariant='first'></CardComponent>
-        <CardComponent cardVariant='second'></CardComponent>
-        <CardComponent cardVariant='third'></CardComponent>
+        <CardComponentAlt1 cardVariant='first'></CardComponentAlt1>
+        <CardComponentAlt2 cardVariant='second'></CardComponentAlt2>
+        <CardComponentAlt3 cardVariant='third'></CardComponentAlt3>
       </div>
       <div className={styles.accordionComponentContainer}>
         <AccordionComponent color='first'></AccordionComponent>
