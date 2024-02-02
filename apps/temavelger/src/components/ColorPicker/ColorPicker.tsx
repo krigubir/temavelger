@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useDesignTokenContext } from '../../layouts/ComponentsDesignLayout/ComponentDesignContext';
 import styles from './ColorPicker.module.css';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScale from '../../utils/generateColorScale';
@@ -20,17 +19,16 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
     generateColorScale(initialColor || '#ffffff'),
   );
 
-  // part of the necessary logic to generate the design-tokens
-  const { setTokenValue } = useDesignTokenContext();
-
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setColorScale(generateColorScale(e.target.value));
-    // change the color of the elements
+    // change the color of the elements semantic-surface components
     document.documentElement.style.setProperty(token, colorScale[1]);
+    // change the color of the text in the components
     document.documentElement.style.setProperty(
       '--fds-semantic-text-neutral-default',
       checkColorContrast(colorScale[1]) ? 'black' : 'white',
     );
+    // change the color of the alt color
     document.documentElement.style.setProperty(
       `--fds-brand-alt${altColorNumber}-100`,
       colorScale[0],
@@ -67,8 +65,6 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
       `--fds-brand-alt${altColorNumber}-900`,
       colorScale[8],
     );
-    // update the designTokenContext
-    setTokenValue(token, e?.target.value);
   };
 
   return (
