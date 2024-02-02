@@ -3,6 +3,7 @@ import styles from './ColorPicker.module.css';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScale from '../../utils/generateColorScale';
 import checkColorContrast from '../../utils/checkColorContrast';
+import { useColorScale } from '../../contexts/useColorScale';
 
 interface ColorPickerProps {
   token: string;
@@ -15,12 +16,16 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   initialColor,
   altColorNumber,
 }) => {
+  const { addColorScale } = useColorScale();
   const [colorScale, setColorScale] = useState<string[]>(
     generateColorScale(initialColor || '#ffffff'),
   );
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setColorScale(generateColorScale(e.target.value));
+    const newColorScale = generateColorScale(e.target.value);
+    setColorScale(newColorScale);
+    addColorScale(Number(altColorNumber), newColorScale);
+
     // change the color of the elements semantic-surface components
     document.documentElement.style.setProperty(token, colorScale[1]);
     // change the color of the text in the components

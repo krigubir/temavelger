@@ -1,7 +1,9 @@
 import { Button, Modal, Paragraph } from '@digdir/design-system-react';
 import { useRef } from 'react';
+import { useColorScale } from '../../contexts/useColorScale';
 
 const CodeGenerator = () => {
+  const { colorScales } = useColorScale();
   const modalRef = useRef<HTMLDialogElement>(null);
   return (
     <div className='copyCode'>
@@ -14,7 +16,15 @@ const CodeGenerator = () => {
         <Modal.Content>
           <Paragraph>
             :root {'{'}
-            <Paragraph>--fds-brand-alt1-100: #ffffff;</Paragraph>
+            {Object.entries(colorScales).map(([key, value]) => (
+              <Paragraph key={key}>
+                {value.map((color, index) => (
+                  <Paragraph key={index}>
+                    --fds-brand-alt{key}-{(index + 1) * 100}: {color};
+                  </Paragraph>
+                ))}
+              </Paragraph>
+            ))}
             {'}'}
           </Paragraph>
         </Modal.Content>
