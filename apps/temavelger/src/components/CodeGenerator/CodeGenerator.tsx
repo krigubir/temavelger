@@ -1,6 +1,7 @@
-import { Button, Modal, Paragraph } from '@digdir/design-system-react';
+import { Button, Modal } from '@digdir/design-system-react';
 import { useRef } from 'react';
 import { useColorScale } from '../../contexts/useColorScale';
+import styles from './CodeGenerator.module.css';
 
 const CodeGenerator = () => {
   const { colorScales } = useColorScale();
@@ -14,19 +15,25 @@ const CodeGenerator = () => {
       >
         <Modal.Header>Design-tokens</Modal.Header>
         <Modal.Content>
-          <Paragraph>
+          <div className={styles.codeOutput}>
             :root {'{'}
             {Object.entries(colorScales).map(([key, value]) => (
-              <Paragraph key={key}>
+              <div key={key}>
                 {value.map((color, index) => (
-                  <Paragraph key={index}>
-                    --fds-brand-alt{key}-{(index + 1) * 100}: {color};
-                  </Paragraph>
+                  <div key={index}>
+                    <span className={styles.tokenName}>
+                      --fds-brand-alt{key}-{(index + 1) * 100}:
+                    </span>{' '}
+                    <span className={styles.tokenValue}>
+                      {color.toUpperCase()};
+                    </span>
+                  </div>
                 ))}
-              </Paragraph>
+                <br />
+              </div>
             ))}
             {'}'}
-          </Paragraph>
+          </div>
         </Modal.Content>
       </Modal>
     </div>

@@ -8,8 +8,8 @@ const generateColorScaleHSL = (
   const [hue, saturation, luminance] = chroma(baseColor).hsl();
   const lightnessStep = 0.1;
 
-  for (let i = Math.floor(numberOfShades / 2) - 1; i >= 0; i--) {
-    const adjustedLuminanceLight = luminance + lightnessStep * (i + 1);
+  for (let i = Math.floor(numberOfShades / 2); i > 0; i--) {
+    const adjustedLuminanceLight = luminance + lightnessStep * i;
     colorScale.push(chroma.hsl(hue, saturation, adjustedLuminanceLight).hex());
   }
 

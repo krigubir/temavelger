@@ -1,0 +1,18 @@
+.codeOutput {
+  background-color: #1e1e1e;
+  color: #dcdcaa;
+  padding: 16px;
+  border-radius: 4px;
+  font-family: 'Courier New', 'Courier', monospace;
+  white-space: pre;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+.tokenName {
+  color: #4ec9b0;
+}
+
+.tokenValue {
+  color: #ce9178;
+}
