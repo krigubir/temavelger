@@ -16,3 +16,9 @@
 .tokenValue {
   color: #ce9178;
 }
+
+.copyToClipboard {
+  display: flex;
+  justify-content: end;
+  margin-right: 1.73rem;
+}

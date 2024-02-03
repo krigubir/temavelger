@@ -6,6 +6,27 @@ import styles from './CodeGenerator.module.css';
 const CodeGenerator = () => {
   const { colorScales } = useColorScale();
   const modalRef = useRef<HTMLDialogElement>(null);
+
+  const generateTokenOutput = () => {
+    let tokenOutput = ':root {\n';
+    Object.entries(colorScales).forEach(([key, value]) => {
+      value.forEach((color, index) => {
+        tokenOutput += `  --fds-brand-alt${key}-${
+          (index + 1) * 100
+        }: ${color};\n`;
+      });
+      tokenOutput += '\n';
+    });
+    tokenOutput += '}';
+    return tokenOutput;
+  };
+
+  const copyToClipboard = () => {
+    const codeGeneratorOutput = generateTokenOutput();
+    navigator.clipboard.writeText(codeGeneratorOutput).then(() => {
+      alert('CSS copied to clipboard!');
+    });
+  };
   return (
     <div className='copyCode'>
       <Button onClick={() => modalRef.current?.showModal()}>Copy code</Button>
@@ -14,6 +35,15 @@ const CodeGenerator = () => {
         onInteractOutside={() => modalRef.current?.close()}
       >
         <Modal.Header>Design-tokens</Modal.Header>
+        <div className={styles.copyToClipboard}>
+          <Button
+            size='small'
+            variant='secondary'
+            onClick={copyToClipboard}
+          >
+            Copy to Clipboard
+          </Button>
+        </div>
         <Modal.Content>
           <div className={styles.codeOutput}>
             :root {'{'}
