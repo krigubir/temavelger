@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './ColorPicker.module.css';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
-import generateColorScale from '../../utils/generateColorScale';
+import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import checkColorContrast from '../../utils/checkColorContrast';
 import { useColorScale } from '../../contexts/useColorScale';
 
@@ -18,11 +18,11 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
 }) => {
   const { addColorScale } = useColorScale();
   const [colorScale, setColorScale] = useState<string[]>(
-    generateColorScale(initialColor || '#ffffff'),
+    generateColorScaleHSL(initialColor, 9 || '#ffffff'),
   );
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newColorScale = generateColorScale(e.target.value);
+    const newColorScale = generateColorScaleHSL(e.target.value, 9);
     setColorScale(newColorScale);
     addColorScale(Number(altColorNumber), newColorScale);
 

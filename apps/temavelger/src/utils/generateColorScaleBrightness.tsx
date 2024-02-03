@@ -1,6 +1,6 @@
 import chroma from 'chroma-js';
 
-const generateColorScale = (baseColor: string): string[] => {
+const generateColorScaleBrightness = (baseColor: string) => {
   const colorScale = chroma.scale([
     chroma(baseColor).brighten(2),
     chroma(baseColor).brighten(1.6),
@@ -12,8 +12,7 @@ const generateColorScale = (baseColor: string): string[] => {
     chroma(baseColor).darken(1.6),
     chroma(baseColor).darken(2),
   ]);
-
   return colorScale.colors(9);
 };
 
-export default generateColorScale;
+export default generateColorScaleBrightness;
