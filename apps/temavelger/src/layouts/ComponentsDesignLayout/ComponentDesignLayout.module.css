@@ -10,13 +10,19 @@
   overflow: hidden;
 }
 
-.colorPickerContainer {
-  margin: 1rem;
-}
-
 .colorPickerMenu {
   display: flex;
   flex-direction: column;
+  border-top: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.actionColorPickerMenu {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #c4c4c4;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .addColorPickerButton {

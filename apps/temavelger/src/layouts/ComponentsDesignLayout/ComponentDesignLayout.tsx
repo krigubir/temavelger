@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ActionColorSelect from '../../components/ActionColorSelect/ActionColorSelect';
+import ActionColorPicker from '../../components/ActionColorPicker/ActionColorPicker';
 import CodeGenerator from '../../components/CodeGenerator/CodeGenerator';
 import ColorPicker from '../../components/ColorPicker/ColorPicker';
 import styles from './ComponentDesignLayout.module.css';
@@ -36,13 +36,16 @@ const ComponentDesignLayout = () => {
             <Button
               variant='secondary'
               onClick={() => addNewColorPicker()}
+              size='small'
             >
               Legg til farge
             </Button>
           </div>
         </div>
-
-        <ActionColorSelect></ActionColorSelect>
+        <div className={styles.actionColorPickerMenu}>
+          <ActionColorPicker variant={'First'}></ActionColorPicker>
+          <ActionColorPicker variant={'Second'}></ActionColorPicker>
+        </div>
         <CodeGenerator></CodeGenerator>
       </aside>
     </ColorScaleProvider>

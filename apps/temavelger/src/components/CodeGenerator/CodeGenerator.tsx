@@ -29,7 +29,12 @@ const CodeGenerator = () => {
   };
   return (
     <div className='copyCode'>
-      <Button onClick={() => modalRef.current?.showModal()}>Copy code</Button>
+      <Button
+        onClick={() => modalRef.current?.showModal()}
+        style={{ background: '#00315D' }}
+      >
+        Copy code
+      </Button>
       <Modal
         ref={modalRef}
         onInteractOutside={() => modalRef.current?.close()}
