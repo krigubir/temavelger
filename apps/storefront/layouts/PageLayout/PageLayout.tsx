@@ -1,4 +1,4 @@
-import React from 'react';
+import type * as React from 'react';
 import NextLink from 'next/link';
 import { Link } from '@digdir/design-system-react';
 import { ArrowLeftIcon } from '@navikt/aksel-icons';
@@ -59,7 +59,6 @@ const PageLayout = ({ content, data }: PageLayoutProps) => {
           </div>
         </Container>
       </div>
-
       <Container className={classes.container}>
         <div className={classes.content}>
           <MdxContent>{content}</MdxContent>

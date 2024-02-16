@@ -1594,12 +1594,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digdir/design-system-react@npm:*, @digdir/design-system-react@workspace:packages/react":
+"@digdir/design-system-react@npm:*, @digdir/design-system-react@npm:0.49.0, @digdir/design-system-react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@digdir/design-system-react@workspace:packages/react"
   dependencies:
     "@altinn/figma-design-tokens": "npm:^6.0.1"
-    "@digdir/design-system-tokens": "npm:^0.12.0"
+    "@digdir/design-system-tokens": "npm:^0.13.0"
     "@floating-ui/react": "npm:0.26.4"
     "@navikt/aksel-icons": "npm:^5.12.2"
     "@radix-ui/react-slot": "npm:^1.0.2"
@@ -1616,7 +1616,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@digdir/design-system-tokens@npm:*, @digdir/design-system-tokens@npm:^0.12.0, @digdir/design-system-tokens@workspace:packages/tokens":
+"@digdir/design-system-tokens@npm:*, @digdir/design-system-tokens@npm:^0.13.0, @digdir/design-system-tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
   resolution: "@digdir/design-system-tokens@workspace:packages/tokens"
   dependencies:
@@ -20300,6 +20300,7 @@ __metadata:
   resolution: "storefront@workspace:apps/storefront"
   dependencies:
     "@altinn/figma-design-tokens": "npm:^6.0.1"
+    "@digdir/design-system-react": "npm:0.49.0"
     "@mdx-js/loader": "npm:^2.0.0-rc.2"
     "@mdx-js/react": "npm:^1.6.22"
     "@navikt/aksel-icons": "npm:^5.12.2"

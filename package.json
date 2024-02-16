@@ -5,8 +5,9 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "apps/storefront",
-    "apps/dev"
+    "apps/*",
+    "docs-components/",
+    ".storybook/"
   ],
   "scripts": {
     "test": "jest",
@@ -28,7 +29,6 @@
     "lint:all:fix": "yarn run lint:all --fix",
     "lint-style": "stylelint  \"**/*.css\"",
     "lint-style:fix": "yarn run lint-style --fix",
-    "pack:react": "yarn workspace @digdir/design-system-react pack",
     "generate-component-storefront": "esno ./scripts/generate-component/storefront.ts",
     "gcsf": "esno ./scripts/generate-component/storefront.ts",
     "generate-component-react": "esno ./scripts/generate-component/react.ts",

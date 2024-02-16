@@ -1,11 +1,11 @@
 import type { HTMLAttributes } from 'react';
-import React, { forwardRef, useContext } from 'react';
+import { forwardRef, useContext } from 'react';
 import cl from 'clsx';
 import { XMarkIcon } from '@navikt/aksel-icons';
 
 import { Heading, Paragraph } from '../../Typography';
 import { Button } from '../../Button';
-import { ModalContext } from '../Modal';
+import { ModalContext } from '../ModalRoot';
 
 import classes from './ModalHeader.module.css';
 

@@ -1,8 +1,13 @@
 // Logic from: https://www.joshuawootonn.com/react-roving-tabindex
 // Inspired by: https://github.com/radix-ui/primitives/tree/main/packages/react/roving-focus/src
 
-import React, { createContext, useRef, useState, forwardRef } from 'react';
-import type { MutableRefObject, ReactNode, HTMLAttributes } from 'react';
+import { createContext, useRef, useState, forwardRef } from 'react';
+import type {
+  MutableRefObject,
+  ReactNode,
+  HTMLAttributes,
+  FocusEvent,
+} from 'react';
 import { useMergeRefs } from '@floating-ui/react';
 import { Slot } from '@radix-ui/react-slot';
 
@@ -49,10 +54,7 @@ export const RovingTabindexRoot: OverridableComponent<
   RovingTabindexRootBaseProps,
   HTMLElement
 > = forwardRef(
-  (
-    { children, valueId, as = 'div', asChild, onBlur, onFocus, ...rest },
-    ref,
-  ) => {
+  ({ valueId, as = 'div', asChild, onBlur, onFocus, ...rest }, ref) => {
     const Component = asChild ? Slot : as;
 
     const [focusableValue, setFocusableValue] = useState<string | null>(null);
@@ -93,11 +95,11 @@ export const RovingTabindexRoot: OverridableComponent<
         <Component
           {...rest}
           tabIndex={isShiftTabbing ? -1 : 0}
-          onBlur={(e: React.FocusEvent<HTMLElement>) => {
+          onBlur={(e: FocusEvent<HTMLElement>) => {
             onBlur?.(e);
             setIsShiftTabbing(false);
           }}
-          onFocus={(e: React.FocusEvent<HTMLElement>) => {
+          onFocus={(e: FocusEvent<HTMLElement>) => {
             onFocus?.(e);
             if (e.target !== e.currentTarget) return;
             const orderedItems = getOrderedItems();
@@ -112,9 +114,7 @@ export const RovingTabindexRoot: OverridableComponent<
             }
           }}
           ref={refs}
-        >
-          {children}
-        </Component>
+        />
       </RovingTabindexContext.Provider>
     );
   },
