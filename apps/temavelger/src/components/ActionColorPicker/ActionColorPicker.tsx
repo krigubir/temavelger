@@ -3,6 +3,11 @@ import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import styles from './ActionColorPicker.module.css';
 
+// TO-DO:
+// - The components from Designsystemet should now be connected to the brand-alt colors
+//   so that the color of the components can be changed by changing the brand-alt colors
+//   instead of updating the individual semantic-tokens
+
 interface ActionColorPickerProps {
   variant: string;
 }

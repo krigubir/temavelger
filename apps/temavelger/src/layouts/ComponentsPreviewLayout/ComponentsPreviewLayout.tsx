@@ -50,9 +50,9 @@ const ComponentsPreviewLayout = () => {
         </ToggleGroup>
       </div>
       <div className={styles.cardComponent}>
-        <CardComponentAlt1 cardVariant='first'></CardComponentAlt1>
-        <CardComponentAlt2 cardVariant='second'></CardComponentAlt2>
-        <CardComponentAlt3 cardVariant='third'></CardComponentAlt3>
+        <CardComponentAlt1 color='first'></CardComponentAlt1>
+        <CardComponentAlt2 color='second'></CardComponentAlt2>
+        <CardComponentAlt3 color='third'></CardComponentAlt3>
       </div>
       <div className={styles.accordionComponentContainer}>
         <AccordionComponent color='first'></AccordionComponent>

@@ -3,12 +3,12 @@ import { createContext, useState } from 'react';
 
 interface ColorScaleContextProps {
   colorScales: Record<number, string[]>;
-  addColorScale: (altColorNumber: number, colorScale: string[]) => void;
+  updateColorScale: (altColorNumber: number, colorScale: string[]) => void;
 }
 
 export const ColorScaleContext = createContext<ColorScaleContextProps>({
   colorScales: {},
-  addColorScale: () => {},
+  updateColorScale: () => {},
 });
 
 export const ColorScaleProvider = ({
@@ -18,7 +18,7 @@ export const ColorScaleProvider = ({
 }) => {
   const [colorScales, setColorScales] = useState<Record<number, string[]>>({});
 
-  const addColorScale = (altColorNumber: number, colorScale: string[]) => {
+  const updateColorScale = (altColorNumber: number, colorScale: string[]) => {
     setColorScales((prevColorScales) => ({
       ...prevColorScales,
       [altColorNumber]: colorScale,
@@ -26,7 +26,7 @@ export const ColorScaleProvider = ({
   };
 
   return (
-    <ColorScaleContext.Provider value={{ colorScales, addColorScale }}>
+    <ColorScaleContext.Provider value={{ colorScales, updateColorScale }}>
       {children}
     </ColorScaleContext.Provider>
   );

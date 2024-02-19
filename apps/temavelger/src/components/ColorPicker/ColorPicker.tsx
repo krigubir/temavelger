@@ -16,59 +16,32 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   initialColor,
   altColorNumber,
 }) => {
-  const { addColorScale } = useColorScale();
+  const { updateColorScale } = useColorScale();
   const [colorScale, setColorScale] = useState<string[]>(
-    generateColorScaleHSL(initialColor, 9 || '#ffffff'),
+    generateColorScaleHSL(initialColor, 9),
   );
 
+  // Update color-scale and brand-color
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newColorScale = generateColorScaleHSL(e.target.value, 9);
+    updateColorScale(Number(altColorNumber), newColorScale); // used in code-generator
     setColorScale(newColorScale);
-    addColorScale(Number(altColorNumber), newColorScale);
 
-    // change the color of the elements semantic-surface components
-    document.documentElement.style.setProperty(token, colorScale[1]);
+    // change semantic-surface color
+    document.documentElement.style.setProperty(token, newColorScale[2]);
+
+    // change the brand-alt colors
+    for (let i = 1; i <= newColorScale.length; i++) {
+      document.documentElement.style.setProperty(
+        `--fds-brand-alt${altColorNumber}-${i * 100}`,
+        newColorScale[i - 1],
+      );
+    }
+
     // change the color of the text in the components
     document.documentElement.style.setProperty(
       '--fds-semantic-text-neutral-default',
-      checkColorContrast(colorScale[1]) ? 'black' : 'white',
-    );
-    // change the color of the alt color
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-100`,
-      colorScale[0],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-200`,
-      colorScale[1],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-300`,
-      colorScale[2],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-400`,
-      colorScale[3],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-500`,
-      colorScale[4],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-600`,
-      colorScale[5],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-700`,
-      colorScale[6],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-800`,
-      colorScale[7],
-    );
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-900`,
-      colorScale[8],
+      checkColorContrast(newColorScale[1]) ? 'black' : 'white',
     );
   };
 

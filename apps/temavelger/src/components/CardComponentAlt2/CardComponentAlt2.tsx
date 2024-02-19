@@ -1,16 +1,16 @@
 import { Card, Heading } from '@digdir/design-system-react';
 import styles from './CardComponentAlt2.module.css';
-type CardVariant = 'neutral' | 'subtle' | 'first' | 'second' | 'third';
+type color = 'neutral' | 'subtle' | 'first' | 'second' | 'third';
 
 interface CardComponentProps {
-  cardVariant: CardVariant;
+  color: color;
 }
 
-const CardComponentAlt2: React.FC<CardComponentProps> = ({ cardVariant }) => {
+const CardComponentAlt2: React.FC<CardComponentProps> = ({ color }) => {
   return (
     <div className={styles.singleCardComponent}>
       <Card
-        color={cardVariant}
+        color={color}
         style={{
           width: '230px',
         }}
