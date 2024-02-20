@@ -4,11 +4,6 @@ import { useColorScale } from '../../contexts/useColorScale';
 import { useState } from 'react';
 import checkColorContrast from '../../utils/checkColorContrast';
 
-// TO-DO:
-// - The components from Designsystemet should now be connected to the brand-alt colors
-//   so that the color of the components can be changed by changing the brand-alt colors
-//   instead of updating the individual semantic-tokens
-
 interface ActionColorPickerProps {
   variant: string;
 }
@@ -54,8 +49,10 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
 
   return (
     <div className={styles.actionColorPicker}>
+      <label
+        htmlFor={`actionColorPicker${variant}`}
+      >{`Hvilken farge skal brukes for Action ${variant}?`}</label>
       <NativeSelect
-        label={`Hvilken farge skal brukes for Action ${variant}?`}
         size='medium'
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           changeActionColor(e)
@@ -64,6 +61,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
           backgroundColor: activeColor,
           color: checkColorContrast(activeColor) ? 'black' : 'white',
         }}
+        id={`actionColorPicker${variant}`}
       >
         <option value=''>Velg farge...</option>
         {generateOptions()}

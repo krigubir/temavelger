@@ -1,5 +1,6 @@
 import { Card, Heading } from '@digdir/design-system-react';
 import styles from './CardComponentAlt1.module.css';
+
 type color = 'neutral' | 'subtle' | 'first' | 'second' | 'third';
 
 interface CardComponentProps {

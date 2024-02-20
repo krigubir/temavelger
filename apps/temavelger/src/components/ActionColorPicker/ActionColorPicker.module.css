@@ -3,4 +3,7 @@
   flex-direction: column;
   height: 100px;
   justify-content: space-around;
+  font: var(--fds-typography-paragraph-medium);
+  font-family: var(--fdsc-typography-font-family);
+  color: black;
 }
