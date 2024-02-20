@@ -1724,7 +1724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digdir/design-system-react@npm:*, @digdir/design-system-react@npm:0.49.0, @digdir/design-system-react@workspace:packages/react":
+"@digdir/design-system-react@npm:*, @digdir/design-system-react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@digdir/design-system-react@workspace:packages/react"
   dependencies:
