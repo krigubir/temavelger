@@ -7,19 +7,17 @@ import { useColorScale } from '../../contexts/useColorScale';
 
 interface ColorPickerProps {
   token: string;
-  initialColor: string;
+  initialColorScale: string[];
   altColorNumber: number;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({
   token,
-  initialColor,
+  initialColorScale,
   altColorNumber,
 }) => {
   const { updateColorScale } = useColorScale();
-  const [colorScale, setColorScale] = useState<string[]>(
-    generateColorScaleHSL(initialColor, 9),
-  );
+  const [colorScale, setColorScale] = useState<string[]>(initialColorScale);
 
   // Update color-scale and brand-color
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {

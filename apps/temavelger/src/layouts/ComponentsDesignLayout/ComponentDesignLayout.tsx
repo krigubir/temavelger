@@ -6,6 +6,7 @@ import styles from './ComponentDesignLayout.module.css';
 import { Button } from '@digdir/design-system-react';
 import colorPickerData from '../../data/colorPickerData';
 import { ColorScaleProvider } from '../../contexts/ColorScaleContext';
+import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 
 const ComponentDesignLayout = () => {
   const [colorPickerList, setColorPickerList] = useState(colorPickerData);
@@ -13,7 +14,7 @@ const ComponentDesignLayout = () => {
   const addNewColorPicker = () => {
     const newColorPicker = {
       token: '',
-      initialColor: '#8f8f8f8f',
+      initialColorScale: generateColorScaleHSL('#919191', 9),
       altColorNumber: colorPickerList.length + 1,
     };
     setColorPickerList([...colorPickerList, newColorPicker]);
@@ -28,7 +29,7 @@ const ComponentDesignLayout = () => {
             <ColorPicker
               key={index}
               token={colorPicker.token}
-              initialColor={colorPicker.initialColor}
+              initialColorScale={colorPicker.initialColorScale}
               altColorNumber={colorPicker.altColorNumber}
             ></ColorPicker>
           ))}
