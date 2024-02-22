@@ -7,6 +7,7 @@ import { Button } from '@digdir/design-system-react';
 import colorPickerData from '../../data/colorPickerData';
 import { ColorScaleProvider } from '../../contexts/ColorScaleContext';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
+import BorderRadiusSelect from '../../components/BorderRadiusSelect/BorderRadiusSelect';
 
 const ComponentDesignLayout = () => {
   const [colorPickerList, setColorPickerList] = useState(colorPickerData);
@@ -46,6 +47,9 @@ const ComponentDesignLayout = () => {
         <div className={styles.actionColorPickerMenu}>
           <ActionColorPicker variant={'First'}></ActionColorPicker>
           <ActionColorPicker variant={'Second'}></ActionColorPicker>
+        </div>
+        <div className={styles.borderRadiusMenu}>
+          <BorderRadiusSelect></BorderRadiusSelect>
         </div>
         <CodeGenerator></CodeGenerator>
       </div>

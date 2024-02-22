@@ -22,7 +22,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
               key={`${altColorNumber}-${index}`}
               value={color}
             >
-              {`--fds-brand-alt${altColorNumber}-${(index + 1) * 100}`}
+              {`alt${altColorNumber} - ${(index + 1) * 100}`}
             </option>,
           ),
         ),
@@ -60,6 +60,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
         style={{
           backgroundColor: activeColor,
           color: checkColorContrast(activeColor) ? 'black' : 'white',
+          borderRadius: '0',
         }}
         id={`actionColorPicker${variant}`}
       >

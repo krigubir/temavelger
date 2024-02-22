@@ -8,7 +8,10 @@ interface AccordionComponentProps {
 const AccordionComponent: React.FC<AccordionComponentProps> = ({ color }) => {
   return (
     <div className={styles.accordionComponent}>
-      <Accordion color={color}>
+      <Accordion
+        color={color}
+        style={{ borderRadius: 'var(--fds-border_radius-medium)' }}
+      >
         <AccordionItem>
           <Accordion.Header level={3}>First color</Accordion.Header>
         </AccordionItem>
