@@ -3,7 +3,7 @@
   flex-direction: column;
   margin: 1rem;
   margin-bottom: 1.5rem;
-  align-items: center;
+  align-items: baseline;
   font-size: medium;
   color: black;
 }
@@ -11,6 +11,7 @@
 .borderRadiusSelectInput {
   display: flex;
   width: 100%;
+  align-items: center;
 }
 
 .borderRadiusSlider {
@@ -22,4 +23,9 @@
   margin: 0.5rem;
   width: 3rem;
   text-align: center;
+}
+
+h3 {
+  margin-top: 0;
+  font-weight: 400;
 }

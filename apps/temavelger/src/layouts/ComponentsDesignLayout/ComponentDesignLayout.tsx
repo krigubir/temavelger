@@ -8,6 +8,7 @@ import colorPickerData from '../../data/colorPickerData';
 import { ColorScaleProvider } from '../../contexts/ColorScaleContext';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import BorderRadiusSelect from '../../components/BorderRadiusSelect/BorderRadiusSelect';
+import FontFamilySelector from '../../components/FontFamilySelector/FontFamilySelector';
 
 const ComponentDesignLayout = () => {
   const [colorPickerList, setColorPickerList] = useState(colorPickerData);
@@ -50,6 +51,9 @@ const ComponentDesignLayout = () => {
         </div>
         <div className={styles.borderRadiusMenu}>
           <BorderRadiusSelect></BorderRadiusSelect>
+        </div>
+        <div className={styles.fontFamilySelectorMenu}>
+          <FontFamilySelector></FontFamilySelector>
         </div>
         <CodeGenerator></CodeGenerator>
       </div>
