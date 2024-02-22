@@ -1,12 +1,12 @@
 import { Pagination, Tag } from '@digdir/design-system-react';
-import CompositeComponent from '../../components/CompositeComponent/CompositeComponent';
-import CardComponentAlt1 from '../CardComponentAlt1/CardComponentAlt1';
-import CardComponentAlt2 from '../CardComponentAlt2/CardComponentAlt2';
-import CardComponentAlt3 from '../CardComponentAlt3/CardComponentAlt3';
-import AccordionComponent from '../AccordionComponent/AccordionComponent';
-import styles from './ComponentsPreviewLayout1.module.css';
+import CompositeComponent from '../../../../components/CompositeComponent/CompositeComponent';
+import CardComponentAlt1 from '../../../../components/CardComponentAlt1/CardComponentAlt1';
+import CardComponentAlt2 from '../../../../components/CardComponentAlt2/CardComponentAlt2';
+import CardComponentAlt3 from '../../../../components/CardComponentAlt3/CardComponentAlt3';
+import AccordionComponent from '../../../../components/AccordionComponent/AccordionComponent';
+import styles from './ComponentLayout1.module.css';
 
-const ComponentPreviewLayout1 = () => {
+const ComponentLayout1 = () => {
   return (
     <div>
       <div className={styles.tagComponentContainer}>
@@ -60,4 +60,4 @@ const ComponentPreviewLayout1 = () => {
     </div>
   );
 };
-export default ComponentPreviewLayout1;
+export default ComponentLayout1;

@@ -1,7 +1,7 @@
-import ComponentPreviewLayout1 from '../../components/ComponentPreviewLayout1/ComponentPreviewLayout1';
-import ComponentsPreviewLayout2 from '../../components/ComponentPreviewLayout2/ComponentsPreviewLayout2';
-import ComponentsPreviewLayout3 from '../../components/ComponentPreviewLayout3/ComponentsPreviewLayout3';
-import ComponentsPreviewLayout4 from '../../components/ComponentPreviewLayout4/ComponentsPreviewLayout4';
+import ComponentLayout1 from './ComponentLayouts/ComponentLayout1/ComponentLayout1';
+import ComponentLayout2 from './ComponentLayouts/ComponentLayout2/ComponentLayout2';
+import ComponentLayout3 from './ComponentLayouts/ComponentLayout3/ComponentLayout3';
+import ComponentLayout4 from './ComponentLayouts/ComponentLayout4/ComponentLayout4';
 import styles from './ComponentsPreviewLayout.module.css';
 
 interface ComponentsPreviewLayoutProps {
@@ -12,29 +12,21 @@ const ComponentsPreviewLayout: React.FC<ComponentsPreviewLayoutProps> = ({
   activeLayout,
 }) => {
   let componentPreviewLayout: React.ReactNode = (
-    <ComponentPreviewLayout1></ComponentPreviewLayout1>
+    <ComponentLayout1></ComponentLayout1>
   );
 
   switch (activeLayout) {
     case 'layout1':
-      componentPreviewLayout = (
-        <ComponentPreviewLayout1></ComponentPreviewLayout1>
-      );
+      componentPreviewLayout = <ComponentLayout1></ComponentLayout1>;
       break;
     case 'layout2':
-      componentPreviewLayout = (
-        <ComponentsPreviewLayout2></ComponentsPreviewLayout2>
-      );
+      componentPreviewLayout = <ComponentLayout2></ComponentLayout2>;
       break;
     case 'layout3':
-      componentPreviewLayout = (
-        <ComponentsPreviewLayout3></ComponentsPreviewLayout3>
-      );
+      componentPreviewLayout = <ComponentLayout3></ComponentLayout3>;
       break;
     case 'layout4':
-      componentPreviewLayout = (
-        <ComponentsPreviewLayout4></ComponentsPreviewLayout4>
-      );
+      componentPreviewLayout = <ComponentLayout4></ComponentLayout4>;
       break;
   }
 
