@@ -1,13 +1,12 @@
-.designMenuContainer {
+.componentsDesignContainer {
   display: flex;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   width: 35%;
-  background-color: white;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
 }
 
 .colorPickerMenu {

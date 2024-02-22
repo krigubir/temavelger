@@ -28,7 +28,7 @@ const CodeGenerator = () => {
     });
   };
   return (
-    <div className='copyCode'>
+    <div className={styles.generateCodeButton}>
       <Button
         onClick={() => modalRef.current?.showModal()}
         style={{ background: '#00315D' }}

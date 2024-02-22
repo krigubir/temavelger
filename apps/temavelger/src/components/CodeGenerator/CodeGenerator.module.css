@@ -22,3 +22,7 @@
   justify-content: end;
   margin-right: 1.73rem;
 }
+
+.generateCodeButton {
+  margin-bottom: 1.5rem;
+}

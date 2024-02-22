@@ -25,11 +25,11 @@
 
 .buttonContainer {
   align-self: end;
+  margin-left: 1rem;
 }
 
 .textContainer {
   display: flex;
-  width: 55%;
   justify-content: space-between;
 }
 

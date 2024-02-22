@@ -4,8 +4,6 @@
   justify-content: flex-start;
   height: 100%;
   background-color: white;
-  padding: 0;
-  margin: 5rem;
-  overflow: hidden;
-  width: 70%;
+  overflow: auto;
+  margin-bottom: 3rem;
 }

@@ -12,12 +12,14 @@ const FrontPageLayout = () => {
 
   return (
     <div className={styles.frontpageContainer}>
-      <ComponentsDesignLayout></ComponentsDesignLayout>
-      <div className='previewMenu'>
-        <div className={styles.toggleGroupComponent}>
+      <aside className={styles.designMenuContainer}>
+        <ComponentsDesignLayout></ComponentsDesignLayout>
+      </aside>
+      <div className={styles.previewMenuContainer}>
+        <div className={styles.toggleGroupContainer}>
           <ToggleGroup
             defaultValue='layout1'
-            name='toggle-group-arrangementer'
+            name='toggle-group'
             onChange={handleLayoutChange}
             size='small'
           >

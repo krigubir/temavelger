@@ -22,7 +22,7 @@ const ComponentDesignLayout = () => {
 
   return (
     <ColorScaleProvider>
-      <aside className={styles.designMenuContainer}>
+      <div className={styles.componentsDesignContainer}>
         <h1 style={{ marginBottom: '1rem', fontSize: '2em' }}>Temavelger</h1>
         <div className={styles.colorPickerMenu}>
           {colorPickerList.map((colorPicker, index) => (
@@ -48,7 +48,7 @@ const ComponentDesignLayout = () => {
           <ActionColorPicker variant={'Second'}></ActionColorPicker>
         </div>
         <CodeGenerator></CodeGenerator>
-      </aside>
+      </div>
     </ColorScaleProvider>
   );
 };
