@@ -14,7 +14,7 @@ const FontFamilySelector = () => {
   };
 
   return (
-    <div className={styles.fontFamilySelectMenu}>
+    <div className={styles.fontFamilySelector}>
       <NativeSelect
         label='Velg font'
         id='fontFamilySelector'

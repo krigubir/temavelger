@@ -2,13 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100px;
-  justify-content: space-around;
   margin: 0.5rem;
 }
 
 .colorPickerInput {
-  width: 100px;
+  width: 30%;
   min-height: 25px;
   margin: 10px;
 }

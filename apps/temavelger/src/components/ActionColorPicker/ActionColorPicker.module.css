@@ -4,6 +4,6 @@
   height: 100px;
   justify-content: space-around;
   font: var(--fds-typography-paragraph-medium);
-  font-family: var(--fdsc-typography-font-family);
-  color: black;
+  font-family: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif', sans-serif;
+  color: var(--tv-font-color);
 }

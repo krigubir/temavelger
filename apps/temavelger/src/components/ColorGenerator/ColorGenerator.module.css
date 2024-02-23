@@ -1,6 +1,6 @@
 .colorBox {
-  width: 42px;
-  height: 42px;
+  width: 3vw;
+  height: 3vw;
 }
 
 .colorGenerator {
@@ -11,11 +11,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: small;
+  font-size: 1.1vw;
+  font-family: 'Inter, system-ui, Avenir, Helvetica, Arial', sans-serif;
 }
 
 .highlightedColorBox {
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
+  width: 3vw;
+  height: 3vw;
+}
+
+.colorNumber {
+  margin-top: 5px;
 }

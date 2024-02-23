@@ -19,7 +19,7 @@ const BorderRadiusInput: React.FC<BorderRadiusInputProps> = ({
     );
   };
   return (
-    <div className={styles.borderRadiusSelectInput}>
+    <div className={styles.borderRadiusSelectorInput}>
       <label htmlFor={`borderRadiusSlider${borderRadiusSize}`}>
         {borderRadiusSize}
       </label>

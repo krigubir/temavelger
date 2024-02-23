@@ -18,7 +18,7 @@ const ColorGenerator: React.FC<ColorGeneratorProps> = ({ colorScale }) => {
             }
             style={{ backgroundColor: color }}
           ></div>
-          <div>{`${index + 1}00`}</div>
+          <div className={styles.colorNumber}>{`${index + 1}00`}</div>
         </div>
       ))}
     </div>

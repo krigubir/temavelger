@@ -51,7 +51,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
     <div className={styles.actionColorPicker}>
       <label
         htmlFor={`actionColorPicker${variant}`}
-      >{`Hvilken farge skal brukes for Action ${variant}?`}</label>
+      >{`Velg farge for Action ${variant}:`}</label>
       <NativeSelect
         size='medium'
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>

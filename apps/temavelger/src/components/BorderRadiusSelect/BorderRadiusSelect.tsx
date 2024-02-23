@@ -3,7 +3,7 @@ import styles from './BorderRadiusSelect.module.css';
 
 const BorderRadiusSelect = () => {
   return (
-    <div className={styles.borderRadiusSelectMenu}>
+    <div className={styles.borderRadiusSelector}>
       <h3>Endre border-radius</h3>
       <BorderRadiusInput borderRadiusSize='small' />
       <BorderRadiusInput borderRadiusSize='medium' />

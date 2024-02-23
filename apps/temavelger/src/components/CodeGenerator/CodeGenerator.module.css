@@ -24,5 +24,6 @@
 }
 
 .generateCodeButton {
-  margin-bottom: 1.5rem;
+  align-self: center;
+  margin-bottom: 5rem;
 }

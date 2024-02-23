@@ -24,9 +24,11 @@ const ComponentDesignLayout = () => {
 
   return (
     <ColorScaleProvider>
-      <div className={styles.componentsDesignContainer}>
-        <h1 style={{ marginBottom: '1rem', fontSize: '2em' }}>Temavelger</h1>
-        <div className={styles.colorPickerMenu}>
+      <div className={styles.designMenu}>
+        <div className={styles.designMenuHeader}>
+          <h1 style={{ marginBottom: '1rem', fontSize: '2em' }}>Temavelger</h1>
+        </div>
+        <div className={styles.designMenuBox}>
           {colorPickerList.map((colorPicker, index) => (
             <ColorPicker
               key={index}
@@ -45,17 +47,19 @@ const ComponentDesignLayout = () => {
             </Button>
           </div>
         </div>
-        <div className={styles.actionColorPickerMenu}>
+        <div className={styles.designMenuBox}>
           <ActionColorPicker variant={'First'}></ActionColorPicker>
           <ActionColorPicker variant={'Second'}></ActionColorPicker>
         </div>
-        <div className={styles.borderRadiusMenu}>
+        <div className={styles.designMenuBox}>
           <BorderRadiusSelect></BorderRadiusSelect>
         </div>
-        <div className={styles.fontFamilySelectorMenu}>
+        <div className={styles.designMenuBox}>
           <FontFamilySelector></FontFamilySelector>
         </div>
-        <CodeGenerator></CodeGenerator>
+        <div className={styles.designMenuBox}>
+          <CodeGenerator></CodeGenerator>
+        </div>
       </div>
     </ColorScaleProvider>
   );

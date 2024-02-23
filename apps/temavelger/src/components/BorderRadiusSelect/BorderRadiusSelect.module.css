@@ -1,16 +1,10 @@
-.borderRadiusSelectMenu {
+.borderRadiusSelector {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
-  margin-bottom: 1.5rem;
-  align-items: baseline;
-  font-size: medium;
-  color: black;
 }
 
-.borderRadiusSelectInput {
+.borderRadiusSelectorInput {
   display: flex;
-  width: 100%;
   align-items: center;
 }
 
@@ -20,7 +14,6 @@
 }
 
 .borderRadiusNumber {
-  margin: 0.5rem;
   width: 3rem;
   text-align: center;
 }
