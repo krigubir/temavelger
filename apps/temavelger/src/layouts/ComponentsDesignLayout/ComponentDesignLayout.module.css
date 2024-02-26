@@ -28,5 +28,15 @@
 }
 
 .designMenuHeader {
+  display: flex;
+  align-items: center;
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial', sans-serif;
+}
+
+.designMenuHeader h1 {
+  margin: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-size: 2em;
+  font-weight: 500;
 }
