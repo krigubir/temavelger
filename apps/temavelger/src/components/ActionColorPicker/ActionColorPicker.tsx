@@ -1,5 +1,5 @@
 import styles from './ActionColorPicker.module.css';
-import { NativeSelect } from '@digdir/design-system-react';
+import { HelpText, NativeSelect } from '@digdir/design-system-react';
 import { useColorScale } from '../../contexts/useColorScale';
 import { useState } from 'react';
 import checkColorContrast from '../../utils/checkColorContrast';
@@ -49,9 +49,21 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
 
   return (
     <div className={styles.actionColorPicker}>
-      <label
-        htmlFor={`actionColorPicker${variant}`}
-      >{`Velg farge for Action ${variant}:`}</label>
+      <div className={styles.actionColorLabel}>
+        <label htmlFor={`actionColorPicker${variant}`}>
+          {`Velg farge for Action ${variant}:`}
+        </label>
+        <HelpText
+          size='small'
+          title='Select action first title'
+          placement='right'
+          portal={true}
+        >
+          {
+            'Action Farge er en farge som brukes til å fremheve en handling, som for eksempel en knapp eller en lenke. Fargen skal være i kontrast til bakgrunnen og andre farger i designet. Du kan velge mellom ulike farger i fargepaletten. Start med å velge en brand-farge over.'
+          }
+        </HelpText>
+      </div>
       <NativeSelect
         size='medium'
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>

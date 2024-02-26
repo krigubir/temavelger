@@ -7,3 +7,8 @@
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif', sans-serif;
   color: var(--tv-font-color);
 }
+
+.actionColorLabel {
+  display: flex;
+  justify-content: space-between;
+}
