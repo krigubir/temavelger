@@ -8,6 +8,11 @@
   align-items: center;
 }
 
+.borderRadiusLabel {
+  display: flex;
+  justify-content: space-between;
+}
+
 .borderRadiusSlider {
   margin: 0.5rem;
   width: 100%;

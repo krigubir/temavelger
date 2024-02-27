@@ -1,7 +1,7 @@
 import { fontFamilyData } from '../../data/fontFamilyData';
 import { useState } from 'react';
 import styles from './FontFamilySelector.module.css';
-import { NativeSelect } from '@digdir/design-system-react';
+import { HelpText, NativeSelect } from '@digdir/design-system-react';
 
 const FontFamilySelector = () => {
   const [selectedFontFamily, setSelectedFontFamily] = useState(
@@ -15,6 +15,17 @@ const FontFamilySelector = () => {
 
   return (
     <div className={styles.fontFamilySelector}>
+      <HelpText
+        className={styles.helpText}
+        size='small'
+        title='Choose font'
+        placement='right'
+        portal={true}
+      >
+        {
+          'Her kan du utforske ulike fonter for ditt brand. Sørg for at fonten du velger er installert på din maskin.'
+        }
+      </HelpText>
       <NativeSelect
         label='Velg font'
         id='fontFamilySelector'

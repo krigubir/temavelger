@@ -20,6 +20,10 @@
   color: var(--tv-font-color);
 }
 
+.helpText {
+  place-self: end;
+}
+
 .addColorPickerButton {
   display: flex;
   justify-content: center;
@@ -31,6 +35,8 @@
   display: flex;
   align-items: center;
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial', sans-serif;
+  margin-top: 1rem;
+  height: 4rem;
 }
 
 .designMenuHeader h1 {

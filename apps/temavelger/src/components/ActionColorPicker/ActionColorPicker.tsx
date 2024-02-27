@@ -55,12 +55,12 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
         </label>
         <HelpText
           size='small'
-          title='Select action first title'
+          title={`Selct action ${variant} color`}
           placement='right'
           portal={true}
         >
           {
-            'Action Farge er en farge som brukes til å fremheve en handling, som for eksempel en knapp eller en lenke. Fargen skal være i kontrast til bakgrunnen og andre farger i designet. Du kan velge mellom ulike farger i fargepaletten. Start med å velge en brand-farge over.'
+            'Action Farge er en farge som brukes til å fremheve en handling, som for eksempel en knapp eller en lenke. Du kan velge mellom ulike farger i fargepaletten. Start med å velge en brand-farge over.'
           }
         </HelpText>
       </div>
@@ -72,7 +72,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
         style={{
           backgroundColor: activeColor,
           color: checkColorContrast(activeColor) ? 'black' : 'white',
-          borderRadius: '0',
+          borderRadius: '5px',
         }}
         id={`actionColorPicker${variant}`}
       >

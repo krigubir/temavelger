@@ -3,7 +3,7 @@ import ActionColorPicker from '../../components/ActionColorPicker/ActionColorPic
 import CodeGenerator from '../../components/CodeGenerator/CodeGenerator';
 import ColorPicker from '../../components/ColorPicker/ColorPicker';
 import styles from './ComponentDesignLayout.module.css';
-import { Button } from '@digdir/design-system-react';
+import { Button, HelpText } from '@digdir/design-system-react';
 import colorPickerData from '../../data/colorPickerData';
 import { ColorScaleProvider } from '../../contexts/ColorScaleContext';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
@@ -117,6 +117,17 @@ const ComponentDesignLayout = () => {
           </svg>
         </div>
         <div className={styles.designMenuBox}>
+          <HelpText
+            className={styles.helpText}
+            size='small'
+            title='Select brand colors'
+            placement='right'
+            portal={true}
+          >
+            {
+              'Her kan du velge farger for ditt brand. Fargene du velger her vil bli brukt i designet av komponentene dine. '
+            }
+          </HelpText>
           {colorPickerList.map((colorPicker, index) => (
             <ColorPicker
               key={index}
