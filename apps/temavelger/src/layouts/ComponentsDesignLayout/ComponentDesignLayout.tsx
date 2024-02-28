@@ -16,10 +16,22 @@ const ComponentDesignLayout = () => {
   const addNewColorPicker = () => {
     const newColorPicker = {
       token: '',
-      initialColorScale: generateColorScaleHSL('#919191', 9),
-      altColorNumber: colorPickerList.length + 1,
+      colorScale: generateColorScaleHSL('#919191', 9),
+      altColorNumber:
+        colorPickerList[colorPickerList.length - 1].altColorNumber + 1,
+      removable: true,
+      removeColorPicker: removeColorPicker,
     };
     setColorPickerList([...colorPickerList, newColorPicker]);
+  };
+
+  const removeColorPicker = (altColorNumber: number) => {
+    setColorPickerList(
+      colorPickerList.filter(
+        (colorPicker) => colorPicker.altColorNumber !== altColorNumber,
+      ),
+    );
+    console.log(colorPickerList);
   };
 
   return (
@@ -132,14 +144,16 @@ const ComponentDesignLayout = () => {
             <ColorPicker
               key={index}
               token={colorPicker.token}
-              initialColorScale={colorPicker.initialColorScale}
+              initialColorScale={colorPicker.colorScale}
               altColorNumber={colorPicker.altColorNumber}
+              removable={colorPicker.removable}
+              removeColorPicker={removeColorPicker}
             ></ColorPicker>
           ))}
           <div className={styles.addColorPickerButton}>
             <Button
               variant='secondary'
-              onClick={() => addNewColorPicker()}
+              onClick={addNewColorPicker}
               size='small'
             >
               Legg til farge

@@ -5,8 +5,23 @@
   margin: 0.5rem;
 }
 
-.colorPickerInput {
-  width: 30%;
+.colorPickerInputContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   min-height: 25px;
   margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.removeColorPickerButton {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.colorPickerInput {
+  width: 30%;
+  margin: 5px;
 }
