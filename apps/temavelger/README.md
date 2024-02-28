@@ -1,5 +1,6 @@
 # Temavelger
 
+Usikker på hvordan designsystemet lar seg tilpasse ditt behov, eller nysgjerrig på hvilke tilpasninger som er mulig? Temavelgeren er et verktøy for deg som ønsker å ta i bruk designsystemet. Verktøyet vil gi deg muligheten til å utforske en rekke tilpasninger av felles komponenter som brand-farger, action-farger, border-radius innstillinger og mer. Temavelgeren gir deg muligheten til å se hvordan dine valg vil påvirke designsystemets komponenter i real-time. Deretter genereres det en css-fil som du enkelt kan ta i bruk i ditt eget prosjekt med dine egne valg. 
 
 
 ## Expanding the ESLint configuration
