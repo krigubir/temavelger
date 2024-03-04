@@ -1,14 +1,23 @@
-import React from 'react';
-import { createContext, useState } from 'react';
+import { useState } from 'react';
+import { createContext } from 'react';
+
+interface ColorScale {
+  altColorNumber: number;
+  colorScale: string[];
+}
 
 interface ColorScaleContextProps {
-  colorScales: Record<number, string[]>;
-  updateColorScales: (altColorNumber: number, colorScale: string[]) => void;
+  colorScales: ColorScale[];
+  addColorScale: (colorScale: string[]) => void;
+  removeColorScale: (altColorNumber: number) => void;
+  updateColorScale: (altColorNumber: number, colorScale: string[]) => void;
 }
 
 export const ColorScaleContext = createContext<ColorScaleContextProps>({
-  colorScales: {},
-  updateColorScales: () => {},
+  colorScales: [],
+  addColorScale: () => {},
+  removeColorScale: () => {},
+  updateColorScale: () => {},
 });
 
 export const ColorScaleProvider = ({
@@ -16,17 +25,48 @@ export const ColorScaleProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [colorScales, setColorScales] = useState<Record<number, string[]>>({});
+  const [colorScales, setColorScales] = useState<ColorScale[]>([]);
 
-  const updateColorScales = (altColorNumber: number, colorScale: string[]) => {
+  const addColorScale = (colorScale: string[]) => {
+    const altColorNumber =
+      colorScales[colorScales.length - 1].altColorNumber + 1;
+    const newColorScale = { altColorNumber, colorScale: colorScale };
+
     setColorScales((prevColorScales) => ({
       ...prevColorScales,
-      [altColorNumber]: colorScale,
+      newColorScale,
     }));
+
+    console.log(colorScales);
+  };
+
+  const removeColorScale = (altColorNumber: number) => {
+    setColorScales((prevColorScales) =>
+      prevColorScales.filter(
+        (colorScale) => colorScale.altColorNumber !== altColorNumber,
+      ),
+    );
+  };
+
+  const updateColorScale = (altColorNumber: number, colorScale: string[]) => {
+    setColorScales((prevColorScales) =>
+      prevColorScales.map((prevColorScale) =>
+        prevColorScale.altColorNumber === altColorNumber
+          ? { ...prevColorScale, colorScale }
+          : prevColorScale,
+      ),
+    );
   };
 
   return (
-    <ColorScaleContext.Provider value={{ colorScales, updateColorScales }}>
+    <ColorScaleContext.Provider
+      value={{
+        colorScales,
+        addColorScale,
+        removeColorScale,
+        updateColorScale,
+      }}
+    >
       {children}
     </ColorScaleContext.Provider>
   );

@@ -1,133 +1,40 @@
-import { useState } from 'react';
 import ActionColorPicker from '../../components/ActionColorPicker/ActionColorPicker';
 import CodeGenerator from '../../components/CodeGenerator/CodeGenerator';
 import ColorPicker from '../../components/ColorPicker/ColorPicker';
 import styles from './ComponentDesignLayout.module.css';
 import { Button, HelpText } from '@digdir/design-system-react';
 import colorPickerData from '../../data/colorPickerData';
-import { ColorScaleProvider } from '../../contexts/ColorScaleContext';
-import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
+import { DataProvider } from '../../contexts/DataContext';
 import BorderRadiusSelect from '../../components/BorderRadiusSelect/BorderRadiusSelect';
 import FontFamilySelector from '../../components/FontFamilySelector/FontFamilySelector';
+import DesignMenuHeader from '../../components/DesignMenuHeader/DesignMenuHeader';
+import { useReducer } from 'react';
+import reducer from '../../reducer/reducer';
+import { ADD_COLOR_PICKER } from '../../reducer/actions';
+
+const defaultState = {
+  colorPickerList: colorPickerData,
+  colorScales: [],
+  actionColorScales: [],
+  borderRadius: [],
+  fontFamily: [],
+};
 
 const ComponentDesignLayout = () => {
-  const [colorPickerList, setColorPickerList] = useState(colorPickerData);
+  const [state, dispatch] = useReducer(reducer, defaultState);
 
   const addNewColorPicker = () => {
-    const newColorPicker = {
-      token: '',
-      colorScale: generateColorScaleHSL('#919191', 9),
-      altColorNumber:
-        colorPickerList[colorPickerList.length - 1].altColorNumber + 1,
-      removable: true,
-      removeColorPicker: removeColorPicker,
-    };
-    setColorPickerList([...colorPickerList, newColorPicker]);
+    dispatch({ type: ADD_COLOR_PICKER });
   };
 
-  const removeColorPicker = (altColorNumber: number) => {
-    setColorPickerList(
-      colorPickerList.filter(
-        (colorPicker) => colorPicker.altColorNumber !== altColorNumber,
-      ),
-    );
-    console.log(colorPickerList);
-  };
+  // const removeColorPicker = (altColorNumber: number) => {
+  //   dispatch({ type: REMOVE_COLOR_PICKER, payload: altColorNumber });
+  // };
 
   return (
-    <ColorScaleProvider>
+    <DataProvider>
       <div className={styles.designMenu}>
-        <div className={styles.designMenuHeader}>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='219'
-            height='2'
-            viewBox='0 0 219 2'
-            fill='none'
-          >
-            <line
-              x1='8.74228e-08'
-              y1='1'
-              x2='219'
-              y2='1.00002'
-              stroke='#D2D5D8'
-              strokeWidth='2'
-            />
-          </svg>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='46'
-            height='12'
-            viewBox='0 0 46 12'
-            fill='none'
-          >
-            <rect
-              width='12'
-              height='12'
-              rx='6'
-              fill='#7DB5A5'
-            />
-            <rect
-              x='17'
-              width='12'
-              height='12'
-              rx='6'
-              fill='#FFB178'
-            />
-            <rect
-              x='34'
-              width='12'
-              height='12'
-              rx='6'
-              fill='#7D81DB'
-            />
-          </svg>
-          <h1>Temavelger</h1>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='46'
-            height='12'
-            viewBox='0 0 46 12'
-            fill='none'
-          >
-            <rect
-              width='12'
-              height='12'
-              rx='6'
-              fill='#7D81DB'
-            />
-            <rect
-              x='17'
-              width='12'
-              height='12'
-              rx='6'
-              fill='#FFB178'
-            />
-            <rect
-              x='34'
-              width='12'
-              height='12'
-              rx='6'
-              fill='#7DB5A5'
-            />
-          </svg>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='219'
-            height='2'
-            viewBox='0 0 219 2'
-            fill='none'
-          >
-            <line
-              x1='8.74228e-08'
-              y1='1'
-              x2='219'
-              y2='1.00002'
-              stroke='#D2D5D8'
-              strokeWidth='2'
-            />
-          </svg>
-        </div>
+        <DesignMenuHeader></DesignMenuHeader>
         <div className={styles.designMenuBox}>
           <HelpText
             className={styles.helpText}
@@ -140,14 +47,12 @@ const ComponentDesignLayout = () => {
               'Her kan du velge farger for ditt brand. Fargene du velger her vil bli brukt i designet av komponentene dine. '
             }
           </HelpText>
-          {colorPickerList.map((colorPicker, index) => (
+          {state.colorPickerList.map((colorPicker, index) => (
             <ColorPicker
               key={index}
               token={colorPicker.token}
               initialColorScale={colorPicker.colorScale}
               altColorNumber={colorPicker.altColorNumber}
-              removable={colorPicker.removable}
-              removeColorPicker={removeColorPicker}
             ></ColorPicker>
           ))}
           <div className={styles.addColorPickerButton}>
@@ -174,7 +79,7 @@ const ComponentDesignLayout = () => {
           <CodeGenerator></CodeGenerator>
         </div>
       </div>
-    </ColorScaleProvider>
+    </DataProvider>
   );
 };
 export default ComponentDesignLayout;

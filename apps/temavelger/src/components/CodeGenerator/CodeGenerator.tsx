@@ -1,6 +1,6 @@
 import { Button, Modal } from '@digdir/design-system-react';
-import { useRef } from 'react';
-import { useColorScale } from '../../contexts/useColorScale';
+import { useRef, useEffect } from 'react';
+import { useColorScale } from '../../contexts/useDataContext';
 import styles from './CodeGenerator.module.css';
 
 const CodeGenerator = () => {
@@ -22,6 +22,7 @@ const CodeGenerator = () => {
   };
 
   const copyToClipboard = () => {
+    console.log(colorScales);
     const codeGeneratorOutput = generateTokenOutput();
     navigator.clipboard.writeText(codeGeneratorOutput).then(() => {
       alert('CSS copied to clipboard!');

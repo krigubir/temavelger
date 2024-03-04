@@ -3,36 +3,42 @@ import styles from './ColorPicker.module.css';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import checkColorContrast from '../../utils/checkColorContrast';
-import { useColorScale } from '../../contexts/useColorScale';
-import { XMarkIcon } from '@navikt/aksel-icons';
-import { Button } from '@digdir/design-system-react';
+import { useColorScale } from '../../contexts/useDataContext';
+
+export type ColorPicker = {
+  token: string;
+  colorScale: string[];
+  altColorNumber: number;
+};
 
 interface ColorPickerProps {
   token: string;
   initialColorScale: string[];
   altColorNumber: number;
-  removable: boolean;
-  removeColorPicker?: (altColorNumber: number) => void;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({
   token,
   initialColorScale,
   altColorNumber,
-  removable,
-  removeColorPicker,
 }) => {
-  const { updateColorScales } = useColorScale();
+  const { updateColorScale } = useColorScale();
   const [colorScale, setColorScale] = useState<string[]>(initialColorScale);
 
   // Update color-scale and brand-color
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newColorScale = generateColorScaleHSL(e.target.value, 9);
-    updateColorScales(Number(altColorNumber), newColorScale); // used in code-generator
+    updateColorScale(Number(altColorNumber), newColorScale); // used in code-generator
     setColorScale(newColorScale);
 
     // change semantic-surface color
     document.documentElement.style.setProperty(token, newColorScale[2]);
+
+    // change semantic-surface-hover color (accordion)
+    document.documentElement.style.setProperty(
+      token + '-hover',
+      newColorScale[3],
+    );
 
     // change the brand-alt colors
     for (let i = 1; i <= newColorScale.length; i++) {
@@ -49,13 +55,6 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
     );
   };
 
-  const handleRemoveColorPicker = () => {
-    updateColorScales(altColorNumber, []);
-    if (removeColorPicker) {
-      removeColorPicker(altColorNumber);
-    }
-  };
-
   return (
     <div className={styles.colorPicker}>
       <div className={styles.colorPickerInputContainer}>
@@ -69,20 +68,6 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
             handleColorChange(e)
           }
         />
-
-        {removable && (
-          <Button
-            className={styles.removeColorPickerButton}
-            onClick={handleRemoveColorPicker}
-            color='inverted'
-            size='small'
-          >
-            <XMarkIcon
-              title='a11y-title'
-              fontSize='2rem'
-            />
-          </Button>
-        )}
       </div>
 
       <ColorGenerator colorScale={colorScale}></ColorGenerator>

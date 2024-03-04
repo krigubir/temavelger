@@ -1,6 +1,6 @@
 import styles from './ActionColorPicker.module.css';
 import { HelpText, NativeSelect } from '@digdir/design-system-react';
-import { useColorScale } from '../../contexts/useColorScale';
+import { useColorScale } from '../../contexts/useDataContext';
 import { useState } from 'react';
 import checkColorContrast from '../../utils/checkColorContrast';
 
@@ -42,7 +42,18 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({ variant }) => {
       e.target.value,
     );
     document.documentElement.style.setProperty(
-      `--fds-semantic-surface-action-first-active`,
+      `--fds-semantic-surface-action-${variant.toLowerCase()}-active`,
+      e.target.value,
+    );
+
+    // change color of radio-group
+    document.documentElement.style.setProperty(
+      '--fds-semantic-border-input-hover', // inside the radio-group
+      e.target.value,
+    );
+
+    document.documentElement.style.setProperty(
+      '--fds-semantic-surface-info-subtle-hover', // outside the radio-group
       e.target.value,
     );
   };
