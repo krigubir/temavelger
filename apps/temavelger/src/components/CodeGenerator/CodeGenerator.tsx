@@ -67,6 +67,14 @@ const CodeGenerator = () => {
                 <br />
               </div>
             ))}
+            {state.buttonColorScale.map((color, index) => (
+              <div key={index}>
+                <span className={styles.tokenName}>
+                  --fds-semantic-surface-action-first-default:
+                </span>{' '}
+                <span className={styles.tokenValue}>{color.toUpperCase()}</span>
+              </div>
+            ))}
             {'}'}
           </div>
         </Modal.Content>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import checkColorContrast from '../../utils/checkColorContrast';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { updateActionColorTokens } from '../../utils/updateActionColorTokens';
+import { UPDATE_BUTTON_COLOR_SCALE } from '../../reducer/actions';
 
 interface ActionColorPickerProps {
   variant: string;
@@ -15,7 +16,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
   actionType,
 }) => {
   // const { colorScales } = useColorScale();
-  const { state } = useReducerContext();
+  const { state, dispatch } = useReducerContext();
   const [activeColor, setActiveColor] = useState<string>('#fff');
 
   const generateOptions = () => {
@@ -43,7 +44,11 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
     return options;
   };
 
-  const changeActionColor = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const changeActionColor = (
+    e: React.ChangeEvent<HTMLSelectElement>,
+    variant: string,
+    actionType: string,
+  ) => {
     const { color, colorNuance, index } = JSON.parse(e.target.value);
 
     setActiveColor(color);
@@ -55,6 +60,16 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
       index,
       state,
     );
+    dispatch({
+      type: UPDATE_BUTTON_COLOR_SCALE,
+      payload: {
+        colorScale: [
+          color,
+          state.colorScales[index].colorScale[colorNuance + 1],
+          state.colorScales[index].colorScale[colorNuance + 3],
+        ],
+      },
+    });
   };
 
   return (
@@ -77,7 +92,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
       <NativeSelect
         size='medium'
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-          changeActionColor(e)
+          changeActionColor(e, variant, actionType)
         }
         style={{
           backgroundColor: activeColor,
