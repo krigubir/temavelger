@@ -9,14 +9,14 @@ interface ReducerContextProps {
 }
 
 export const ReducerContext = createContext<ReducerContextProps>({
-  state: { colorPickerList: [], colorScales: [] },
+  state: { colorPickerList: [], colorScales: [], buttonColorScale: [] },
   dispatch: () => {},
 });
 
 const defaultState = {
   colorPickerList: colorPickerData,
   colorScales: [], // add default state
-  actionColorScales: [],
+  buttonColorScale: [],
   borderRadius: [],
   fontFamily: [],
 };

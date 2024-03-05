@@ -6,7 +6,11 @@ import { Button, HelpText } from '@digdir/design-system-react';
 import BorderRadiusSelect from '../../components/BorderRadiusSelect/BorderRadiusSelect';
 import FontFamilySelector from '../../components/FontFamilySelector/FontFamilySelector';
 import DesignMenuHeader from '../../components/DesignMenuHeader/DesignMenuHeader';
-import { ADD_COLOR_PICKER, REMOVE_COLOR_PICKER } from '../../reducer/actions';
+import {
+  ADD_COLOR_PICKER,
+  REMOVE_COLOR_PICKER,
+  REMOVE_COLOR_SCALE,
+} from '../../reducer/actions';
 import { useReducerContext } from '../../contexts/useReducerContext';
 
 const ComponentDesignLayout = () => {
@@ -18,6 +22,7 @@ const ComponentDesignLayout = () => {
 
   const removeColorPicker = (altColorNumber: number) => {
     dispatch({ type: REMOVE_COLOR_PICKER, payload: altColorNumber });
+    dispatch({ type: REMOVE_COLOR_SCALE, payload: altColorNumber });
   };
 
   return (
@@ -68,8 +73,18 @@ const ComponentDesignLayout = () => {
         </div>
       </div>
       <div className={styles.designMenuBox}>
-        <ActionColorPicker variant={'First'}></ActionColorPicker>
-        <ActionColorPicker variant={'Second'}></ActionColorPicker>
+        <ActionColorPicker
+          variant={'First'}
+          actionType={'Button'}
+        ></ActionColorPicker>
+        <ActionColorPicker
+          variant={'Second'}
+          actionType={'Button'}
+        ></ActionColorPicker>
+        <ActionColorPicker
+          variant={''}
+          actionType={'Form Elements'}
+        ></ActionColorPicker>
       </div>
       <div className={styles.designMenuBox}>
         <BorderRadiusSelect></BorderRadiusSelect>

@@ -1,12 +1,12 @@
 import { ColorPicker } from '../components/ColorPicker/ColorPicker';
 import {
   ADD_COLOR_PICKER,
-  ADD_COLOR_SCALE,
   REMOVE_COLOR_PICKER,
+  REMOVE_COLOR_SCALE,
   UPDATE_COLOR_SCALE,
 } from './actions';
 import { addColorPicker } from './reducerFunctions/addColorPicker';
-import { addColorScale } from './reducerFunctions/addColorScale';
+import { removeColorScale } from './reducerFunctions/removeColorScale';
 import { removeColorPicker } from './reducerFunctions/removerColorPicker';
 import { updateColorScale } from './reducerFunctions/updateColorScale';
 
@@ -18,6 +18,7 @@ interface ColorScale {
 export type State = {
   colorPickerList: ColorPicker[];
   colorScales: ColorScale[];
+  buttonColorScale: string[];
 };
 
 export type Action = {
@@ -34,20 +35,20 @@ const reducer = (state: State, action: Action): State => {
     return removeColorPicker(state, action.payload as number);
   }
 
-  if (action.type === ADD_COLOR_SCALE) {
-    console.log(state);
-    return addColorScale(
-      state,
-      action.payload as { altColorNumber: number; colorScale: string[] },
-    );
-  }
-
   if (action.type === UPDATE_COLOR_SCALE) {
     return updateColorScale(
       state,
       action.payload as { altColorNumber: number; colorScale: string[] },
     );
   }
+
+  if (action.type === REMOVE_COLOR_SCALE) {
+    return removeColorScale(state, action.payload as number);
+  }
+
+  // if (action.type === ADD_BUTTON_COLOR_SCALE) {
+  //   return addButtonColorScale(state, action.payload as string);
+  // }
 
   return state;
 };

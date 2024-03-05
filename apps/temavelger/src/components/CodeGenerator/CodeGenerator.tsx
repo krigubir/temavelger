@@ -52,13 +52,12 @@ const CodeGenerator = () => {
         <Modal.Content>
           <div className={styles.codeOutput}>
             :root {'{'}
-            {state.colorScales.map((scales, key) => (
+            {state.colorScales.map((value, key) => (
               <div key={key}>
-                {scales.colorScale.map((color, index) => (
+                {value.colorScale.map((color, index) => (
                   <div key={index}>
                     <span className={styles.tokenName}>
-                      --fds-brand-alt{scales.altColorNumber}-{(index + 1) * 100}
-                      :
+                      --fds-brand-alt{value.altColorNumber}-{(index + 1) * 100}:
                     </span>{' '}
                     <span className={styles.tokenValue}>
                       {color.toUpperCase()};
