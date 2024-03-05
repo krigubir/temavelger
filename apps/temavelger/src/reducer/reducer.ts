@@ -1,44 +1,52 @@
 import { ColorPicker } from '../components/ColorPicker/ColorPicker';
-import generateColorScaleHSL from '../utils/generateColorScaleHSL';
-import { ADD_COLOR_PICKER, REMOVE_COLOR_PICKER } from './actions';
+import {
+  ADD_COLOR_PICKER,
+  ADD_COLOR_SCALE,
+  REMOVE_COLOR_PICKER,
+  UPDATE_COLOR_SCALE,
+} from './actions';
+import { addColorPicker } from './reducerFunctions/addColorPicker';
+import { addColorScale } from './reducerFunctions/addColorScale';
+import { removeColorPicker } from './reducerFunctions/removerColorPicker';
+import { updateColorScale } from './reducerFunctions/updateColorScale';
 
-type State = {
+interface ColorScale {
+  altColorNumber: number;
+  colorScale: string[];
+}
+
+export type State = {
   colorPickerList: ColorPicker[];
+  colorScales: ColorScale[];
 };
 
-type Action = {
+export type Action = {
   type: string;
   payload?: unknown;
 };
 
 const reducer = (state: State, action: Action): State => {
   if (action.type === ADD_COLOR_PICKER) {
-    const newColorPicker = {
-      token: '',
-      colorScale: generateColorScaleHSL('#919191', 9),
-      altColorNumber:
-        state.colorPickerList[state.colorPickerList.length - 1].altColorNumber +
-        1,
-      removable: true,
-    };
-
-    const colorPickerList = [...state.colorPickerList, newColorPicker];
-    return {
-      ...state,
-      colorPickerList: colorPickerList,
-    };
+    return addColorPicker(state);
   }
 
   if (action.type === REMOVE_COLOR_PICKER) {
-    const altColorNumber = action.payload as number;
-    const colorPickerList = state.colorPickerList.filter(
-      (colorPicker) => colorPicker.altColorNumber !== altColorNumber,
-    );
+    return removeColorPicker(state, action.payload as number);
+  }
 
-    return {
-      ...state,
-      colorPickerList: colorPickerList,
-    };
+  if (action.type === ADD_COLOR_SCALE) {
+    console.log(state);
+    return addColorScale(
+      state,
+      action.payload as { altColorNumber: number; colorScale: string[] },
+    );
+  }
+
+  if (action.type === UPDATE_COLOR_SCALE) {
+    return updateColorScale(
+      state,
+      action.payload as { altColorNumber: number; colorScale: string[] },
+    );
   }
 
   return state;

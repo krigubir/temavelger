@@ -3,12 +3,14 @@ import styles from './ColorPicker.module.css';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import checkColorContrast from '../../utils/checkColorContrast';
-import { useColorScale } from '../../contexts/useDataContext';
+import { useReducerContext } from '../../contexts/useReducerContext';
+import { UPDATE_COLOR_SCALE } from '../../reducer/actions';
 
 export type ColorPicker = {
   token: string;
   colorScale: string[];
   altColorNumber: number;
+  removable: boolean;
 };
 
 interface ColorPickerProps {
@@ -22,13 +24,22 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   initialColorScale,
   altColorNumber,
 }) => {
-  const { updateColorScale } = useColorScale();
+  // const { updateColorScale } = useColorScale();
   const [colorScale, setColorScale] = useState<string[]>(initialColorScale);
+
+  // try using reducer
+  const { dispatch } = useReducerContext();
 
   // Update color-scale and brand-color
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newColorScale = generateColorScaleHSL(e.target.value, 9);
-    updateColorScale(Number(altColorNumber), newColorScale); // used in code-generator
+    // updateColorScale(Number(altColorNumber), newColorScale); // used in code-generator
+
+    // dispatch action
+    dispatch({
+      type: UPDATE_COLOR_SCALE,
+      payload: { altColorNumber, colorScale: newColorScale },
+    });
     setColorScale(newColorScale);
 
     // change semantic-surface color

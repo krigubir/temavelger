@@ -1,33 +1,33 @@
 import { Button, Modal } from '@digdir/design-system-react';
-import { useRef, useEffect } from 'react';
-import { useColorScale } from '../../contexts/useDataContext';
+import { useRef } from 'react';
 import styles from './CodeGenerator.module.css';
+import { useReducerContext } from '../../contexts/useReducerContext';
 
 const CodeGenerator = () => {
-  const { colorScales } = useColorScale();
+  // const { colorScales } = useColorScale();
+  const { state } = useReducerContext();
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const generateTokenOutput = () => {
-    let tokenOutput = ':root {\n';
-    Object.entries(colorScales).forEach(([key, value]) => {
-      value.forEach((color, index) => {
-        tokenOutput += `  --fds-brand-alt${key}-${
-          (index + 1) * 100
-        }: ${color};\n`;
-      });
-      tokenOutput += '\n';
-    });
-    tokenOutput += '}';
-    return tokenOutput;
-  };
+  // const generateTokenOutput = () => {
+  //   let tokenOutput = ':root {\n';
+  //   Object.entries(colorScales).forEach(([key, value]) => {
+  //     value.forEach((color, index) => {
+  //       tokenOutput += `  --fds-brand-alt${key}-${
+  //         (index + 1) * 100
+  //       }: ${color};\n`;
+  //     });
+  //     tokenOutput += '\n';
+  //   });
+  //   tokenOutput += '}';
+  //   return tokenOutput;
+  // };
 
-  const copyToClipboard = () => {
-    console.log(colorScales);
-    const codeGeneratorOutput = generateTokenOutput();
-    navigator.clipboard.writeText(codeGeneratorOutput).then(() => {
-      alert('CSS copied to clipboard!');
-    });
-  };
+  // const copyToClipboard = () => {
+  //   const codeGeneratorOutput = generateTokenOutput();
+  //   navigator.clipboard.writeText(codeGeneratorOutput).then(() => {
+  //     alert('CSS copied to clipboard!');
+  //   });
+  // };
   return (
     <div className={styles.generateCodeButton}>
       <Button
@@ -45,7 +45,6 @@ const CodeGenerator = () => {
           <Button
             size='small'
             variant='secondary'
-            onClick={copyToClipboard}
           >
             Copy to Clipboard
           </Button>
@@ -53,12 +52,13 @@ const CodeGenerator = () => {
         <Modal.Content>
           <div className={styles.codeOutput}>
             :root {'{'}
-            {Object.entries(colorScales).map(([key, value]) => (
+            {state.colorScales.map((scales, key) => (
               <div key={key}>
-                {value.map((color, index) => (
+                {scales.colorScale.map((color, index) => (
                   <div key={index}>
                     <span className={styles.tokenName}>
-                      --fds-brand-alt{key}-{(index + 1) * 100}:
+                      --fds-brand-alt{scales.altColorNumber}-{(index + 1) * 100}
+                      :
                     </span>{' '}
                     <span className={styles.tokenValue}>
                       {color.toUpperCase()};
