@@ -42,7 +42,6 @@ const ComponentDesignLayout = () => {
           >
             <ColorPicker
               key={index}
-              token={colorPicker.token}
               initialColorScale={colorPicker.colorScale}
               altColorNumber={colorPicker.altColorNumber}
             ></ColorPicker>
