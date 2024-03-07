@@ -1,4 +1,4 @@
-import { State } from '../reducer';
+import { State } from '../../contexts/ReducerContext';
 
 /*
   This function updates the button color scale in the state
@@ -11,11 +11,10 @@ export const updateButtonFirstData = (
   state: State,
   payload: { buttonFirstColorScale: string[]; chosenColorIndex: number },
 ) => {
-  console.log('updateButtonFirstData: ' + payload.chosenColorIndex);
   return {
     ...state,
     buttonFirstData: {
-      buttonFirstColorScale: payload.buttonFirstColorScale,
+      actionColorScale: payload.buttonFirstColorScale,
       chosenColorIndex: payload.chosenColorIndex,
     },
   };

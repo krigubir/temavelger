@@ -1,5 +1,11 @@
 import chroma from 'chroma-js';
 
+/*
+  This function generates a color scale based on the HSL color model.
+  @param baseColor: string - The base color to generate the scale from.
+  @param numberOfShades: number - The number of shades to generate.
+*/
+
 const generateColorScaleHSL = (
   baseColor: string,
   numberOfShades: number,

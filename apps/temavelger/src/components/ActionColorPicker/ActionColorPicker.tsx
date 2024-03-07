@@ -4,7 +4,11 @@ import { useState } from 'react';
 import checkColorContrast from '../../utils/checkColorContrast';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { updateActionColorTokens } from '../../utils/updateActionColorTokens';
-import { UPDATE_BUTTON_FIRST_COLOR_SCALE } from '../../reducer/actions';
+import {
+  UPDATE_BUTTON_FIRST_DATA,
+  UPDATE_BUTTON_SECOND_DATA,
+  UPDATE_FORM_ELEMENTS_DATA,
+} from '../../reducer/actions';
 
 interface ActionColorPickerProps {
   variant: string;
@@ -51,25 +55,48 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
       e.target.value,
     );
 
-    console.log('ActionColorPicker: ' + chosenColorIndex);
-
     setActiveColor(color);
     updateActionColorTokens(
       variant,
       actionType,
-      color,
       chosenColorIndex,
       altColorNumber,
       state,
     );
 
-    dispatch({
-      type: UPDATE_BUTTON_FIRST_COLOR_SCALE,
-      payload: {
-        buttonFirstColorScale: state.colorScales[altColorNumber].colorScale,
-        chosenColorIndex: chosenColorIndex,
-      },
-    });
+    if (
+      variant.toLowerCase() === 'first' &&
+      actionType.toLowerCase() === 'button'
+    )
+      dispatch({
+        type: UPDATE_BUTTON_FIRST_DATA,
+        payload: {
+          buttonFirstColorScale: state.colorScales[altColorNumber].colorScale,
+          chosenColorIndex: chosenColorIndex,
+        },
+      });
+    else if (
+      variant.toLowerCase() === 'second' &&
+      actionType.toLowerCase() === 'button'
+    )
+      dispatch({
+        type: UPDATE_BUTTON_SECOND_DATA,
+        payload: {
+          buttonSecondColorScale: state.colorScales[altColorNumber].colorScale,
+          chosenColorIndex: chosenColorIndex,
+        },
+      });
+    else if (
+      variant.toLowerCase() === '' &&
+      actionType.toLowerCase() === 'form elements'
+    )
+      dispatch({
+        type: UPDATE_FORM_ELEMENTS_DATA,
+        payload: {
+          formElementsColorScale: state.colorScales[altColorNumber].colorScale,
+          chosenColorIndex: chosenColorIndex,
+        },
+      });
   };
 
   return (

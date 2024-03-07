@@ -48,16 +48,20 @@ export const getButtonFirstTokens = (
   };
 };
 
-export const buttonSecondTokens = [
-  '--fds-semantic-surface-action-second-default',
-  '--fds-semantic-surface-action-second-hover',
-  '--fds-semantic-surface-action-second-active',
-  '--fds-semantic-surface-action-second-no_fill-hover',
-  '--fds-semantic-surface-action-second-no_fill-active',
-  '--fds-semantic-text-action-second-default',
-  '--fds-semantic-text-action-second-hover',
-  '--fds-semantic-text-action-second-active',
-];
+export const getButtonSecondTokens = (
+  colorNuance: number,
+): { [token: string]: number } => {
+  return {
+    '--fds-semantic-surface-action-second-default': colorNuance,
+    '--fds-semantic-surface-action-second-hover': colorNuance + 1,
+    '--fds-semantic-surface-action-second-active': colorNuance + 3,
+    '--fds-semantic-surface-action-second-no_fill-hover': 0,
+    '--fds-semantic-surface-action-second-no_fill-active': 2,
+    '--fds-semantic-text-action-second-default': 5,
+    '--fds-semantic-text-action-second-hover': 6,
+    '--fds-semantic-text-action-second-active': 7,
+  };
+};
 
 export const getFormElementTokens = (
   colorNuance: number,

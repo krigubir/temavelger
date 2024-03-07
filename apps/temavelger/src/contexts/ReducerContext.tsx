@@ -1,6 +1,34 @@
 import { createContext, useReducer } from 'react';
-import reducer, { Action, State } from '../reducer/reducer';
+import reducer from '../reducer/reducer';
 import colorPickerData from '../data/colorPickerData';
+import { ColorPicker } from '../components/ColorPicker/ColorPicker';
+
+/*
+  This file needs a cleanup. 
+*/
+
+interface ColorScale {
+  altColorNumber: number;
+  colorScale: string[];
+}
+
+interface ActionColorData {
+  chosenColorIndex: number;
+  actionColorScale: string[];
+}
+
+export type State = {
+  colorPickerList: ColorPicker[];
+  colorScales: ColorScale[];
+  buttonFirstData: ActionColorData;
+  buttonSecondData: ActionColorData;
+  formElementsData: ActionColorData;
+};
+
+export type Action = {
+  type: string;
+  payload?: unknown;
+};
 
 // create context
 interface ReducerContextProps {
@@ -9,16 +37,40 @@ interface ReducerContextProps {
 }
 
 export const ReducerContext = createContext<ReducerContextProps>({
-  state: { colorPickerList: [], colorScales: [], buttonColorScale: [] },
+  state: {
+    colorPickerList: [],
+    colorScales: [],
+    buttonFirstData: {
+      chosenColorIndex: 0,
+      actionColorScale: [],
+    },
+    buttonSecondData: {
+      chosenColorIndex: 0,
+      actionColorScale: [],
+    },
+    formElementsData: {
+      chosenColorIndex: 0,
+      actionColorScale: [],
+    },
+  },
   dispatch: () => {},
 });
 
 const defaultState = {
   colorPickerList: colorPickerData,
-  colorScales: [], // add default state
-  buttonColorScale: [],
-  borderRadius: [],
-  fontFamily: [],
+  colorScales: [],
+  buttonFirstData: {
+    chosenColorIndex: 0,
+    actionColorScale: [],
+  },
+  buttonSecondData: {
+    chosenColorIndex: 0,
+    actionColorScale: [],
+  },
+  formElementsData: {
+    chosenColorIndex: 0,
+    actionColorScale: [],
+  },
 };
 
 // create reducer provider
