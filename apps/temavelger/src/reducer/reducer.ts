@@ -3,24 +3,36 @@ import {
   ADD_COLOR_PICKER,
   REMOVE_COLOR_PICKER,
   REMOVE_COLOR_SCALE,
-  UPDATE_BUTTON_COLOR_SCALE,
+  UPDATE_BUTTON_FIRST_COLOR_SCALE,
   UPDATE_COLOR_SCALE,
 } from './actions';
 import { addColorPicker } from './reducerFunctions/addColorPicker';
 import { removeColorScale } from './reducerFunctions/removeColorScale';
 import { removeColorPicker } from './reducerFunctions/removerColorPicker';
-import { updateButtonColorScale } from './reducerFunctions/updateButtonColorScale';
+import { updateButtonFirstData } from './reducerFunctions/updateButtonFirstData';
 import { updateColorScale } from './reducerFunctions/updateColorScale';
+
+/*
+  This is the reducer function
+  @param state
+  @param action
+  @returns state
+*/
 
 interface ColorScale {
   altColorNumber: number;
   colorScale: string[];
 }
 
+interface ButtonColorData {
+  chosenColorIndex: number;
+  buttonFirstColorScale: string[];
+}
+
 export type State = {
   colorPickerList: ColorPicker[];
   colorScales: ColorScale[];
-  buttonColorScale: string[];
+  buttonFirstData: ButtonColorData;
 };
 
 export type Action = {
@@ -48,10 +60,17 @@ const reducer = (state: State, action: Action): State => {
     return removeColorScale(state, action.payload as number);
   }
 
-  if (action.type === UPDATE_BUTTON_COLOR_SCALE) {
-    return updateButtonColorScale(
+  if (action.type === UPDATE_BUTTON_FIRST_COLOR_SCALE) {
+    console.log(
+      'reducer: ' +
+        (action.payload as { chosenColorIndex: number }).chosenColorIndex,
+    );
+    return updateButtonFirstData(
       state,
-      action.payload as { colorScale: string[] },
+      action.payload as {
+        buttonFirstColorScale: string[];
+        chosenColorIndex: number;
+      },
     );
   }
 

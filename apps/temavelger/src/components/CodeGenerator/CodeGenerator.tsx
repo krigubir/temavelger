@@ -2,11 +2,31 @@ import { Button, Modal } from '@digdir/design-system-react';
 import { useRef } from 'react';
 import styles from './CodeGenerator.module.css';
 import { useReducerContext } from '../../contexts/useReducerContext';
+import { getButtonFirstTokens } from '../../data/designTokens';
 
 const CodeGenerator = () => {
   // const { colorScales } = useColorScale();
   const { state } = useReducerContext();
   const modalRef = useRef<HTMLDialogElement>(null);
+
+  const mapButtonFirstTokens = () => {
+    if (state.buttonFirstData === undefined) return;
+    const tokenList = getButtonFirstTokens(
+      state.buttonFirstData.chosenColorIndex,
+    );
+    const output = [];
+    for (const token in tokenList) {
+      output.push(
+        <div key={token}>
+          <span className={styles.tokenName}>{token}: </span>
+          <span className={styles.tokenValue}>
+            {state.buttonFirstData.buttonFirstColorScale[tokenList[token]]};
+          </span>
+        </div>,
+      );
+    }
+    return output;
+  };
 
   // const generateTokenOutput = () => {
   //   let tokenOutput = ':root {\n';
@@ -67,14 +87,7 @@ const CodeGenerator = () => {
                 <br />
               </div>
             ))}
-            {state.buttonColorScale.map((color, index) => (
-              <div key={index}>
-                <span className={styles.tokenName}>
-                  --fds-semantic-surface-action-first-default:
-                </span>{' '}
-                <span className={styles.tokenValue}>{color.toUpperCase()}</span>
-              </div>
-            ))}
+            {mapButtonFirstTokens()}
             {'}'}
           </div>
         </Modal.Content>

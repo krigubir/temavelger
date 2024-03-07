@@ -4,7 +4,7 @@ import { useState } from 'react';
 import checkColorContrast from '../../utils/checkColorContrast';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { updateActionColorTokens } from '../../utils/updateActionColorTokens';
-import { UPDATE_BUTTON_COLOR_SCALE } from '../../reducer/actions';
+import { UPDATE_BUTTON_FIRST_COLOR_SCALE } from '../../reducer/actions';
 
 interface ActionColorPickerProps {
   variant: string;
@@ -15,26 +15,24 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
   variant,
   actionType,
 }) => {
-  // const { colorScales } = useColorScale();
   const { state, dispatch } = useReducerContext();
   const [activeColor, setActiveColor] = useState<string>('#fff');
 
   const generateOptions = () => {
-    console.log('state:', state);
     const options: React.ReactNode[] = [];
     {
       state.colorScales.map((value, index) =>
-        value.colorScale.map((color, colorNuance) =>
+        value.colorScale.map((color, colorNuanceIndex) =>
           options.push(
             <option
-              key={`${index + 1}-${colorNuance}`}
+              key={`${index + 1}-${colorNuanceIndex}`}
               value={JSON.stringify({
                 color: color,
-                colorNuance: colorNuance,
-                index: index,
+                chosenColorIndex: colorNuanceIndex,
+                altColorNumber: index,
               })}
             >{`alt${value.altColorNumber} - ${
-              (colorNuance + 1) * 100
+              (colorNuanceIndex + 1) * 100
             }`}</option>,
           ),
         ),
@@ -49,25 +47,27 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
     variant: string,
     actionType: string,
   ) => {
-    const { color, colorNuance, index } = JSON.parse(e.target.value);
+    const { color, chosenColorIndex, altColorNumber } = JSON.parse(
+      e.target.value,
+    );
+
+    console.log('ActionColorPicker: ' + chosenColorIndex);
 
     setActiveColor(color);
     updateActionColorTokens(
       variant,
       actionType,
       color,
-      colorNuance,
-      index,
+      chosenColorIndex,
+      altColorNumber,
       state,
     );
+
     dispatch({
-      type: UPDATE_BUTTON_COLOR_SCALE,
+      type: UPDATE_BUTTON_FIRST_COLOR_SCALE,
       payload: {
-        colorScale: [
-          color,
-          state.colorScales[index].colorScale[colorNuance + 1],
-          state.colorScales[index].colorScale[colorNuance + 3],
-        ],
+        buttonFirstColorScale: state.colorScales[altColorNumber].colorScale,
+        chosenColorIndex: chosenColorIndex,
       },
     });
   };

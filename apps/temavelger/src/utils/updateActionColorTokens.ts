@@ -1,11 +1,25 @@
 import { State } from '../reducer/reducer';
+import {
+  getButtonFirstTokens,
+  getFormElementTokens,
+} from '../data/designTokens';
+
+/*
+  This function updates the action-color tokens in the DOM
+  @param variant - first or second
+  @param actionType - button or form elements
+  @param color - selected color
+  @param colorNuanceIndex - index of the selected color in the color scale
+  @param altColorNumber - index of the selected color scale in the state
+  @param state - the state of the application
+ */
 
 export const updateActionColorTokens = (
   variant: string,
   actionType: string,
   color: string,
-  colorNuance: number,
-  index: number,
+  colorNuanceIndex: number,
+  altColorNumber: number,
   state: State,
 ) => {
   // button first
@@ -13,18 +27,13 @@ export const updateActionColorTokens = (
     variant.toLowerCase() === 'first' &&
     actionType.toLowerCase() === 'button'
   ) {
-    document.documentElement.style.setProperty(
-      '--fds-semantic-surface-action-first-default',
-      color,
-    );
-    document.documentElement.style.setProperty(
-      '--fds-semantic-surface-action-first-hover',
-      state.colorScales[index].colorScale[colorNuance + 1],
-    );
-    document.documentElement.style.setProperty(
-      '--fds-semantic-surface-action-first-active',
-      state.colorScales[index].colorScale[colorNuance + 3],
-    );
+    const tokenList = getButtonFirstTokens(colorNuanceIndex);
+    for (const token in tokenList) {
+      document.documentElement.style.setProperty(
+        token,
+        state.colorScales[altColorNumber].colorScale[tokenList[token]],
+      );
+    }
   }
 
   // button second
@@ -38,31 +47,22 @@ export const updateActionColorTokens = (
     );
     document.documentElement.style.setProperty(
       '--fds-semantic-surface-action-second-hover',
-      state.colorScales[index].colorScale[colorNuance + 1],
+      state.colorScales[altColorNumber].colorScale[colorNuanceIndex + 1],
     );
     document.documentElement.style.setProperty(
       '--fds-semantic-surface-action-second-active',
-      state.colorScales[index].colorScale[colorNuance + 3],
+      state.colorScales[altColorNumber].colorScale[colorNuanceIndex + 3],
     );
   }
 
   // form elements
   if (variant == '' && actionType.toLowerCase() == 'form elements') {
-    document.documentElement.style.setProperty(
-      '--fds-semantic-border-input-hover', // inside the radio-group
-      color,
-    );
-    document.documentElement.style.setProperty(
-      '--fds-semantic-border-input-default', // default radio circle
-      state.colorScales[index].colorScale[8],
-    );
-    document.documentElement.style.setProperty(
-      '--fds-semantic-text-action-hover', // hover-text
-      state.colorScales[index].colorScale[6],
-    );
-    document.documentElement.style.setProperty(
-      '--fds-semantic-surface-info-subtle-hover', // outside the radio-group
-      state.colorScales[index].colorScale[1],
-    );
+    const tokenList = getFormElementTokens(colorNuanceIndex);
+    for (const token in tokenList) {
+      document.documentElement.style.setProperty(
+        token,
+        state.colorScales[altColorNumber].colorScale[tokenList[token]],
+      );
+    }
   }
 };

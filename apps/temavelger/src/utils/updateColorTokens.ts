@@ -1,4 +1,13 @@
-const altColorNumberMap = ['first', 'second', 'third'];
+import {
+  getColorPickerBrandTokens,
+  getColorPickerSemanticTokens,
+} from '../data/designTokens';
+
+/*
+  This function updates the color tokens in the DOM
+  @param colorScale
+  @param altColorNumber
+ */
 
 export const updateColorTokens = (
   colorScale: string[],
@@ -6,25 +15,15 @@ export const updateColorTokens = (
 ) => {
   // update the brand-alt colors
   for (let i = 0; i < colorScale.length; i++) {
-    document.documentElement.style.setProperty(
-      `--fds-brand-alt${altColorNumber}-${(i + 1) * 100}`,
-      colorScale[i],
-    );
+    const { brandColor } = getColorPickerBrandTokens(altColorNumber, i);
+    document.documentElement.style.setProperty(brandColor, colorScale[i]);
   }
 
-  // change semantic-surface color
-  document.documentElement.style.setProperty(
-    `--fds-semantic-surface-${altColorNumberMap[altColorNumber - 1]}-light`,
-    colorScale[2],
-  );
-
-  // change semantic-surface-hover color (accordion)
-  document.documentElement.style.setProperty(
-    `--fds-semantic-surface-${
-      altColorNumberMap[altColorNumber - 1]
-    }-light-hover`,
-    colorScale[3],
-  );
+  // update the surface colors
+  const { surfaceColor, surfaceColorHover } =
+    getColorPickerSemanticTokens(altColorNumber);
+  document.documentElement.style.setProperty(surfaceColor, colorScale[4]);
+  document.documentElement.style.setProperty(surfaceColorHover, colorScale[5]);
 
   // change the color of the text in the components
   // document.documentElement.style.setProperty(
