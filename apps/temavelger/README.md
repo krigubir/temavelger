@@ -48,3 +48,17 @@ The preview area is a composition of a selection of customizable components from
 When you are happy with the design, click on the _Generate ouput_ button. This will generate a CSS-file with all the custom design-tokens necessary to represent your design choices. Copy and paste the output into your CSS file. Your custom design is now applied! 
 
 ## 🔏 Documentation
+### Purpose
+**Temavelgeren** is a tool that allows you to explore and customize components from Designsystemet. It's purpose is to make it easy for users to adopt the design system and tailor it to their own brand. The tool presents the user with a range of adjustment options that will affect a selection of components in real-time. Subsequently, the decisions will be available as an automatically generated CSS file, which the user can easily incorporate into their own project. Temavelgeren functions as a creative tool that helps maintain identity while showcasing all customizable components of the design system.
+
+### Technology and Tools
+The Theme Selector is developed using the Designsystemets own components. Similar to Designsystemet, the tool is written in TypeScript with React as framework. The application utilizes CSS modules for styling components.
+
+### Folder structure
+- components
+- contexts
+- data
+- layouts
+- reducer
+- utils
+
