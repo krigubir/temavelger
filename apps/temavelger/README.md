@@ -67,7 +67,7 @@ This folder contains reusable components that build the user-interface of the ap
   - ComponentName.module.css:
 
 #### contexts
-The application utilizes **useReducer** and **ContextAPI** to manage the application's state. The reducerContext is responsible for defining the State interface and distribute both the state and the reducer to child components. Every tool in the **Design Menu** is responsible for manipulating the DOM as well as update the State with the corresponding changes. All tools have their a corresponding property in the State where data is added/updated/deleted from. In the **reducerContext** you will find all you need to add or modify the state's interfaces and types.
+The application utilizes **useReducer** and **ContextAPI** to manage the application's state. The _reducerContext.tsx_ is responsible for defining the States interface and distribute both the state and the reducer to child components. Every tool in the **Design Menu** is responsible for manipulating the DOM as well as update the State with the corresponding changes. All tools have their a corresponding property in the State where data is added/updated/deleted from. In the **reducerContext** you will find all you need to add or modify the state's interfaces and types.
 
 #### data
 This folder holds static data. The data-folder includes three files:
