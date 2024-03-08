@@ -11,8 +11,15 @@ Clone this repo to your local machine:
 git clone https://github.com/krigubir/temavelger.git
 ```
 
-### 2. Install Dependencies
+### 2. Install dependencies and build
 Install dependencies
 ```
-yarn install
+yarn install && yarn build
 ```
+
+### 3. Run application in devmode
+```
+yarn dev
+```
+
+## 
