@@ -22,7 +22,7 @@ export const updateColorTokens = (
   // update the surface colors
   const { surfaceColor, surfaceColorHover } =
     getColorPickerSemanticTokens(altColorNumber);
-  document.documentElement.style.setProperty(surfaceColor, colorScale[4]);
+  document.documentElement.style.setProperty(surfaceColor, colorScale[2]);
   document.documentElement.style.setProperty(surfaceColorHover, colorScale[5]);
 
   // change the color of the text in the components

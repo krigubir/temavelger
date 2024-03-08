@@ -1,4 +1,6 @@
-.codeOutput {
+.codeOutputContainer {
+  display: flex;
+  justify-content: space-between;
   background-color: #1e1e1e;
   color: #dcdcaa;
   padding: 16px;
@@ -20,7 +22,16 @@
 .copyToClipboard {
   display: flex;
   justify-content: end;
-  margin-right: 1.73rem;
+}
+
+.copyButtonIcon {
+  color: #bebebe;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.copyButtonIcon:hover {
+  color: white;
 }
 
 .generateCodeButton {
