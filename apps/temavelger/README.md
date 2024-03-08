@@ -6,6 +6,8 @@ Uncertain about how the Designsystemet can adapt to your needs, or curious about
 Follow these steps to try out **Temavelgeren**
 
 ### 1. Clone the repo
-Clone this repo to your local machine
-<img alt="clone-step-1" src="assets/img/logo.svg">
+Clone this repo to your local machine:
+´´´
+git clone 
+´´´
 
