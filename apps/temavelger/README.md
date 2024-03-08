@@ -7,3 +7,5 @@ Follow these steps to try out **Temavelgeren**
 
 ### 1. Clone the repo
 Clone this repo to your local machine
+<img alt="clone-step-1" src="assets/img/logo.svg">
+
