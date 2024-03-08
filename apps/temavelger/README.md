@@ -61,4 +61,17 @@ The Theme Selector is developed using the Designsystemets own components. Simila
 - layouts
 - reducer
 - utils
+#### components
+This folder contains reusable components that build the user-interface of the application. The structure is as follows:
+  - ComponentName.tsx:
+  - ComponentName.module.css:
+
+#### contexts
+The application utilizes **useReducer** and **ContextAPI** to manage the application's state. The reducerContext is responsible for defining the State interface and distribute both the state and the reducer to child components. Every tool in the **Design Menu** is responsible for manipulating the DOM as well as update the State with the corresponding changes. All tools have their a corresponding property in the State where data is added/updated/deleted from. In the **reducerContext** you will find all you need to add or modify the state's interfaces and types.
+
+#### data
+This folder holds static data. The data-folder includes three files:
+  - **colorPickerData**: Used to generate the initial three colorPicker-tools
+  - **designTokens**: In here you will find all design-tokens that are being updated by the design-tools. This file also maps semantic-tokens to a corresponding number-value. The number-value represents which color in a selected color-scale that should be used. For example, if the alt1-300 color is chosen as the button-first color, then relevant states will be used based on this choice.
+  - **fontFamilyData**: A static file containing data used generate font-family options.
 
