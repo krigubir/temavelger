@@ -23,7 +23,7 @@ yarn dev
 ```
 
 ## 📖 Guidelines
-**Temavelgeren** is designed to work with Designsystemts components and design-tokens. Make adjustments and copy the output to your project!
+**Temavelgeren** is designed to work with Designsystemets components and design-tokens. Make adjustments and copy the output to your project!
 
 ### Color Picker
 The color picker tool allows you to choose brand-colors for your design and will affect the overall appereance.
