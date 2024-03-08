@@ -1,7 +1,6 @@
-# Temavelger
+## 📖 About Themebuilder
 
-Usikker på hvordan designsystemet lar seg tilpasse ditt behov, eller nysgjerrig på hvilke tilpasninger som er mulig? Temavelgeren er et verktøy for deg som ønsker å ta i bruk designsystemet. Verktøyet vil gi deg muligheten til å utforske en rekke tilpasninger av felles komponenter som brand-farger, action-farger, border-radius innstillinger og mer. Temavelgeren gir deg muligheten til å se hvordan dine valg vil påvirke designsystemets komponenter i real-time. Deretter genereres det en css-fil som du enkelt kan ta i bruk i ditt eget prosjekt med dine egne valg. 
-
+Uncertain about how the Designsystemet can adapt to your needs, or curious about the possible customizations? **Temavelgeren** is a tool for those who want to utilize Designsystemet with their own brand. This tool will allow you to explore various adjustments such as brand-color, action-color, border-radius settings, and more. Temavelgeren enables you to see how your choices will affect Designsystemets components in real-time. Subsequently, a CSS file is generated which you can easily incorporate into your own project.
 
 ## Expanding the ESLint configuration
 
