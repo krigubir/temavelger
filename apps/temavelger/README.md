@@ -45,5 +45,5 @@ When choosing a font-family, make sure you have it installed locally on your com
 The preview area is a composition of a selection of customizable components from Designsystemet. You have the option to switch between different previews in order to get a better sense of how your design is going to look. Use the toggle-group to select between previews.
 
 ### 💾 Generate Output (CSS)
-When you are happy with the design, click on the _Generate ouput_-button. This will generate a CSS-file with all the adjusted design-tokens. Copy and paste the output into your appicatin CSS file. Your custom design is now applied! 
+When you are happy with the design, click on the _Generate ouput_ button. This will generate a CSS-file with all the adjusted design-tokens. Copy and paste the output into your appicatin CSS file. Your custom design is now applied! 
 
