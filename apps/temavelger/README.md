@@ -8,7 +8,7 @@ Follow these steps to try out **Temavelgeren**
 ### 1. Clone the repo
 Clone this repo to your local machine:
 ```
-**git clone** https://github.com/krigubir/temavelger.git
+git clone https://github.com/krigubir/temavelger.git
 ```
 
 ### 2. Install Dependencies
