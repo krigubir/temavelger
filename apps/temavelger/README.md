@@ -41,5 +41,5 @@ Customize the border radius
 When choosing a font-family, make sure you have it installed locally on your computer in order to see the changes. 
 
 ### Generate Output (CSS)
-When you are happy with the design, xlick on the _Generate ouput_-button. This will generate a CSS-file with all the adjusted design-tokens. Copy and paste the output into your appicatin CSS file. Your custom design is now applied! 
+When you are happy with the design, click on the _Generate ouput_-button. This will generate a CSS-file with all the adjusted design-tokens. Copy and paste the output into your appicatin CSS file. Your custom design is now applied! 
 
