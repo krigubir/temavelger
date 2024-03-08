@@ -25,7 +25,7 @@ yarn dev
 ## 📖 Guidelines
 **Temavelgeren** is designed to work with Designsystemets components and design-tokens. Make adjustments and copy the output into your own project!
 
-### The Design Menu 🎨 
+### 🎨 The Design Menu  
 #### Color Picker
 The color picker tool allows you to choose brand-colors for your design and will affect the overall appereance.
 
@@ -41,9 +41,9 @@ Customize the border radius
 #### Font Family Select
 When choosing a font-family, make sure you have it installed locally on your computer in order to see the changes. 
 
-### Preview Area 🧾
+### 🖥 Preview Area
 
 
-### Generate Output (CSS)
+### 💾 Generate Output (CSS)
 When you are happy with the design, click on the _Generate ouput_-button. This will generate a CSS-file with all the adjusted design-tokens. Copy and paste the output into your appicatin CSS file. Your custom design is now applied! 
 
