@@ -32,5 +32,14 @@ The color picker tool allows you to choose brand-colors for your design and will
 This tool allows you customize specific action-components. The available colors are defined by your colors of choice in the color picker. Currently, the action color picker will allow you separately customize _button-first, button-second and form-elements_. 
 - Button-first will adjust the color of all button components and their connected states.
 - Button-second components are meant to be used in situations that require a denser UI (for example an admin-view).
-- Form-elements will affect the following components: radio, checkbox, textfield. 
+- Form-elements will affect the following components: radio, checkbox, textfield.
+
+### Border Radius Select
+Customize the border radius
+
+### Font Family Select
+When choosing a font-family, make sure you have it installed locally on your computer in order to see the changes. 
+
+### Generate Output CSS
+When you are happy with the design, xlick on the _Generate ouput_-button. This will generate a CSS-file with all the adjusted design-tokens. Copy and paste the output into your appicatin CSS file. Your custom design is now applied! 
 
