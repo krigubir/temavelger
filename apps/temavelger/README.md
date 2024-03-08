@@ -1,4 +1,4 @@
-# 🎨 Temavelgeren
+# Temavelgeren
 
 Uncertain about how **Designsystemet** can adapt to your needs? **Temavelgeren** is a tool for those who want to utilize Designsystemet with their own brand. This tool will allow you to explore various adjustments such as brand-color, action-color, border-radius settings, and more. Temavelgeren enables you to see how your choices will affect Designsystemets components in real-time. Subsequently, a CSS file is generated which you can easily incorporate into your own project.
 
@@ -25,7 +25,7 @@ yarn dev
 ## 📖 Guidelines
 **Temavelgeren** is designed to work with Designsystemets components and design-tokens. Make adjustments and copy the output into your own project!
 
-### Design Menu
+### The Design Menu 🎨 
 #### Color Picker
 The color picker tool allows you to choose brand-colors for your design and will affect the overall appereance.
 
@@ -40,6 +40,9 @@ Customize the border radius
 
 #### Font Family Select
 When choosing a font-family, make sure you have it installed locally on your computer in order to see the changes. 
+
+### Preview Area 🧾
+
 
 ### Generate Output (CSS)
 When you are happy with the design, click on the _Generate ouput_-button. This will generate a CSS-file with all the adjusted design-tokens. Copy and paste the output into your appicatin CSS file. Your custom design is now applied! 
