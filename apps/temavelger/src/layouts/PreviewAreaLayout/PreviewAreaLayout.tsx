@@ -2,13 +2,13 @@ import ComponentLayout1 from './ComponentLayouts/ComponentLayout1/ComponentLayou
 import ComponentLayout2 from './ComponentLayouts/ComponentLayout2/ComponentLayout2';
 import ComponentLayout3 from './ComponentLayouts/ComponentLayout3/ComponentLayout3';
 import ComponentLayout4 from './ComponentLayouts/ComponentLayout4/ComponentLayout4';
-import styles from './ComponentsPreviewLayout.module.css';
+import styles from './PreviewAreaLayout.module.css';
 
-interface ComponentsPreviewLayoutProps {
+interface PreviewAreaLayoutProps {
   activeLayout: string;
 }
 
-const ComponentsPreviewLayout: React.FC<ComponentsPreviewLayoutProps> = ({
+const PreviewAreaLayout: React.FC<PreviewAreaLayoutProps> = ({
   activeLayout,
 }) => {
   let componentPreviewLayout: React.ReactNode = (
@@ -36,4 +36,4 @@ const ComponentsPreviewLayout: React.FC<ComponentsPreviewLayoutProps> = ({
     </section>
   );
 };
-export default ComponentsPreviewLayout;
+export default PreviewAreaLayout;

@@ -1,8 +1,9 @@
-import ComponentsDesignLayout from '../ComponentsDesignLayout/ComponentDesignLayout';
-import ComponentsPreviewLayout from '../ComponentsPreviewLayout/ComponentsPreviewLayout';
+import DesignMenuLayout from '../DesignMenuLayout/DesignMenuLayout';
+import PreviewAreaLayout from '../PreviewAreaLayout/PreviewAreaLayout';
 import { ToggleGroup } from '@digdir/design-system-react';
 import styles from './FrontpageLayout.module.css';
 import { useState } from 'react';
+
 const FrontPageLayout = () => {
   const [activeLayout, setActiveLayout] = useState<string>('Layout1');
 
@@ -13,7 +14,7 @@ const FrontPageLayout = () => {
   return (
     <div className={styles.frontpageContainer}>
       <aside className={styles.designMenuContainer}>
-        <ComponentsDesignLayout></ComponentsDesignLayout>
+        <DesignMenuLayout></DesignMenuLayout>
       </aside>
       <div className={styles.previewMenuContainer}>
         <div className={styles.toggleGroupContainer}>
@@ -29,9 +30,7 @@ const FrontPageLayout = () => {
             <ToggleGroup.Item value='layout4'>Layout 4</ToggleGroup.Item>
           </ToggleGroup>
         </div>
-        <ComponentsPreviewLayout
-          activeLayout={activeLayout}
-        ></ComponentsPreviewLayout>
+        <PreviewAreaLayout activeLayout={activeLayout}></PreviewAreaLayout>
       </div>
     </div>
   );

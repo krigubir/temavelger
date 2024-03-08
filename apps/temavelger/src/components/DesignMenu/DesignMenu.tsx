@@ -1,19 +1,19 @@
-import ActionColorPicker from '../../components/ActionColorPicker/ActionColorPicker';
-import CodeGenerator from '../../components/CodeGenerator/CodeGenerator';
-import ColorPicker from '../../components/ColorPicker/ColorPicker';
-import styles from './ComponentDesignLayout.module.css';
-import { Button, HelpText } from '@digdir/design-system-react';
-import BorderRadiusSelect from '../../components/BorderRadiusSelect/BorderRadiusSelect';
-import FontFamilySelector from '../../components/FontFamilySelector/FontFamilySelector';
-import DesignMenuHeader from '../../components/DesignMenuHeader/DesignMenuHeader';
+import { HelpText, Button } from '@digdir/design-system-react';
+import { useReducerContext } from '../../contexts/useReducerContext';
 import {
   ADD_COLOR_PICKER,
   REMOVE_COLOR_PICKER,
   REMOVE_COLOR_SCALE,
 } from '../../reducer/actions';
-import { useReducerContext } from '../../contexts/useReducerContext';
+import ActionColorPicker from '../ActionColorPicker/ActionColorPicker';
+import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
+import CodeGenerator from '../CodeGenerator/CodeGenerator';
+import ColorPicker from '../ColorPicker/ColorPicker';
+import DesignMenuHeader from '../DesignMenuHeader/DesignMenuHeader';
+import FontFamilySelector from '../FontFamilySelector/FontFamilySelector';
+import styles from './DesignMenu.module.css';
 
-const ComponentDesignLayout = () => {
+const DesignMenu = () => {
   const { state, dispatch } = useReducerContext();
 
   const addNewColorPicker = () => {
@@ -98,4 +98,4 @@ const ComponentDesignLayout = () => {
     </div>
   );
 };
-export default ComponentDesignLayout;
+export default DesignMenu;
