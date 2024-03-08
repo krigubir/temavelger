@@ -1,4 +1,4 @@
-## 📖 About Temavelgeren
+## 🎨 Temavelgeren
 
 Uncertain about how the Designsystemet can adapt to your needs, or curious about the possible customizations? **Temavelgeren** is a tool for those who want to utilize Designsystemet with their own brand. This tool will allow you to explore various adjustments such as brand-color, action-color, border-radius settings, and more. Temavelgeren enables you to see how your choices will affect Designsystemets components in real-time. Subsequently, a CSS file is generated which you can easily incorporate into your own project.
 
@@ -25,9 +25,9 @@ yarn dev
 ## 📖 Guidelines
 **Temavelgeren** is designed to work with Designsystemts components and design-tokens. Make adjustments and copy the output to your project!
 
-#### Color Picker
+### Color Picker
 The color picker tool allows you to choose brand-colors for your design and will affect the overall appereance.
 
-#### Action Color Picker
+### Action Color Picker
 This tool allows you customize specific action-components. The available colors are defined by your colors of choice in the color picker. Currently, the action color picker will allow you separately _customize button-first, button-second and form-elements_. Button-first will adjust the color of all button components and their connected states. Button-second components are meant to be used in situations that require a denser UI (for example an admin-view). Form-elements will affect the following components: radio, checkbox, textfield. 
 
