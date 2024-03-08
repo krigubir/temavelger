@@ -47,3 +47,4 @@ The preview area is a composition of a selection of customizable components from
 ### 💾 Generate Output (CSS)
 When you are happy with the design, click on the _Generate ouput_ button. This will generate a CSS-file with all the custom design-tokens necessary to represent your design choices. Copy and paste the output into your CSS file. Your custom design is now applied! 
 
+## 🔏 Documentation
