@@ -75,3 +75,22 @@ This folder holds static data. The data-folder includes three files:
   - **designTokens**: In here you will find all design-tokens that are being updated by the design-tools. This file also maps semantic-tokens to a corresponding number-value. The number-value represents which color in a selected color-scale that should be used. For example, if the alt1-300 color is chosen as the button-first color, then relevant states will be used based on this choice.
   - **fontFamilyData**: A static file containing data used generate font-family options.
 
+#### layouts 
+The layouts folder contains files that define the overall structure and design of the application. The files in this folder needs to be updateed, and are not currently matching their appropiate purpose. The layout folder currently consists of:
+  - DesignMenuLayout
+  - FrontpageLayout
+  - PreviewAreaLayout
+
+#### reducer
+The reducer folder contains _reducer.ts_, _actions.ts_ and _reducerFunctions_. The _reducer_ is responsible for handling dispatched actions from various components. _actions_ defines all possible dispatch-messages, known as types. The _reducer_ utilizes a function based on the corresponding dispatch-message (type). The functions in the _reducerFunctions_ folder is responsible for actually updating and maintaining the State. 
+
+#### utils
+The utils folder contains reusable helper-functions.
+- checkColorContrast
+- generateColorScaleHSL
+
+The functions responsible for updating the DOM (design-tokens) lives here. There is one helper-function for each tool in the **Design Menu**. These functions use the _designTokens.ts_ file in the **data**-folder to retrieve relevant design-tokens. The design-tokens gets updated based on the users choices. These choices are served as paramters to these functions in the utils-folder:
+- updateColorTokens
+- updateActionColorTokens
+
+
