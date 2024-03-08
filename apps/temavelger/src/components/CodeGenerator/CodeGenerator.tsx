@@ -37,7 +37,7 @@ const CodeGenerator = () => {
         onClick={openModal}
         style={{ background: '#00315D' }}
       >
-        Copy code
+        Generate output
       </Button>
       <Modal
         ref={modalRef}

@@ -1,6 +1,6 @@
 import { fontFamilyData } from '../../data/fontFamilyData';
 import { useState } from 'react';
-import styles from './FontFamilySelector.module.css';
+import styles from './FontFamilySelect.module.css';
 import { HelpText, NativeSelect } from '@digdir/design-system-react';
 
 const FontFamilySelector = () => {

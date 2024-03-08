@@ -4,7 +4,8 @@ import colorPickerData from '../data/colorPickerData';
 import { ColorPicker } from '../components/ColorPicker/ColorPicker';
 
 /*
-  This file needs a cleanup. 
+  Responsible for defining the state-interface and distribute both the state and
+  the reducer to child components. 
 */
 
 interface ColorScale {

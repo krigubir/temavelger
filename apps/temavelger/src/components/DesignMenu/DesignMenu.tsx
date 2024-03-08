@@ -10,7 +10,7 @@ import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
 import CodeGenerator from '../CodeGenerator/CodeGenerator';
 import ColorPicker from '../ColorPicker/ColorPicker';
 import DesignMenuHeader from '../DesignMenuHeader/DesignMenuHeader';
-import FontFamilySelector from '../FontFamilySelector/FontFamilySelector';
+import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
 import styles from './DesignMenu.module.css';
 
 const DesignMenu = () => {
