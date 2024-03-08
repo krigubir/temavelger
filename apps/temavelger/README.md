@@ -5,5 +5,5 @@ Uncertain about how the Designsystemet can adapt to your needs, or curious about
 ## 🚀 Get started
 Follow these steps to try out **Temavelgeren**
 
-## 1. Clone the repo
+### 1. Clone the repo
 Clone this repo to your local machine
