@@ -65,7 +65,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
           {...fieldsetProps}
           className={cl(
             classes.fieldset,
-            !hideLegend && classes.spacing,
+            !hideLegend && classes.withSpacing,
             readOnly && classes.readonly,
             props?.disabled && classes.disabled,
             className,
@@ -77,19 +77,21 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
             asChild
             size={size}
           >
-            <legend
-              className={cl(
-                classes.legend,
-                hideLegend && utilityclasses.visuallyHidden,
-              )}
-            >
-              {readOnly && (
-                <PadlockLockedFillIcon
-                  className={classes.padlock}
-                  aria-hidden
-                />
-              )}
-              {legend}
+            <legend className={classes.legend}>
+              <span
+                className={cl(
+                  classes.legendContent,
+                  hideLegend && utilityclasses.visuallyHidden,
+                )}
+              >
+                {readOnly && (
+                  <PadlockLockedFillIcon
+                    className={classes.padlock}
+                    aria-hidden
+                  />
+                )}
+                {legend}
+              </span>
             </legend>
           </Label>
           {description && (
@@ -114,6 +116,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(
             id={errorId}
             aria-live='polite'
             aria-relevant='additions removals'
+            className={classes.errorWrapper}
           >
             {hasError && <ErrorMessage size={size}>{error}</ErrorMessage>}
           </div>
