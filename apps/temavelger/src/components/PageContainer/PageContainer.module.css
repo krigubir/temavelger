@@ -1,0 +1,11 @@
+.aside {
+  min-width: 35%;
+  background: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 999;
+}

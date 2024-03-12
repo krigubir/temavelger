@@ -1,28 +1,10 @@
-.frontpageContainer {
+.frontpage {
   display: flex;
-  background: #efefef;
+  background: var(--tv-background-color);
 }
 
-.designMenuContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  min-width: 35%;
-}
-
-.toggleGroupContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-
-.previewMenuContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: auto;
-  align-items: center;
-  width: 100%;
+@media (max-width: 768px) {
+  .frontpage {
+    flex-direction: column;
+  }
 }

@@ -5,24 +5,9 @@
 
   --tv-border-color: #c4c4c4;
   --tv-font-color: #1e2b3c;
+  --tv-background-color: #efefefef;
 }
 
 body {
   margin: 0;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #fff;
-  }
 }

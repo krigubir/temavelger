@@ -9,3 +9,12 @@
   border-radius: 8px;
   width: 90%;
 }
+
+.previewAreaContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  align-items: center;
+  width: 100%;
+}
