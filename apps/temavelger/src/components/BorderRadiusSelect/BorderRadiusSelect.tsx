@@ -1,6 +1,6 @@
 import BorderRadiusInput from './BorderRadiusInput';
 import styles from './BorderRadiusSelect.module.css';
-import { HelpText } from '@digdir/design-system-react';
+import { HelpText } from '@digdir/designsystemet-react';
 
 const BorderRadiusSelect = () => {
   return (

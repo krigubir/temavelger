@@ -1,4 +1,4 @@
-import { Pagination, Tag } from '@digdir/design-system-react';
+import { Pagination, Tag } from '@digdir/designsystemet-react';
 import CompositeComponent from '../../../../components/CompositeComponent/CompositeComponent';
 import CardComponentAlt1 from '../../../../components/CardComponentAlt1/CardComponentAlt1';
 import CardComponentAlt2 from '../../../../components/CardComponentAlt2/CardComponentAlt2';

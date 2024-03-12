@@ -1760,24 +1760,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digdir/design-system-react@npm:^0.46.1":
-  version: 0.46.1
-  resolution: "@digdir/design-system-react@npm:0.46.1"
-  dependencies:
-    "@altinn/figma-design-tokens": "npm:^6.0.1"
-    "@digdir/design-system-tokens": "npm:^0.12.0"
-    "@floating-ui/react": "npm:0.26.4"
-    "@navikt/aksel-icons": "npm:^5.12.2"
-    "@radix-ui/react-slot": "npm:^1.0.2"
-    "@tanstack/react-virtual": "npm:^3.0.1"
-    react-number-format: "npm:5.3.1"
-  peerDependencies:
-    react: ">=18.2.0"
-    react-dom: ">=18.2.0"
-  checksum: d3d131e129ea25f4a60870d2a5022defe59c46e35a5137082fc1a121fd32d2980e2861e04ff9824a7bf5c824a091f793193c4c0e09dc33fb340371fb58af1517
-  languageName: node
-  linkType: hard
-
 "@digdir/design-system-react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@digdir/design-system-react@workspace:packages/react"
@@ -1811,10 +1793,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@digdir/design-system-tokens@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@digdir/design-system-tokens@npm:0.12.0"
-  checksum: cbc1056850bdf8d66cb66cbca23e15be5f6f065b9a4881f41ba67175a47c8ffb9fbe612ef3e5fa7583c6f4ec7204c7b72162dbf5328a3ccad1ea4f837fb2431b
+"@digdir/designsystemet-css@npm:^0.1.1-alpha.6":
+  version: 0.1.1-alpha.6
+  resolution: "@digdir/designsystemet-css@npm:0.1.1-alpha.6"
+  dependencies:
+    "@digdir/designsystemet-react": "npm:^0.52.0-alpha.3"
+  checksum: dac3eefd482d46b1e56f44ecfae276bcb96024bbc32f100a14e5edb1be2786c3e6c7b0232ddd30aba7fef0948f4bd86093c2fc5d0ab820591a8bec1c0208876c
   languageName: node
   linkType: hard
 
@@ -1826,6 +1810,28 @@ __metadata:
     postcss-cli: "npm:^11.0.0"
   languageName: unknown
   linkType: soft
+
+"@digdir/designsystemet-react@npm:^0.52.0-alpha.3":
+  version: 0.52.0-alpha.3
+  resolution: "@digdir/designsystemet-react@npm:0.52.0-alpha.3"
+  dependencies:
+    "@floating-ui/react": "npm:0.26.4"
+    "@navikt/aksel-icons": "npm:^5.12.2"
+    "@radix-ui/react-slot": "npm:^1.0.2"
+    "@tanstack/react-virtual": "npm:^3.0.1"
+  peerDependencies:
+    react: ">=18.2.0"
+    react-dom: ">=18.2.0"
+  checksum: d1219346f6ff71eb8b4123c746fc6bde6a38341b7782396e3cb1575c498f45458a0c0acd72f357885edcc08aff5152e9b3624bcbe2d826022b4557ca3fb3f1e3
+  languageName: node
+  linkType: hard
+
+"@digdir/designsystemet-theme@npm:^0.13.1-alpha.2":
+  version: 0.13.1-alpha.2
+  resolution: "@digdir/designsystemet-theme@npm:0.13.1-alpha.2"
+  checksum: b87e7ed45be29b2b8e1da5dc8eeefe614601d1c71769a40e517ba209ddccc332492c6c44c0b770bd5a2b8717391ff37be6642f992ca1f955f64c3f804db81ed4
+  languageName: node
+  linkType: hard
 
 "@discoveryjs/json-ext@npm:^0.5.3":
   version: 0.5.7
@@ -21486,8 +21492,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "temavelger@workspace:apps/temavelger"
   dependencies:
-    "@digdir/design-system-react": "npm:^0.46.1"
-    "@digdir/design-system-tokens": "npm:^0.12.0"
+    "@digdir/designsystemet-css": "npm:^0.1.1-alpha.6"
+    "@digdir/designsystemet-react": "npm:^0.52.0-alpha.3"
+    "@digdir/designsystemet-theme": "npm:^0.13.1-alpha.2"
     "@types/chroma-js": "npm:^2.4.3"
     "@types/react": "npm:^18.2.43"
     "@types/react-dom": "npm:^18.2.17"

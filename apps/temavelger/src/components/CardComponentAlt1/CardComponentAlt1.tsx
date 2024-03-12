@@ -1,4 +1,4 @@
-import { Card, Heading } from '@digdir/design-system-react';
+import { Card, Heading } from '@digdir/designsystemet-react';
 import styles from './CardComponentAlt1.module.css';
 
 type color = 'neutral' | 'subtle' | 'first' | 'second' | 'third';

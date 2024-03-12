@@ -1,4 +1,4 @@
-import { Alert, Button, Heading, Modal } from '@digdir/design-system-react';
+import { Alert, Button, Heading, Modal } from '@digdir/designsystemet-react';
 import { useRef, useState } from 'react';
 import styles from './CodeGenerator.module.css';
 import { useReducerContext } from '../../contexts/useReducerContext';

@@ -1,4 +1,4 @@
-import { Button, Radio, Textfield } from '@digdir/design-system-react';
+import { Button, Radio, Textfield } from '@digdir/designsystemet-react';
 import styles from './CompositeComponent.module.css';
 
 const CompositeComponent = () => {

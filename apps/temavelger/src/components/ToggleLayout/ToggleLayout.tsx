@@ -1,4 +1,4 @@
-import { ToggleGroup } from '@digdir/design-system-react';
+import { ToggleGroup } from '@digdir/designsystemet-react';
 import styles from './ToggleLayout.module.css';
 
 interface ToggleLayoutProps {

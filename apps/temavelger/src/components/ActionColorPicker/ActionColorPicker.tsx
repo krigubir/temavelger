@@ -1,5 +1,5 @@
 import styles from './ActionColorPicker.module.css';
-import { HelpText, NativeSelect } from '@digdir/design-system-react';
+import { HelpText, NativeSelect } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 import checkColorContrast from '../../utils/checkColorContrast';
 import { useReducerContext } from '../../contexts/useReducerContext';

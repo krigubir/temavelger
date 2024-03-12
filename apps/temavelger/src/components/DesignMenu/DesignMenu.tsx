@@ -1,4 +1,4 @@
-import { HelpText, Button } from '@digdir/design-system-react';
+import { HelpText, Button } from '@digdir/designsystemet-react';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import {
   ADD_COLOR_PICKER,

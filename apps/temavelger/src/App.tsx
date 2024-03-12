@@ -1,4 +1,5 @@
-import '@digdir/design-system-tokens/brand/digdir/tokens.css';
+import '@digdir/designsystemet-theme';
+import '@digdir/designsystemet-css';
 
 import FrontpageLayout from './layouts/FrontpageLayout/FrontpageLayout';
 import { ReducerProvider } from './contexts/ReducerContext';
