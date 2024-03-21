@@ -15,6 +15,7 @@ import { updateButtonFirstData } from './reducerFunctions/updateButtonFirstData'
 import { updateButtonSecondData } from './reducerFunctions/updateButtonSecondData';
 import { updateColorScale } from './reducerFunctions/updateColorScale';
 import { updateFormElementsData } from './reducerFunctions/updateFormElementsData';
+export type { State };
 
 /*
   This is the reducer function

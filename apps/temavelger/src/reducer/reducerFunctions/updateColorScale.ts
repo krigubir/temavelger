@@ -1,4 +1,4 @@
-import { State } from '../reducer';
+import type { State } from '../reducer';
 
 // need to add default values to the state
 
