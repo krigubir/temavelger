@@ -1,33 +1,36 @@
 import { Alert, Button, Heading, Modal } from '@digdir/designsystemet-react';
+import { FileCodeIcon } from '@navikt/aksel-icons';
 import { useRef, useState } from 'react';
-import styles from './CodeGenerator.module.css';
+
 import { useReducerContext } from '../../contexts/useReducerContext';
+
+import styles from './CodeGenerator.module.css';
 import generateButtonFirstOutput from './helperFunctions/generateButtonFirstOutput';
 import generateButtonSecondOutput from './helperFunctions/generateButtonSecondOutput';
 import generateFormElementsOutput from './helperFunctions/generateFormElementsOutput';
 import generateColorScaleOutput from './helperFunctions/generateColorScaleOutput';
-import { FileCodeIcon } from '@navikt/aksel-icons';
+import generateBorderRadiusOutput from './helperFunctions/generateBorderRadiusOutput';
 
 const CodeGenerator = () => {
   const { state } = useReducerContext();
   const [successFullCopy, setSuccessFullCopy] = useState(false);
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const closeModal = () => {
-    modalRef.current?.close();
-    setSuccessFullCopy(false);
-  };
-
   const openModal = () => {
     modalRef.current?.showModal();
     setSuccessFullCopy(false);
   };
 
-  const copyOutputToClipboard = () => {
+  const closeModal = () => {
+    modalRef.current?.close();
+    setSuccessFullCopy(false);
+  };
+
+  const copyOutputToClipboard = async () => {
     const code = document.querySelector(
       `.${styles.codeOutputContainer}`,
     )?.textContent;
-    navigator.clipboard.writeText(code || '');
+    await navigator.clipboard.writeText(code || '');
     setSuccessFullCopy(true);
   };
 
@@ -63,6 +66,7 @@ const CodeGenerator = () => {
               {generateButtonFirstOutput(state)}
               {generateButtonSecondOutput(state)}
               {generateFormElementsOutput(state)}
+              {generateBorderRadiusOutput(state)}
               {'}'}
             </div>
             <div className={styles.copyToClipboard}>
@@ -70,7 +74,7 @@ const CodeGenerator = () => {
                 title='a11y-title'
                 fontSize='2rem'
                 className={styles.copyButtonIcon}
-                onClick={copyOutputToClipboard}
+                onClick={() => copyOutputToClipboard()}
               />
             </div>
           </div>

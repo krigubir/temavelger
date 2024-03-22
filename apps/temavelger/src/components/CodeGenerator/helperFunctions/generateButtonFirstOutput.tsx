@@ -1,4 +1,4 @@
-import { State } from '../../../contexts/ReducerContext';
+import type { State } from '../../../contexts/ReducerContext';
 import { getButtonFirstTokens } from '../../../data/designTokens';
 import styles from '../CodeGenerator.module.css';
 
@@ -7,7 +7,7 @@ const generateButtonFirstOutput = (state: State) => {
   const tokenList = getButtonFirstTokens(
     state.buttonFirstData.chosenColorIndex,
   );
-  const output = [];
+  const output: JSX.Element[] = [];
   for (const token in tokenList) {
     output.push(
       <div key={token}>

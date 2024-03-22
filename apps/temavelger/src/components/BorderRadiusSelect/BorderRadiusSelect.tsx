@@ -20,9 +20,6 @@ const BorderRadiusSelect = () => {
         </HelpText>
       </div>
       <BorderRadiusInput borderRadiusSize='small' />
-      <BorderRadiusInput borderRadiusSize='medium' />
-      <BorderRadiusInput borderRadiusSize='large' />
-      <BorderRadiusInput borderRadiusSize='xlarge' />
     </div>
   );
 };

@@ -73,3 +73,16 @@ export const getFormElementTokens = (
     '--fds-semantic-surface-info-subtle-hover': 1,
   };
 };
+
+export const getBorderRadiusTokens = (): string[] => {
+  return [
+    '--fds-border_radius-small',
+    '--fds-border_radius-medium',
+    '--fds-border_radius-large',
+    '--fds-border_radius-xlarge',
+    '--fds-border_radius-xxlarge',
+    '--fds-border_radius-xxxlarge',
+    '--fds-border_radius-xxxxlarge',
+    '--fds-border_radius-interactive',
+  ];
+};

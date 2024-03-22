@@ -1,4 +1,5 @@
 import PageContainer from '../../components/PageContainer/PageContainer';
+
 import styles from './FrontpageLayout.module.css';
 
 const FrontpageLayout = () => {

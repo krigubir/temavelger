@@ -1,32 +1,30 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+
 import styles from './BorderRadiusSelect.module.css';
+import { updateBorderRadiusData } from '../../utils/updateBorderRadiusTokens';
+import { ReducerContext } from '../../contexts/ReducerContext';
+import { UPDATE_BORDER_RADIUS_DATA } from '../../reducer/actions';
 
-interface BorderRadiusInputProps {
-  borderRadiusSize: string;
-}
-
-const BorderRadiusInput: React.FC<BorderRadiusInputProps> = ({
-  borderRadiusSize,
-}) => {
+const BorderRadiusInput = () => {
   const [borderRadius, setBorderRadius] = useState(0);
+  const { dispatch } = useContext(ReducerContext);
 
   const handleBorderRadiusChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBorderRadius(parseInt(e.target.value));
+    const newBorderRadius = parseInt(e.target.value);
+    setBorderRadius(newBorderRadius);
+    updateBorderRadiusData(newBorderRadius);
 
-    document.documentElement.style.setProperty(
-      `--fds-border_radius-${borderRadiusSize}`,
-      e.target.value + 'px',
-    );
+    dispatch({
+      type: UPDATE_BORDER_RADIUS_DATA,
+      payload: { borderRadiusValue: newBorderRadius },
+    });
   };
   return (
     <div className={styles.borderRadiusSelectorInput}>
-      <label htmlFor={`borderRadiusSlider${borderRadiusSize}`}>
-        {borderRadiusSize}
-      </label>
       <input
         className={styles.borderRadiusSlider}
         type='range'
-        id={`borderRadiusSlider${borderRadiusSize}`}
+        id={'borderRadiusSlider'}
         min='0'
         max='50'
         value={borderRadius}
@@ -37,7 +35,7 @@ const BorderRadiusInput: React.FC<BorderRadiusInputProps> = ({
       <input
         className={styles.borderRadiusNumber}
         type='number'
-        id={`borderRadiusNumber${borderRadiusSize}`}
+        id={'borderRadiusNumber'}
         value={borderRadius}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           handleBorderRadiusChange(e)

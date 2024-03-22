@@ -35,8 +35,8 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
       payload: { altColorNumber, colorScale: newColorScale },
     });
 
-    setColorScale(newColorScale);
-    updateColorTokens(newColorScale, altColorNumber);
+    setColorScale(newColorScale); // sets local color-scale
+    updateColorTokens(newColorScale, altColorNumber); // updates the DOM
   };
 
   return (

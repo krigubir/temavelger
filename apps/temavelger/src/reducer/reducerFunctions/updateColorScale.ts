@@ -1,7 +1,5 @@
 import type { State } from '../reducer';
 
-// need to add default values to the state
-
 export const updateColorScale = (
   state: State,
   payload: { altColorNumber: number; colorScale: string[] },

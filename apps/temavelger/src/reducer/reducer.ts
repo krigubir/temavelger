@@ -3,6 +3,7 @@ import {
   ADD_COLOR_PICKER,
   REMOVE_COLOR_PICKER,
   REMOVE_COLOR_SCALE,
+  UPDATE_BORDER_RADIUS_DATA,
   UPDATE_BUTTON_FIRST_DATA,
   UPDATE_BUTTON_SECOND_DATA,
   UPDATE_COLOR_SCALE,
@@ -11,6 +12,7 @@ import {
 import { addColorPicker } from './reducerFunctions/addColorPicker';
 import { removeColorScale } from './reducerFunctions/removeColorScale';
 import { removeColorPicker } from './reducerFunctions/removerColorPicker';
+import { updateBorderRadiusData } from './reducerFunctions/updateBorderRadusData';
 import { updateButtonFirstData } from './reducerFunctions/updateButtonFirstData';
 import { updateButtonSecondData } from './reducerFunctions/updateButtonSecondData';
 import { updateColorScale } from './reducerFunctions/updateColorScale';
@@ -18,7 +20,7 @@ import { updateFormElementsData } from './reducerFunctions/updateFormElementsDat
 export type { State };
 
 /*
-  This is the reducer function
+  Receives an action message and executes the corresponding function
   @param state
   @param action
   @returns state
@@ -74,6 +76,14 @@ const reducer = (state: State, action: Action): State => {
     );
   }
 
+  if (action.type === UPDATE_BORDER_RADIUS_DATA) {
+    return updateBorderRadiusData(
+      state,
+      action.payload as {
+        borderRadiusValue: number;
+      },
+    );
+  }
   return state;
 };
 

@@ -13,6 +13,12 @@ import DesignMenuHeader from '../DesignMenuHeader/DesignMenuHeader';
 import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
 import styles from './DesignMenu.module.css';
 
+/*
+  Responsible for:
+   - rendering the design menu
+   - adding and removing color pickers
+*/
+
 const DesignMenu = () => {
   const { state, dispatch } = useReducerContext();
 
@@ -50,7 +56,6 @@ const DesignMenu = () => {
               initialColorScale={colorPicker.colorScale}
               altColorNumber={colorPicker.altColorNumber}
             ></ColorPicker>
-
             {colorPicker.removable && (
               <Button
                 variant='secondary'
