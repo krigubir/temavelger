@@ -25,6 +25,7 @@ export type State = {
   buttonSecondData: ActionColorData;
   formElementsData: ActionColorData;
   borderRadiusData: number;
+  fontFamilyData: string;
 };
 
 export type Action = {
@@ -55,6 +56,7 @@ export const ReducerContext = createContext<ReducerContextProps>({
       actionColorScale: [],
     },
     borderRadiusData: 0,
+    fontFamilyData: '',
   },
   dispatch: () => {},
 });
@@ -75,6 +77,7 @@ const defaultState = {
     actionColorScale: [],
   },
   borderRadiusData: 0,
+  fontFamilyData: '',
 };
 
 // create reducer provider

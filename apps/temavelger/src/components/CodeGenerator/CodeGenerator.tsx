@@ -10,6 +10,7 @@ import generateButtonSecondOutput from './helperFunctions/generateButtonSecondOu
 import generateFormElementsOutput from './helperFunctions/generateFormElementsOutput';
 import generateColorScaleOutput from './helperFunctions/generateColorScaleOutput';
 import generateBorderRadiusOutput from './helperFunctions/generateBorderRadiusOutput';
+import generateFontFamilyOutput from './helperFunctions/generateFontFamilyOutput';
 
 const CodeGenerator = () => {
   const { state } = useReducerContext();
@@ -26,12 +27,16 @@ const CodeGenerator = () => {
     setSuccessFullCopy(false);
   };
 
-  const copyOutputToClipboard = async () => {
+  const copyOutputToClipboard = () => {
     const code = document.querySelector(
       `.${styles.codeOutputContainer}`,
     )?.textContent;
-    await navigator.clipboard.writeText(code || '');
-    setSuccessFullCopy(true);
+    navigator.clipboard
+      .writeText(code || '')
+      .then(() => setSuccessFullCopy(true))
+      .catch((error) =>
+        console.error('Failed to write text to clipboard:', error),
+      );
   };
 
   return (
@@ -60,18 +65,18 @@ const CodeGenerator = () => {
 
         <Modal.Content>
           <div className={styles.codeOutputContainer}>
-            <div className={styles.codeOutput}>
+            <div>
               :root {'{'}
               {generateColorScaleOutput(state)}
               {generateButtonFirstOutput(state)}
               {generateButtonSecondOutput(state)}
               {generateFormElementsOutput(state)}
               {generateBorderRadiusOutput(state)}
+              {generateFontFamilyOutput(state)}
               {'}'}
             </div>
             <div className={styles.copyToClipboard}>
               <FileCodeIcon
-                title='a11y-title'
                 fontSize='2rem'
                 className={styles.copyButtonIcon}
                 onClick={() => copyOutputToClipboard()}

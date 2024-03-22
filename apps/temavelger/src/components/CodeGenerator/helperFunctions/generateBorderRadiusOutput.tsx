@@ -13,7 +13,7 @@ const generateBorderRadiusOutput = (state: State) => {
         <span className={styles.tokenName}>{token}: </span>
         <span
           className={styles.tokenValue}
-        >{`${state.borderRadiusData}px`}</span>
+        >{`${state.borderRadiusData}px;`}</span>
       </div>,
     );
   }

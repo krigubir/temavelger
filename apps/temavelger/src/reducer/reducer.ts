@@ -7,16 +7,18 @@ import {
   UPDATE_BUTTON_FIRST_DATA,
   UPDATE_BUTTON_SECOND_DATA,
   UPDATE_COLOR_SCALE,
+  UPDATE_FONT_FAMILY_DATA,
   UPDATE_FORM_ELEMENTS_DATA,
 } from './actions';
 import { addColorPicker } from './reducerFunctions/addColorPicker';
 import { removeColorScale } from './reducerFunctions/removeColorScale';
 import { removeColorPicker } from './reducerFunctions/removerColorPicker';
-import { updateBorderRadiusData } from './reducerFunctions/updateBorderRadusData';
+import { updateBorderRadiusData } from './reducerFunctions/updateBorderRadiusData';
 import { updateButtonFirstData } from './reducerFunctions/updateButtonFirstData';
 import { updateButtonSecondData } from './reducerFunctions/updateButtonSecondData';
 import { updateColorScale } from './reducerFunctions/updateColorScale';
 import { updateFormElementsData } from './reducerFunctions/updateFormElementsData';
+import { updateFontFamilyData } from './reducerFunctions/updateFontFamilyData';
 export type { State };
 
 /*
@@ -81,6 +83,15 @@ const reducer = (state: State, action: Action): State => {
       state,
       action.payload as {
         borderRadiusValue: number;
+      },
+    );
+  }
+
+  if (action.type === UPDATE_FONT_FAMILY_DATA) {
+    return updateFontFamilyData(
+      state,
+      action.payload as {
+        fontFamily: string;
       },
     );
   }
