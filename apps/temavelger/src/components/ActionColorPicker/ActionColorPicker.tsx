@@ -1,6 +1,6 @@
-import styles from './ActionColorPicker.module.css';
 import { HelpText, NativeSelect } from '@digdir/designsystemet-react';
 import { useState } from 'react';
+
 import checkColorContrast from '../../utils/checkColorContrast';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { updateActionColorTokens } from '../../utils/updateActionColorTokens';
@@ -9,6 +9,8 @@ import {
   UPDATE_BUTTON_SECOND_DATA,
   UPDATE_FORM_ELEMENTS_DATA,
 } from '../../reducer/actions';
+
+import styles from './ActionColorPicker.module.css';
 
 interface ActionColorPickerProps {
   variant: string;
@@ -22,7 +24,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
   const { state, dispatch } = useReducerContext();
   const [activeColor, setActiveColor] = useState<string>('#fff');
 
-  const generateOptions = () => {
+  const generateColorScaleOptions = () => {
     const options: React.ReactNode[] = [];
     {
       state.colorScales.map((value, index) =>
@@ -51,11 +53,19 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
     variant: string,
     actionType: string,
   ) => {
-    const { color, chosenColorIndex, altColorNumber } = JSON.parse(
-      e.target.value,
-    );
+    const {
+      color,
+      chosenColorIndex,
+      altColorNumber,
+    }: { color: string; chosenColorIndex: number; altColorNumber: number } =
+      JSON.parse(e.target.value) as {
+        color: string;
+        chosenColorIndex: number;
+        altColorNumber: number;
+      };
 
     setActiveColor(color);
+    // updates DOM elements
     updateActionColorTokens(
       variant,
       actionType,
@@ -64,6 +74,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
       state,
     );
 
+    // updates state
     if (
       variant.toLowerCase() === 'first' &&
       actionType.toLowerCase() === 'button'
@@ -129,7 +140,7 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
         id={`actionColorPicker${actionType}${variant}`}
       >
         <option value=''>Velg farge...</option>
-        {generateOptions()}
+        {generateColorScaleOptions()}
       </NativeSelect>
     </div>
   );

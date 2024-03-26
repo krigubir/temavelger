@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
 
-  "include": ["src"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.css", "styles.d.ts"],
+
   "references": [{ "path": "./tsconfig.node.json" }]
 }

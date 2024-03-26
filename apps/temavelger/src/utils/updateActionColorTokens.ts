@@ -26,8 +26,16 @@ export const updateActionColorTokens = (
     variant.toLowerCase() === 'first' &&
     actionType.toLowerCase() === 'button'
   ) {
+    // tokensList contains design tokens and an index used to access the correct color in the state
     const tokenList = getButtonFirstTokens(colorNuanceIndex);
     for (const token in tokenList) {
+      if (tokenList[token] > 7) {
+        document.documentElement.style.setProperty(
+          token,
+          state.colorScales[altColorNumber].colorScale[7],
+        );
+        continue;
+      }
       document.documentElement.style.setProperty(
         token,
         state.colorScales[altColorNumber].colorScale[tokenList[token]],
@@ -42,6 +50,13 @@ export const updateActionColorTokens = (
   ) {
     const tokenList = getButtonSecondTokens(colorNuanceIndex);
     for (const token in tokenList) {
+      if (tokenList[token] > 7) {
+        document.documentElement.style.setProperty(
+          token,
+          state.colorScales[altColorNumber].colorScale[7],
+        );
+        continue;
+      }
       document.documentElement.style.setProperty(
         token,
         state.colorScales[altColorNumber].colorScale[tokenList[token]],

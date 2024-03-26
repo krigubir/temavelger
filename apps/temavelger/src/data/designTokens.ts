@@ -1,6 +1,6 @@
 /*
   This file keeps track of the design tokens and their 
-  corresponding data used in the application
+  corresponding values used in the application
 
   The design tokens are mapped to a color in the color scale
   and are used in DOM manipulation and in the state of the application
