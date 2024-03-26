@@ -35,13 +35,13 @@ const Header = () => {
       name: 'Mønstre',
       url: '/monstre',
     },
-    /* {
+    {
       name: 'Bloggen',
       url: '/bloggen',
-    }, */
+    },
     {
       name: 'Komponenter',
-      url: 'https://storybook.designsystemet.no',
+      url: '/komponenter',
     },
   ];
 
@@ -66,7 +66,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div>
+        <nav>
           <button
             aria-expanded={open}
             aria-label='Meny'
@@ -130,7 +130,7 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </header>
   );
