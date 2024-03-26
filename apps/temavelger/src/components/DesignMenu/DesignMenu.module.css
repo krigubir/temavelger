@@ -27,12 +27,15 @@
 .addColorPickerButton {
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin: 0.5rem;
+  margin-top: 1.5rem;
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial', sans-serif;
 }
 
 .addColorPickerButton button {
   background-color: var(--fds-colors-blue-700);
+  border-radius: 4px;
+  flex-grow: 1;
 }
 
 .addColorPickerButton:hover button:hover {

@@ -38,3 +38,16 @@
   align-self: center;
   margin-bottom: 5rem;
 }
+
+.generateCodeButton button {
+  background-color: var(--fds-colors-blue-900);
+  border-radius: 4px;
+}
+
+.generateCodeButton:hover button:hover {
+  background-color: var(--fds-colors-blue-800);
+}
+
+.generateCodeButton:active button:active {
+  background-color: var(--fds-colors-blue-900);
+}

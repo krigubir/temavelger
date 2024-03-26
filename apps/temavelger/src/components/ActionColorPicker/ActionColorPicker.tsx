@@ -139,7 +139,9 @@ const ActionColorPicker: React.FC<ActionColorPickerProps> = ({
         }}
         id={`actionColorPicker${actionType}${variant}`}
       >
-        <option value=''>Velg farge...</option>
+        <option value={JSON.stringify({ color: 'white' })}>
+          Velg farge...
+        </option>
         {generateColorScaleOptions()}
       </NativeSelect>
     </div>

@@ -41,12 +41,7 @@ const CodeGenerator = () => {
 
   return (
     <div className={styles.generateCodeButton}>
-      <Button
-        onClick={openModal}
-        style={{ background: '#00315D' }}
-      >
-        Generate output
-      </Button>
+      <Button onClick={openModal}>Generate output</Button>
       <Modal
         ref={modalRef}
         onInteractOutside={closeModal}
