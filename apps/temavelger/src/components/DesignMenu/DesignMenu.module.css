@@ -30,3 +30,15 @@
   margin: 1rem;
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial', sans-serif;
 }
+
+.addColorPickerButton button {
+  background-color: var(--fds-colors-blue-700);
+}
+
+.addColorPickerButton:hover button:hover {
+  background-color: var(--fds-colors-blue-800);
+}
+
+.addColorPickerButton:active button:active {
+  background-color: var(--fds-colors-blue-900);
+}

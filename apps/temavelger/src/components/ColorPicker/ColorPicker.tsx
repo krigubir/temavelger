@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import styles from './ColorPicker.module.css';
+import { Button } from '@digdir/designsystemet-react';
+import { TrashIcon } from '@navikt/aksel-icons';
+
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { UPDATE_COLOR_SCALE } from '../../reducer/actions';
 import { updateColorTokens } from '../../utils/updateColorTokens';
+
+import styles from './ColorPicker.module.css';
 
 export type ColorPicker = {
   colorScale: string[];
@@ -15,11 +19,15 @@ export type ColorPicker = {
 interface ColorPickerProps {
   initialColorScale: string[];
   altColorNumber: number;
+  removable: boolean;
+  removeColorPicker: (altColorNumber: number) => void;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({
   initialColorScale,
   altColorNumber,
+  removable,
+  removeColorPicker,
 }) => {
   // local storage of color-scale
   const [colorScale, setColorScale] = useState<string[]>(initialColorScale);
@@ -52,6 +60,17 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
             handleColorChange(e)
           }
         />
+
+        {removable && (
+          <Button
+            variant='secondary'
+            onClick={() => removeColorPicker(altColorNumber)}
+            size='small'
+            className={styles.removeColorPickerButton}
+          >
+            <TrashIcon fontSize='1.5rem' />
+          </Button>
+        )}
       </div>
 
       <ColorGenerator colorScale={colorScale}></ColorGenerator>

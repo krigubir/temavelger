@@ -1,4 +1,4 @@
-import { State } from '../contexts/ReducerContext';
+import type { State } from '../contexts/ReducerContext';
 import {
   getButtonFirstTokens,
   getButtonSecondTokens,

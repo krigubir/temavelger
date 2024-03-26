@@ -1,4 +1,6 @@
 import { HelpText, Button } from '@digdir/designsystemet-react';
+import { PlusIcon } from '@navikt/aksel-icons';
+
 import { useReducerContext } from '../../contexts/useReducerContext';
 import {
   ADD_COLOR_PICKER,
@@ -11,6 +13,7 @@ import CodeGenerator from '../CodeGenerator/CodeGenerator';
 import ColorPicker from '../ColorPicker/ColorPicker';
 import DesignMenuHeader from '../DesignMenuHeader/DesignMenuHeader';
 import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
+
 import styles from './DesignMenu.module.css';
 
 /*
@@ -47,24 +50,14 @@ const DesignMenu = () => {
           }
         </HelpText>
         {state.colorPickerList.map((colorPicker, index) => (
-          <div
-            className={styles.colorPickerContainer}
-            key={index}
-          >
+          <div key={index}>
             <ColorPicker
               key={index}
               initialColorScale={colorPicker.colorScale}
               altColorNumber={colorPicker.altColorNumber}
+              removable={colorPicker.removable}
+              removeColorPicker={removeColorPicker}
             ></ColorPicker>
-            {colorPicker.removable && (
-              <Button
-                variant='secondary'
-                onClick={() => removeColorPicker(colorPicker.altColorNumber)}
-                size='small'
-              >
-                Fjern farge
-              </Button>
-            )}
           </div>
         ))}
         <div className={styles.addColorPickerButton}>
@@ -73,6 +66,10 @@ const DesignMenu = () => {
             onClick={addNewColorPicker}
             size='small'
           >
+            <PlusIcon
+              title='a11y-title'
+              fontSize='3rem'
+            />
             Legg til farge
           </Button>
         </div>

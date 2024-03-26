@@ -11,7 +11,7 @@
   width: 100%;
   min-height: 25px;
   margin: 10px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -19,9 +19,24 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
+  margin-left: -3rem;
+}
+
+.colorPickerInputContainer button {
+  background-color: var(--fds-colors-white);
+  color: var(--fds-colors-blue-700);
+}
+
+.colorPickerInputContainer:hover button:hover {
+  background-color: var(--fds-colors-blue-200);
+}
+
+.colorPickerInputContainer:active button:active {
+  background-color: var(--fds-colors-blue-400);
+  color: var(--fds-colors-blue-900);
 }
 
 .colorPickerInput {
   width: 30%;
-  margin: 5px;
+  margin: 0 auto;
 }
