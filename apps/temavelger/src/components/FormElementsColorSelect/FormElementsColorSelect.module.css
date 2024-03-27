@@ -6,9 +6,15 @@
   font: var(--fds-typography-paragraph-medium);
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif', sans-serif;
   color: var(--tv-font-color);
+  margin-bottom: 1.5rem;
 }
 
 .actionColorLabel {
   display: flex;
   justify-content: space-between;
+}
+
+.helperText {
+  color: grey;
+  font-size: 14px;
 }

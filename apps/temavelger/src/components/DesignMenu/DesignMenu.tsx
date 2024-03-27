@@ -7,14 +7,16 @@ import {
   REMOVE_COLOR_PICKER,
   REMOVE_COLOR_SCALE,
 } from '../../reducer/actions';
-import ActionColorPicker from '../ActionColorPicker/ActionColorPicker';
 import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
 import CodeGenerator from '../CodeGenerator/CodeGenerator';
 import ColorPicker from '../ColorPicker/ColorPicker';
 import DesignMenuHeader from '../DesignMenuHeader/DesignMenuHeader';
 import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
+import ButtonFirstColorSelect from '../ButtonFirstColorSelect/ButtonFirstColorSelect';
 
 import styles from './DesignMenu.module.css';
+import ButtonSecondColorSelect from '../ButtonSecondColorSelect/ButtonSecondColorSelect';
+import FormElementsColorSelect from '../FormElementsColorSelect/FormElementsColorSelect';
 
 /*
   Responsible for:
@@ -75,18 +77,9 @@ const DesignMenu = () => {
         </div>
       </div>
       <div className={styles.designMenuBox}>
-        <ActionColorPicker
-          variant={'First'}
-          actionType={'Button'}
-        ></ActionColorPicker>
-        <ActionColorPicker
-          variant={'Second'}
-          actionType={'Button'}
-        ></ActionColorPicker>
-        <ActionColorPicker
-          variant={''}
-          actionType={'Form Elements'}
-        ></ActionColorPicker>
+        <ButtonFirstColorSelect></ButtonFirstColorSelect>
+        <ButtonSecondColorSelect></ButtonSecondColorSelect>
+        <FormElementsColorSelect></FormElementsColorSelect>
       </div>
       <div className={styles.designMenuBox}>
         <BorderRadiusSelect></BorderRadiusSelect>

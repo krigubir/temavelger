@@ -63,6 +63,7 @@ const FontFamilySelector = () => {
         onKeyDown={(e) => {
           updateFontFamilyOnEnter(e);
         }}
+        style={{ borderRadius: '4px' }}
       />
     </div>
   );
