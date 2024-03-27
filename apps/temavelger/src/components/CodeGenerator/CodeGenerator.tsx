@@ -1,5 +1,5 @@
 import { Alert, Button, Heading, Modal } from '@digdir/designsystemet-react';
-import { FileCodeIcon } from '@navikt/aksel-icons';
+import { FileCodeIcon, CodeIcon } from '@navikt/aksel-icons';
 import { useRef, useState } from 'react';
 
 import { useReducerContext } from '../../contexts/useReducerContext';
@@ -40,23 +40,38 @@ const CodeGenerator = () => {
   };
 
   return (
-    <div className={styles.generateCodeButton}>
-      <Button onClick={openModal}>Generate output</Button>
+    <div>
+      <div className={styles.generateCodeButton}>
+        <Button
+          onClick={openModal}
+          variant='primary'
+          className='openModalBtn'
+        >
+          <CodeIcon
+            title='a11y-title'
+            fontSize='1.5rem'
+          />
+          Generate output
+        </Button>
+      </div>
+
       <Modal
         ref={modalRef}
         onInteractOutside={closeModal}
       >
-        {successFullCopy && (
-          <Alert severity='success'>
-            <Heading
-              level={1}
-              size='xsmall'
-            >
-              Koden er kopiert til utklippstavlen
-            </Heading>
-          </Alert>
-        )}
-        <Modal.Header>Design-tokens</Modal.Header>
+        <div className={styles.closeModalBtn}>
+          {successFullCopy && (
+            <Alert severity='success'>
+              <Heading
+                level={1}
+                size='xsmall'
+              >
+                Koden er kopiert til utklippstavlen
+              </Heading>
+            </Alert>
+          )}
+          <Modal.Header>Design-tokens</Modal.Header>
+        </div>
 
         <Modal.Content>
           <div className={styles.codeOutputContainer}>

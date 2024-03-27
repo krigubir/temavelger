@@ -50,7 +50,7 @@ const FontFamilySelector = () => {
           portal={true}
         >
           {
-            'Her kan du utforske ulike fonter for ditt brand. Sørg for at fonten du velger er installert på din maskin.'
+            'Skriv inn ønskede font-familier. F.eks. Arial, Inter, Sans-serif, ...'
           }
         </HelpText>
       </div>

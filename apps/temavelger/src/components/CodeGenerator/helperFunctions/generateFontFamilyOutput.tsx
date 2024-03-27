@@ -3,7 +3,7 @@ import styles from '../CodeGenerator.module.css';
 
 const generateFontFamilyOutput = (state: State) => {
   const output: JSX.Element[] = [];
-
+  if (state.fontFamilyData.length === 0) return;
   output.push(
     <div key='font-family'>
       <span className={styles.tokenName}>font-family:</span>

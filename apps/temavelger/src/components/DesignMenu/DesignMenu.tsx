@@ -13,10 +13,10 @@ import ColorPicker from '../ColorPicker/ColorPicker';
 import DesignMenuHeader from '../DesignMenuHeader/DesignMenuHeader';
 import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
 import ButtonFirstColorSelect from '../ButtonFirstColorSelect/ButtonFirstColorSelect';
-
-import styles from './DesignMenu.module.css';
 import ButtonSecondColorSelect from '../ButtonSecondColorSelect/ButtonSecondColorSelect';
 import FormElementsColorSelect from '../FormElementsColorSelect/FormElementsColorSelect';
+
+import styles from './DesignMenu.module.css';
 
 /*
   Responsible for:
@@ -87,7 +87,7 @@ const DesignMenu = () => {
       <div className={styles.designMenuBox}>
         <FontFamilySelector></FontFamilySelector>
       </div>
-      <div className={styles.designMenuBox}>
+      <div className={styles.designMenuCodeGenerator}>
         <CodeGenerator></CodeGenerator>
       </div>
     </div>

@@ -1,5 +1,6 @@
-import { JSX } from 'react/jsx-runtime';
-import { State } from '../../../contexts/ReducerContext';
+import type { JSX } from 'react/jsx-runtime';
+
+import type { State } from '../../../contexts/ReducerContext';
 import styles from '../CodeGenerator.module.css';
 
 const generateColorScaleOutput = (state: State) => {

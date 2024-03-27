@@ -6,7 +6,6 @@
   padding: 16px;
   border-radius: 4px;
   font-family: 'Courier New', 'Courier', monospace;
-  white-space: pre;
   overflow-x: auto;
   margin-bottom: 10px;
 }
@@ -36,12 +35,22 @@
 
 .generateCodeButton {
   align-self: center;
-  margin-bottom: 5rem;
+  margin: 2rem;
+}
+
+.closeModalBtn button {
+  background-color: transparent;
+  color: var(--fds-colors-blue-800);
 }
 
 .generateCodeButton button {
   background-color: var(--fds-colors-blue-900);
   border-radius: 4px;
+}
+
+.closeModalBtn:hover button:hover {
+  background-color: var(--fds-colors-blue-100);
+  color: var(--fds-colors-blue-900);
 }
 
 .generateCodeButton:hover button:hover {
