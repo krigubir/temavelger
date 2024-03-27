@@ -1,25 +1,25 @@
+import { HelpText } from '@digdir/designsystemet-react';
+
 import BorderRadiusInput from './BorderRadiusInput';
 import styles from './BorderRadiusSelect.module.css';
-import { HelpText } from '@digdir/designsystemet-react';
 
 const BorderRadiusSelect = () => {
   return (
     <div className={styles.borderRadiusSelector}>
       <div className={styles.borderRadiusLabel}>
-        <h3>Endre border-radius</h3>
+        <label htmlFor='borderRadiusSlider'>{'Velg border-radius'}</label>
         <HelpText
-          className={styles.helpText}
           size='small'
           title='Edit border-radius'
           placement='right'
           portal={true}
         >
           {
-            'Her kan du velge border-radius for ditt brand. Border-radiusen du velger her vil bli brukt i designet av komponentene dine.'
+            'Juster border-radius for å se hvordan det påvirker elementene i designet. Verdien kan endres ved å skrive inn et tall i feltet eller ved å dra slideren. Verdien er representerert i pixler.'
           }
         </HelpText>
       </div>
-      <BorderRadiusInput borderRadiusSize='small' />
+      <BorderRadiusInput />
     </div>
   );
 };

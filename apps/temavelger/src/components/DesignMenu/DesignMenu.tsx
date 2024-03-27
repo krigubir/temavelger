@@ -46,7 +46,7 @@ const DesignMenu = () => {
           portal={true}
         >
           {
-            'Her kan du velge farger for ditt brand. Fargene du velger her vil bli brukt i designet av komponentene dine. '
+            'Bruk fargevelgeren til å velge farger som representerer ditt brand, eller utforsk nye. Valgene vil utgjøre fargepaletten din og være tilgjengelig når du skal velge farger for knapper og andre form-elementer.'
           }
         </HelpText>
         {state.colorPickerList.map((colorPicker, index) => (

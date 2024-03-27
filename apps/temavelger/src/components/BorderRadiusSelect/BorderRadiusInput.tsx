@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react';
 
-import styles from './BorderRadiusSelect.module.css';
 import { updateBorderRadiusData } from '../../utils/updateBorderRadiusTokens';
 import { ReducerContext } from '../../contexts/ReducerContext';
 import { UPDATE_BORDER_RADIUS_DATA } from '../../reducer/actions';
+
+import styles from './BorderRadiusSelect.module.css';
 
 const BorderRadiusInput = () => {
   const [borderRadius, setBorderRadius] = useState(0);

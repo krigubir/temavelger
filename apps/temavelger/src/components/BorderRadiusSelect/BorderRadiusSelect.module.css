@@ -11,6 +11,10 @@
 .borderRadiusLabel {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: large;
 }
 
 .borderRadiusSlider {
@@ -21,9 +25,4 @@
 .borderRadiusNumber {
   width: 3rem;
   text-align: center;
-}
-
-h3 {
-  margin-top: 0;
-  font-weight: 400;
 }

@@ -41,19 +41,21 @@ const FontFamilySelector = () => {
 
   return (
     <div className={styles.fontFamilySelector}>
-      <HelpText
-        className={styles.helpText}
-        size='small'
-        title='Choose font'
-        placement='right'
-        portal={true}
-      >
-        {
-          'Her kan du utforske ulike fonter for ditt brand. Sørg for at fonten du velger er installert på din maskin.'
-        }
-      </HelpText>
+      <div className={styles.fontFamilySelectorLabel}>
+        <label htmlFor='fontFamilyInput'>Skriv inn font-family</label>
+        <HelpText
+          size='small'
+          title='Choose font'
+          placement='right'
+          portal={true}
+        >
+          {
+            'Her kan du utforske ulike fonter for ditt brand. Sørg for at fonten du velger er installert på din maskin.'
+          }
+        </HelpText>
+      </div>
       <Textfield
-        label='Skriv inn fontnavn'
+        id='fontFamilyInput'
         placeholder='Arial, Inter, Sans-serif, ...'
         value={fontFamily}
         onChange={(e) => handleInputChange(e)}
