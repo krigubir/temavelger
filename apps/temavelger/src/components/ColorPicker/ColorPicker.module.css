@@ -40,3 +40,8 @@
   width: 30%;
   margin: 0 auto;
 }
+
+.colorPickerInputContainer label {
+  position: absolute;
+  color: var(--fds-colors-blue-700);
+}

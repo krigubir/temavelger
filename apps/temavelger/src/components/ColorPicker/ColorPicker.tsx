@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@digdir/designsystemet-react';
+import { Button, Tag } from '@digdir/designsystemet-react';
 import { TrashIcon } from '@navikt/aksel-icons';
 
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
@@ -50,10 +50,18 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   return (
     <div className={styles.colorPicker}>
       <div className={styles.colorPickerInputContainer}>
+        <label htmlFor={`colorPicker${altColorNumber}`}>
+          <Tag
+            color='info'
+            size='small'
+          >
+            {`alt ${altColorNumber}`}
+          </Tag>
+        </label>
         <input
-          id='colorPicker'
+          id={`colorPicker${altColorNumber}`}
           className={styles.colorPickerInput}
-          name='colorPicker'
+          name={`colorPicker${altColorNumber}`}
           type='color'
           value={colorScale[4]}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -63,12 +71,12 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
 
         {removable && (
           <Button
-            variant='secondary'
+            variant='tertiary'
             onClick={() => removeColorPicker(altColorNumber)}
             size='small'
             className={styles.removeColorPickerButton}
           >
-            <TrashIcon fontSize='1.5rem' />
+            <TrashIcon fontSize='2rem' />
           </Button>
         )}
       </div>

@@ -13,7 +13,7 @@ export const generateColorScaleOptions = (state: State) => {
               chosenColorIndex: colorNuanceIndex,
               altColorNumber: index,
             })}
-          >{`alt${value.altColorNumber} - ${
+          >{`alt ${value.altColorNumber} - ${
             (colorNuanceIndex + 1) * 100
           }`}</option>,
         ),
