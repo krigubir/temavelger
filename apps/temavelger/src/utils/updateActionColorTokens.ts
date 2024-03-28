@@ -22,13 +22,13 @@ export const updateButtonFirstColorTokens = (
     if (tokenList[token] > 7) {
       document.documentElement.style.setProperty(
         token,
-        state.colorScales[altColorNumber].colorScale[7],
+        state.colorPickerList[altColorNumber].colorScale[7],
       );
       continue;
     }
     document.documentElement.style.setProperty(
       token,
-      state.colorScales[altColorNumber].colorScale[tokenList[token]],
+      state.colorPickerList[altColorNumber].colorScale[tokenList[token]],
     );
   }
 };
@@ -43,13 +43,13 @@ export const updateButtonSecondColorTokens = (
     if (tokenList[token] > 7) {
       document.documentElement.style.setProperty(
         token,
-        state.colorScales[altColorNumber].colorScale[7],
+        state.colorPickerList[altColorNumber].colorScale[7],
       );
       continue;
     }
     document.documentElement.style.setProperty(
       token,
-      state.colorScales[altColorNumber].colorScale[tokenList[token]],
+      state.colorPickerList[altColorNumber].colorScale[tokenList[token]],
     );
   }
 };
@@ -63,7 +63,7 @@ export const updateFormElementColorTokens = (
   for (const token in tokenList) {
     document.documentElement.style.setProperty(
       token,
-      state.colorScales[altColorNumber].colorScale[tokenList[token]],
+      state.colorPickerList[altColorNumber].colorScale[tokenList[token]],
     );
   }
 };

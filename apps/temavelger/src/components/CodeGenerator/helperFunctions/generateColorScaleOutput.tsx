@@ -5,7 +5,7 @@ import styles from '../CodeGenerator.module.css';
 
 const generateColorScaleOutput = (state: State) => {
   const output: JSX.Element[] = [];
-  state.colorScales.map((value, key) =>
+  state.colorPickerList.map((value, key) =>
     output.push(
       <div key={key}>
         {value.colorScale.map((color, index) => (

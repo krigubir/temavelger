@@ -32,7 +32,7 @@ const ButtonFirstColorSelect = () => {
     dispatch({
       type: UPDATE_BUTTON_FIRST_DATA,
       payload: {
-        buttonFirstColorScale: state.colorScales[altColorNumber].colorScale,
+        buttonFirstColorScale: state.colorPickerList[altColorNumber].colorScale,
         chosenColorIndex: chosenColorIndex,
       },
     });

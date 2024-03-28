@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import { Button, Tag } from '@digdir/designsystemet-react';
 import { TrashIcon } from '@navikt/aksel-icons';
 
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import { useReducerContext } from '../../contexts/useReducerContext';
-import { UPDATE_COLOR_SCALE } from '../../reducer/actions';
+import { UPDATE_COLOR_PICKER_DATA } from '../../reducer/actions';
 import { updateColorTokens } from '../../utils/updateColorTokens';
 
 import styles from './ColorPicker.module.css';
@@ -24,26 +23,20 @@ interface ColorPickerProps {
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({
-  initialColorScale,
   altColorNumber,
   removable,
   removeColorPicker,
 }) => {
-  // local storage of color-scale
-  const [colorScale, setColorScale] = useState<string[]>(initialColorScale);
-
-  // give access to the dispatch function
-  const { dispatch } = useReducerContext();
+  const { state, dispatch } = useReducerContext();
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newColorScale = generateColorScaleHSL(e.target.value, 9);
 
     dispatch({
-      type: UPDATE_COLOR_SCALE,
+      type: UPDATE_COLOR_PICKER_DATA,
       payload: { altColorNumber, colorScale: newColorScale },
     });
 
-    setColorScale(newColorScale); // sets local color-scale
     updateColorTokens(newColorScale, altColorNumber); // updates the DOM
   };
 
@@ -63,7 +56,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
           className={styles.colorPickerInput}
           name={`colorPicker${altColorNumber}`}
           type='color'
-          value={colorScale[4]}
+          value={state.colorPickerList[altColorNumber - 1].colorScale[4]}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             handleColorChange(e)
           }
@@ -81,7 +74,9 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
         )}
       </div>
 
-      <ColorGenerator colorScale={colorScale}></ColorGenerator>
+      <ColorGenerator
+        colorScale={state.colorPickerList[altColorNumber - 1].colorScale}
+      ></ColorGenerator>
     </div>
   );
 };

@@ -32,7 +32,8 @@ const ButtonSecondColorSelect = () => {
     dispatch({
       type: UPDATE_BUTTON_SECOND_DATA,
       payload: {
-        buttonSecondColorScale: state.colorScales[altColorNumber].colorScale,
+        buttonSecondColorScale:
+          state.colorPickerList[altColorNumber].colorScale,
         chosenColorIndex: chosenColorIndex,
       },
     });

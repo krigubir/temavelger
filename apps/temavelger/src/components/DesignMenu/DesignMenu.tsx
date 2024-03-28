@@ -2,11 +2,7 @@ import { HelpText, Button } from '@digdir/designsystemet-react';
 import { PlusIcon } from '@navikt/aksel-icons';
 
 import { useReducerContext } from '../../contexts/useReducerContext';
-import {
-  ADD_COLOR_PICKER,
-  REMOVE_COLOR_PICKER,
-  REMOVE_COLOR_SCALE,
-} from '../../reducer/actions';
+import { ADD_COLOR_PICKER, REMOVE_COLOR_PICKER } from '../../reducer/actions';
 import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
 import CodeGenerator from '../CodeGenerator/CodeGenerator';
 import ColorPicker from '../ColorPicker/ColorPicker';
@@ -33,7 +29,6 @@ const DesignMenu = () => {
 
   const removeColorPicker = (altColorNumber: number) => {
     dispatch({ type: REMOVE_COLOR_PICKER, payload: altColorNumber });
-    dispatch({ type: REMOVE_COLOR_SCALE, payload: altColorNumber });
   };
 
   return (

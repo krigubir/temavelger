@@ -9,27 +9,12 @@
   This is the one source of truth for which design tokens are used in the application
 */
 
-const altColorNumberMap = ['first', 'second', 'third'];
-
 export const getColorPickerBrandTokens = (
   altColorNumber: number,
   colorNuance: number,
 ): { brandColor: string } => {
   return {
     brandColor: `--fds-brand-alt${altColorNumber}-${(colorNuance + 1) * 100}`,
-  };
-};
-
-export const getColorPickerSemanticTokens = (
-  altColorNumber: number,
-): { surfaceColor: string; surfaceColorHover: string } => {
-  return {
-    surfaceColor: `--fds-semantic-surface-${
-      altColorNumberMap[altColorNumber - 1]
-    }-light`,
-    surfaceColorHover: `--fds-semantic-surface-${
-      altColorNumberMap[altColorNumber - 1]
-    }-light-hover`,
   };
 };
 

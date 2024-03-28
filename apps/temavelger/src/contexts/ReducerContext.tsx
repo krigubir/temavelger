@@ -1,17 +1,13 @@
 import { createContext, useReducer } from 'react';
+
 import reducer from '../reducer/reducer';
 import colorPickerData from '../data/colorPickerData';
-import { ColorPicker } from '../components/ColorPicker/ColorPicker';
+import type { ColorPicker } from '../components/ColorPicker/ColorPicker';
 
 /*
   Responsible for defining the state-interface and distribute both the state and
   the reducer to child components. 
 */
-
-interface ColorScale {
-  altColorNumber: number;
-  colorScale: string[];
-}
 
 interface ActionColorData {
   chosenColorIndex: number;
@@ -20,7 +16,6 @@ interface ActionColorData {
 
 export type State = {
   colorPickerList: ColorPicker[];
-  colorScales: ColorScale[];
   buttonFirstData: ActionColorData;
   buttonSecondData: ActionColorData;
   formElementsData: ActionColorData;
@@ -42,7 +37,6 @@ interface ReducerContextProps {
 export const ReducerContext = createContext<ReducerContextProps>({
   state: {
     colorPickerList: [],
-    colorScales: [],
     buttonFirstData: {
       chosenColorIndex: 0,
       actionColorScale: [],
@@ -63,7 +57,6 @@ export const ReducerContext = createContext<ReducerContextProps>({
 
 const defaultState = {
   colorPickerList: colorPickerData,
-  colorScales: [],
   buttonFirstData: {
     chosenColorIndex: 0,
     actionColorScale: [],
@@ -80,7 +73,6 @@ const defaultState = {
   fontFamilyData: '',
 };
 
-// create reducer provider
 export const ReducerProvider = ({
   children,
 }: {

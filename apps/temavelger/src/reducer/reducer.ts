@@ -1,24 +1,23 @@
-import { State, Action } from '../contexts/ReducerContext';
+import type { State, Action } from '../contexts/ReducerContext';
+
 import {
   ADD_COLOR_PICKER,
   REMOVE_COLOR_PICKER,
-  REMOVE_COLOR_SCALE,
   UPDATE_BORDER_RADIUS_DATA,
   UPDATE_BUTTON_FIRST_DATA,
   UPDATE_BUTTON_SECOND_DATA,
-  UPDATE_COLOR_SCALE,
+  UPDATE_COLOR_PICKER_DATA,
   UPDATE_FONT_FAMILY_DATA,
   UPDATE_FORM_ELEMENTS_DATA,
 } from './actions';
 import { addColorPicker } from './reducerFunctions/addColorPicker';
-import { removeColorScale } from './reducerFunctions/removeColorScale';
 import { removeColorPicker } from './reducerFunctions/removerColorPicker';
 import { updateBorderRadiusData } from './reducerFunctions/updateBorderRadiusData';
 import { updateButtonFirstData } from './reducerFunctions/updateButtonFirstData';
 import { updateButtonSecondData } from './reducerFunctions/updateButtonSecondData';
-import { updateColorScale } from './reducerFunctions/updateColorScale';
 import { updateFormElementsData } from './reducerFunctions/updateFormElementsData';
 import { updateFontFamilyData } from './reducerFunctions/updateFontFamilyData';
+import { updateColorPickerData } from './reducerFunctions/updateColorPickerData';
 export type { State };
 
 /*
@@ -37,15 +36,11 @@ const reducer = (state: State, action: Action): State => {
     return removeColorPicker(state, action.payload as number);
   }
 
-  if (action.type === UPDATE_COLOR_SCALE) {
-    return updateColorScale(
+  if (action.type === UPDATE_COLOR_PICKER_DATA) {
+    return updateColorPickerData(
       state,
       action.payload as { altColorNumber: number; colorScale: string[] },
     );
-  }
-
-  if (action.type === REMOVE_COLOR_SCALE) {
-    return removeColorScale(state, action.payload as number);
   }
 
   if (action.type === UPDATE_BUTTON_FIRST_DATA) {

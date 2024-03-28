@@ -32,7 +32,8 @@ const FormElementsColorSelect = () => {
     dispatch({
       type: UPDATE_FORM_ELEMENTS_DATA,
       payload: {
-        formElementsColorScale: state.colorScales[altColorNumber].colorScale,
+        formElementsColorScale:
+          state.colorPickerList[altColorNumber].colorScale,
         chosenColorIndex: chosenColorIndex,
       },
     });
