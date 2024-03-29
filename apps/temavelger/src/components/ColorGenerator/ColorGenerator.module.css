@@ -25,10 +25,12 @@
 
 .colorBox:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .highlightedColorBox:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .colorInfo {
