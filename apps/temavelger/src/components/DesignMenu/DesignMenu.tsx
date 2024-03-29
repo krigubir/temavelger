@@ -15,6 +15,7 @@ import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
 import ButtonFirstColorSelect from '../ButtonFirstColorSelect/ButtonFirstColorSelect';
 import ButtonSecondColorSelect from '../ButtonSecondColorSelect/ButtonSecondColorSelect';
 import FormElementsColorSelect from '../FormElementsColorSelect/FormElementsColorSelect';
+import { resetBrandColorData } from '../../utils/resetBrandColorData';
 
 import styles from './DesignMenu.module.css';
 
@@ -37,6 +38,7 @@ const DesignMenu = () => {
 
   const resetSettings = () => {
     dispatch({ type: RESET_ALL_COLOR_PICKER_DATA });
+    resetBrandColorData();
   };
 
   return (
