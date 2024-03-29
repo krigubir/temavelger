@@ -74,7 +74,9 @@ const ButtonFirstColorSelect = () => {
         id='buttonFirstColorSelect'
         aria-placeholder='Velg farge...'
       >
-        <option value={JSON.stringify({ color: '#fff' })}>Velg farge...</option>
+        <option value={JSON.stringify({ color: '#fff', altColorNumber: -1 })}>
+          Velg farge...
+        </option>
         {generateColorScaleOptions(state)}
       </NativeSelect>
     </div>

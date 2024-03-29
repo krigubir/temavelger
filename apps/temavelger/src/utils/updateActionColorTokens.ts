@@ -18,6 +18,7 @@ export const updateButtonFirstColorTokens = (
   state: State,
 ) => {
   const tokenList = getButtonFirstTokens(chosenColorIndex);
+  if (altColorNumber === -1) return;
   for (const token in tokenList) {
     if (tokenList[token] > 7) {
       document.documentElement.style.setProperty(
@@ -38,6 +39,7 @@ export const updateButtonSecondColorTokens = (
   altColorNumber: number,
   state: State,
 ) => {
+  if (altColorNumber === -1) return;
   const tokenList = getButtonSecondTokens(chosenColorIndex);
   for (const token in tokenList) {
     if (tokenList[token] > 7) {
@@ -59,6 +61,7 @@ export const updateFormElementColorTokens = (
   altColorNumber: number,
   state: State,
 ) => {
+  if (altColorNumber === -1) return;
   const tokenList = getFormElementTokens(chosenColorIndex);
   for (const token in tokenList) {
     document.documentElement.style.setProperty(
