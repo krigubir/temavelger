@@ -63,14 +63,18 @@ const ButtonFirstColorSelect = () => {
         }
         style={{
           backgroundColor: activeButtonFirstColor,
-          color: checkColorContrast(activeButtonFirstColor) ? 'black' : 'white',
-          borderRadius: '5px',
+          color:
+            activeButtonFirstColor === '#fff'
+              ? '#666666'
+              : checkColorContrast(activeButtonFirstColor)
+              ? 'black'
+              : 'white',
+          borderRadius: '4px',
         }}
         id='buttonFirstColorSelect'
+        aria-placeholder='Velg farge...'
       >
-        <option value={JSON.stringify({ color: 'white' })}>
-          Velg farge...
-        </option>
+        <option value={JSON.stringify({ color: '#fff' })}>Velg farge...</option>
         {generateColorScaleOptions(state)}
       </NativeSelect>
     </div>

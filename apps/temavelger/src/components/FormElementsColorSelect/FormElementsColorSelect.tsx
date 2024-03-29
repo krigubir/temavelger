@@ -68,15 +68,16 @@ const FormElementsColorSelect = () => {
         }
         style={{
           backgroundColor: activeFormElementsColor,
-          color: checkColorContrast(activeFormElementsColor)
-            ? 'black'
-            : 'white',
+          color:
+            activeFormElementsColor === '#fff'
+              ? '#666666'
+              : checkColorContrast(activeFormElementsColor)
+              ? 'black'
+              : 'white',
           borderRadius: '5px',
         }}
       >
-        <option value={JSON.stringify({ color: 'white' })}>
-          Velg farge...
-        </option>
+        <option value={JSON.stringify({ color: '#fff' })}>Velg farge...</option>
         {generateColorScaleOptions(state)}
       </NativeSelect>
     </div>

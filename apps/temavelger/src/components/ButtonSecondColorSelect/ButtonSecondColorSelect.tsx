@@ -63,16 +63,17 @@ const ButtonSecondColorSelect = () => {
         }
         style={{
           backgroundColor: activeButtonSecondColor,
-          color: checkColorContrast(activeButtonSecondColor)
-            ? 'black'
-            : 'white',
-          borderRadius: '5px',
+          color:
+            activeButtonSecondColor === '#fff'
+              ? '#666666'
+              : checkColorContrast(activeButtonSecondColor)
+              ? 'black'
+              : 'white',
+          borderRadius: '4px',
         }}
         id='buttonSecondColorSelect'
       >
-        <option value={JSON.stringify({ color: 'white' })}>
-          Velg farge...
-        </option>
+        <option value={JSON.stringify({ color: '#fff' })}>Velg farge...</option>
         {generateColorScaleOptions(state)}
       </NativeSelect>
     </div>
