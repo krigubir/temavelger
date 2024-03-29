@@ -1,8 +1,3 @@
-.colorBox {
-  width: 3vw;
-  height: 3vw;
-}
-
 .colorGenerator {
   display: flex;
 }
@@ -15,10 +10,49 @@
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial', sans-serif;
 }
 
+.colorBox {
+  width: 3vw;
+  height: 3vw;
+  transition: transform 0.2s ease;
+}
+
 .highlightedColorBox {
   border-radius: 50%;
   width: 3vw;
   height: 3vw;
+  transition: transform 0.2s ease;
+}
+
+.colorBox:hover {
+  transform: scale(1.1);
+}
+
+.highlightedColorBox:hover {
+  transform: scale(1.1);
+}
+
+.colorInfo {
+  display: none;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  top: calc(-100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.colorInfo:hover {
+  display: block;
+}
+
+.colorBox:hover .colorInfo {
+  display: block;
+}
+
+.highlightedColorBox:hover .colorInfo {
+  display: block;
 }
 
 .colorNumber {
