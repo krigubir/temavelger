@@ -15,4 +15,10 @@
 
 .fontFamilySelector input {
   border-radius: 4px !important;
+  border: 1px solid var(--fds-colors-blue-900);
+}
+
+.fontFamilySelector:hover input:not(:focus-visible, :disabled, [aria-disabled]):hover {
+  box-shadow: inset 0 0 0 1px var(--fds-colors-blue-700);
+  border: 1px solid var(--fds-colors-blue-700);
 }

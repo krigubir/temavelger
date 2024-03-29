@@ -54,6 +54,7 @@ const FontFamilySelector = () => {
           }
         </HelpText>
       </div>
+
       <Textfield
         id='fontFamilyInput'
         placeholder='Arial, Inter, Sans-serif, ...'
@@ -63,7 +64,6 @@ const FontFamilySelector = () => {
         onKeyDown={(e) => {
           updateFontFamilyOnEnter(e);
         }}
-        style={{ borderRadius: '4px' }}
       />
     </div>
   );

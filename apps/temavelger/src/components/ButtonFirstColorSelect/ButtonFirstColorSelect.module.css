@@ -9,7 +9,22 @@
   margin-bottom: 1.5rem;
 }
 
+.actionColorPicker select {
+  border: 1px solid var(--fds-colors-blue-900);
+  color: #919191;
+}
+
 .actionColorLabel {
   display: flex;
   justify-content: space-between;
+}
+
+.actionColorPicker:hover select:not(:focus-visible, :disabled, [aria-disabled]):hover {
+  box-shadow: inset 0 0 0 1px var(--fds-colors-blue-700);
+  border: 1px solid var(--fds-colors-blue-700);
+}
+
+.helpText {
+  place-self: end;
+  border-radius: 4px;
 }

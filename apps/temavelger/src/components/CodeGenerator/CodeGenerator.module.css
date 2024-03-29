@@ -10,6 +10,10 @@
   margin-bottom: 10px;
 }
 
+.codeGeneratorModal {
+  border-radius: 4px;
+}
+
 .tokenName {
   color: #4ec9b0;
 }
@@ -41,6 +45,7 @@
 .closeModalBtn button {
   background-color: transparent;
   color: var(--fds-colors-blue-800);
+  border-radius: 4px;
 }
 
 .generateCodeButton button {

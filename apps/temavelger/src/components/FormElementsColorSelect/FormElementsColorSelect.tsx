@@ -42,7 +42,7 @@ const FormElementsColorSelect = () => {
   return (
     <div className={styles.actionColorPicker}>
       <div className={styles.actionColorLabel}>
-        <label htmlFor='fromElementsColorSelect'>
+        <label htmlFor='formElementsColorSelect'>
           Velg farge for <strong>Form Elements</strong>
         </label>
         <HelpText
@@ -61,6 +61,7 @@ const FormElementsColorSelect = () => {
         Combobox
       </section>
       <NativeSelect
+        id='formElementsColorSelect'
         size='medium'
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           changeFormElementsColor(e)
@@ -72,7 +73,6 @@ const FormElementsColorSelect = () => {
             : 'white',
           borderRadius: '5px',
         }}
-        id='formElementsColorSelect'
       >
         <option value={JSON.stringify({ color: 'white' })}>
           Velg farge...

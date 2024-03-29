@@ -58,6 +58,7 @@ const CodeGenerator = () => {
       <Modal
         ref={modalRef}
         onInteractOutside={closeModal}
+        className={styles.codeGeneratorModal}
       >
         <div className={styles.closeModalBtn}>
           {successFullCopy && (
