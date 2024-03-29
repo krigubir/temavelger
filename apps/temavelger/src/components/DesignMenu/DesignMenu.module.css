@@ -21,6 +21,7 @@
 
 .helpText {
   place-self: end;
+  align-self: center;
 }
 
 .addColorPickerButton {
@@ -56,4 +57,14 @@
   width: 90%;
   justify-content: center;
   box-shadow: 0 -15px 30px white;
+}
+
+.colorPickerHeader {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.resetButton {
+  margin-left: auto;
 }

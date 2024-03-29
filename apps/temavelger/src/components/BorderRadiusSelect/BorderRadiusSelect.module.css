@@ -10,11 +10,15 @@
 
 .borderRadiusLabel {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: large;
+}
+
+.borderRadiusLabel label {
+  margin-left: 1rem;
 }
 
 .borderRadiusSlider {
@@ -25,4 +29,8 @@
 .borderRadiusNumber {
   width: 3rem;
   text-align: center;
+}
+
+.resetButton {
+  margin-left: auto;
 }

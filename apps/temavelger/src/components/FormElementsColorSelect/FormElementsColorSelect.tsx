@@ -1,11 +1,15 @@
-import { HelpText, NativeSelect } from '@digdir/designsystemet-react';
+import { Button, HelpText, NativeSelect } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 
 import checkColorContrast from '../../utils/checkColorContrast';
 import { updateFormElementColorTokens } from '../../utils/updateActionColorTokens';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { generateColorScaleOptions } from '../../utils/generateColorScaleOptions';
-import { UPDATE_FORM_ELEMENTS_DATA } from '../../reducer/actions';
+import {
+  RESET_FORM_ELEMENTS_DATA,
+  UPDATE_FORM_ELEMENTS_DATA,
+} from '../../reducer/actions';
+import { resetFormElementsDOM } from '../../utils/resetActionColorTokens';
 
 import styles from './FormElementsColorSelect.module.css';
 
@@ -27,6 +31,12 @@ const FormElementsColorSelect = () => {
       };
 
     setActiveFormElementsColor(color);
+
+    if (altColorNumber === -1) {
+      resetFormElementsDOM();
+      return;
+    }
+
     updateFormElementColorTokens(chosenColorIndex, altColorNumber, state);
 
     dispatch({
@@ -39,26 +49,39 @@ const FormElementsColorSelect = () => {
     });
   };
 
+  const resetSettings = () => {
+    dispatch({ type: RESET_FORM_ELEMENTS_DATA });
+    setActiveFormElementsColor('#fff');
+    resetFormElementsDOM();
+  };
+
   return (
     <div className={styles.actionColorPicker}>
       <div className={styles.actionColorLabel}>
-        <label htmlFor='formElementsColorSelect'>
-          Velg farge for <strong>Form Elements</strong>
-        </label>
         <HelpText
           size='small'
           title='Form Elements Help Text'
-          placement='right'
+          placement='top-start'
           portal={true}
         >
           {
             'Form Elements representerer input-felt og andre form-elementer som ikke er en knapp.'
           }
         </HelpText>
+        <label htmlFor='formElementsColorSelect'>
+          Velg farge for <strong>Form Elements</strong>
+        </label>
+        <Button
+          variant='tertiary'
+          size='medium'
+          onClick={resetSettings}
+          className={styles.resetButton}
+        >
+          reset
+        </Button>
       </div>
       <section className={styles.helperText}>
-        Gjelder farger for Radio, Checkbox, TextField, TextArea, Search og
-        Combobox
+        Gjelder Radio, Checkbox, TextField, TextArea, Search og Combobox
       </section>
       <NativeSelect
         id='formElementsColorSelect'
@@ -77,7 +100,9 @@ const FormElementsColorSelect = () => {
           borderRadius: '5px',
         }}
       >
-        <option value={JSON.stringify({ color: '#fff' })}>Velg farge...</option>
+        <option value={JSON.stringify({ color: '#fff', altColorNumber: -1 })}>
+          Velg farge...
+        </option>
         {generateColorScaleOptions(state)}
       </NativeSelect>
     </div>

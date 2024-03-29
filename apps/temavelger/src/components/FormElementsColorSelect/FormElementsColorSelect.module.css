@@ -1,7 +1,6 @@
 .actionColorPicker {
   display: flex;
   flex-direction: column;
-  height: 100px;
   justify-content: space-around;
   font: var(--fds-typography-paragraph-medium);
   font-family: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif', sans-serif;
@@ -22,10 +21,20 @@
 
 .actionColorLabel {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 0.6rem;
 }
 
 .helperText {
   color: grey;
   font-size: 14px;
+}
+
+.actionColorLabel label {
+  margin-left: 1rem;
+}
+
+.resetButton {
+  margin-left: auto;
 }

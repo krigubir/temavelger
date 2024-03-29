@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { HelpText, Textfield } from '@digdir/designsystemet-react';
+import { Button, HelpText, Textfield } from '@digdir/designsystemet-react';
 
 import { useReducerContext } from '../../contexts/useReducerContext';
-import { UPDATE_FONT_FAMILY_DATA } from '../../reducer/actions';
+import {
+  RESET_FONT_FAMILY_DATA,
+  UPDATE_FONT_FAMILY_DATA,
+} from '../../reducer/actions';
 import { updateFontFamilyDOM } from '../../utils/updateFontFamilyDOM';
 import { formatFontFamilyInput } from '../../utils/formatFontFamilyInput';
 
@@ -39,20 +42,34 @@ const FontFamilySelector = () => {
     }
   };
 
+  const resetSettings = () => {
+    dispatch({ type: RESET_FONT_FAMILY_DATA });
+    setFontFamily('');
+    updateFontFamilyDOM('Inter, sans-serif');
+  };
+
   return (
     <div className={styles.fontFamilySelector}>
       <div className={styles.fontFamilySelectorLabel}>
-        <label htmlFor='fontFamilyInput'>Skriv inn font-family</label>
         <HelpText
           size='small'
           title='Choose font'
-          placement='right'
+          placement='top-start'
           portal={true}
         >
           {
             'Skriv inn ønskede font-familier. F.eks. Arial, Inter, Sans-serif, ...'
           }
         </HelpText>
+        <label htmlFor='fontFamilyInput'>Skriv inn font-family</label>
+        <Button
+          variant='tertiary'
+          size='medium'
+          onClick={resetSettings}
+          className={styles.resetButton}
+        >
+          reset
+        </Button>
       </div>
 
       <Textfield

@@ -1,11 +1,15 @@
-import { HelpText, NativeSelect } from '@digdir/designsystemet-react';
+import { HelpText, NativeSelect, Button } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 
 import checkColorContrast from '../../utils/checkColorContrast';
 import { updateButtonFirstColorTokens } from '../../utils/updateActionColorTokens';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { generateColorScaleOptions } from '../../utils/generateColorScaleOptions';
-import { UPDATE_BUTTON_FIRST_DATA } from '../../reducer/actions';
+import {
+  RESET_BUTTON_FIRST_DATA,
+  UPDATE_BUTTON_FIRST_DATA,
+} from '../../reducer/actions';
+import { resetButtonFirstDOM } from '../../utils/resetActionColorTokens';
 
 import styles from './ButtonFirstColorSelect.module.css';
 
@@ -27,6 +31,11 @@ const ButtonFirstColorSelect = () => {
       };
 
     setActiveButtonFirstColor(color);
+
+    if (altColorNumber === -1) {
+      resetButtonFirstDOM();
+      return;
+    }
     updateButtonFirstColorTokens(chosenColorIndex, altColorNumber, state);
 
     dispatch({
@@ -38,22 +47,36 @@ const ButtonFirstColorSelect = () => {
     });
   };
 
+  const resetSettings = () => {
+    dispatch({ type: RESET_BUTTON_FIRST_DATA });
+    setActiveButtonFirstColor('#fff');
+    resetButtonFirstDOM();
+  };
+
   return (
     <div className={styles.actionColorPicker}>
       <div className={styles.actionColorLabel}>
-        <label htmlFor='buttonFirstColorSelect'>
-          Velg farge for <strong>Button First</strong>
-        </label>
         <HelpText
           size='small'
           title='Button first Help Text'
-          placement='right'
+          placement='top-start'
           portal={true}
         >
           {
             'Button First-knapper utgjør hovedknappene på nettsiden og representerer viktige handlinger. Disse knappene bør ha god kontrast mot bakgrunnen og være lett synlige for brukere.'
           }
         </HelpText>
+        <label htmlFor='buttonFirstColorSelect'>
+          Velg farge for <strong>Button First</strong>
+        </label>
+        <Button
+          variant='tertiary'
+          size='medium'
+          onClick={resetSettings}
+          className={styles.resetButton}
+        >
+          reset
+        </Button>
       </div>
 
       <NativeSelect

@@ -21,5 +21,15 @@
 
 .actionColorLabel {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.actionColorLabel label {
+  margin-left: 1rem;
+}
+
+.resetButton {
+  margin-left: auto;
 }

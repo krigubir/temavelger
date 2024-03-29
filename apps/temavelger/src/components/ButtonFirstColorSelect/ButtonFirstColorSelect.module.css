@@ -16,7 +16,13 @@
 
 .actionColorLabel {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.actionColorLabel label {
+  margin-left: 1rem;
 }
 
 .actionColorPicker:hover select:not(:focus-visible, :disabled, [aria-disabled]):hover {
@@ -24,7 +30,6 @@
   border: 1px solid var(--fds-colors-blue-700);
 }
 
-.helpText {
-  place-self: end;
-  border-radius: 4px;
+.resetButton {
+  margin-left: auto;
 }

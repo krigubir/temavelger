@@ -2,7 +2,11 @@ import { HelpText, Button } from '@digdir/designsystemet-react';
 import { PlusIcon } from '@navikt/aksel-icons';
 
 import { useReducerContext } from '../../contexts/useReducerContext';
-import { ADD_COLOR_PICKER, REMOVE_COLOR_PICKER } from '../../reducer/actions';
+import {
+  ADD_COLOR_PICKER,
+  REMOVE_COLOR_PICKER,
+  RESET_ALL_COLOR_PICKER_DATA,
+} from '../../reducer/actions';
 import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
 import CodeGenerator from '../CodeGenerator/CodeGenerator';
 import ColorPicker from '../ColorPicker/ColorPicker';
@@ -31,21 +35,35 @@ const DesignMenu = () => {
     dispatch({ type: REMOVE_COLOR_PICKER, payload: altColorNumber });
   };
 
+  const resetSettings = () => {
+    dispatch({ type: RESET_ALL_COLOR_PICKER_DATA });
+  };
+
   return (
     <div className={styles.designMenu}>
       <DesignMenuHeader></DesignMenuHeader>
       <div className={styles.designMenuBox}>
-        <HelpText
-          className={styles.helpText}
-          size='small'
-          title='Select brand colors'
-          placement='right'
-          portal={true}
-        >
-          {
-            'Bruk fargevelgeren til å velge farger som representerer ditt brand, eller utforsk nye. Valgene vil utgjøre fargepaletten din og være tilgjengelig når du skal velge farger for knapper og andre form-elementer.'
-          }
-        </HelpText>
+        <div className={styles.colorPickerHeader}>
+          <HelpText
+            className={styles.helpText}
+            size='small'
+            title='Select brand colors'
+            placement='top-start'
+            portal={true}
+          >
+            {
+              'Bruk fargevelgeren til å velge farger som representerer ditt brand, eller utforsk nye. Valgene vil utgjøre fargepaletten din og være tilgjengelig når du skal velge farger for knapper og andre form-elementer.'
+            }
+          </HelpText>
+          <Button
+            variant='tertiary'
+            size='medium'
+            onClick={resetSettings}
+            className={styles.resetButton}
+          >
+            reset
+          </Button>
+        </div>
         {state.colorPickerList.map((colorPicker, index) => (
           <div key={index}>
             <ColorPicker

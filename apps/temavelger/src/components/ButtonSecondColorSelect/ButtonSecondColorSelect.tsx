@@ -1,11 +1,15 @@
-import { HelpText, NativeSelect } from '@digdir/designsystemet-react';
+import { Button, HelpText, NativeSelect } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 
 import checkColorContrast from '../../utils/checkColorContrast';
 import { updateButtonSecondColorTokens } from '../../utils/updateActionColorTokens';
 import { useReducerContext } from '../../contexts/useReducerContext';
 import { generateColorScaleOptions } from '../../utils/generateColorScaleOptions';
-import { UPDATE_BUTTON_SECOND_DATA } from '../../reducer/actions';
+import {
+  RESET_BUTTON_SECOND_DATA,
+  UPDATE_BUTTON_SECOND_DATA,
+} from '../../reducer/actions';
+import { resetButtonSecondDOM } from '../../utils/resetActionColorTokens';
 
 import styles from './ButtonSecondColorSelect.module.css';
 
@@ -27,6 +31,11 @@ const ButtonSecondColorSelect = () => {
       };
 
     setActiveButtonSecondColor(color);
+
+    if (altColorNumber === -1) {
+      resetButtonSecondDOM();
+      return;
+    }
     updateButtonSecondColorTokens(chosenColorIndex, altColorNumber, state);
 
     dispatch({
@@ -39,22 +48,36 @@ const ButtonSecondColorSelect = () => {
     });
   };
 
+  const resetSettings = () => {
+    dispatch({ type: RESET_BUTTON_SECOND_DATA });
+    setActiveButtonSecondColor('#fff');
+    resetButtonSecondDOM();
+  };
+
   return (
     <div className={styles.actionColorPicker}>
       <div className={styles.actionColorLabel}>
-        <label htmlFor='buttonSecondColorSelect'>
-          Velg farge for <strong>Button Second</strong>
-        </label>
         <HelpText
           size='small'
           title='Button second Help Text'
-          placement='right'
+          placement='top-start'
           portal={true}
         >
           {
             'Button Second-knapper utgjør sekundærknappene på nettsiden. Bruk disse knappe der synlighet og kontrast er mindre vikitg.'
           }
         </HelpText>
+        <label htmlFor='buttonSecondColorSelect'>
+          Velg farge for <strong>Button Second</strong>
+        </label>
+        <Button
+          variant='tertiary'
+          size='medium'
+          onClick={resetSettings}
+          className={styles.resetButton}
+        >
+          reset
+        </Button>
       </div>
       <NativeSelect
         size='medium'
@@ -73,7 +96,9 @@ const ButtonSecondColorSelect = () => {
         }}
         id='buttonSecondColorSelect'
       >
-        <option value={JSON.stringify({ color: '#fff' })}>Velg farge...</option>
+        <option value={JSON.stringify({ color: '#fff', altColorNumber: -1 })}>
+          Velg farge...
+        </option>
         {generateColorScaleOptions(state)}
       </NativeSelect>
     </div>
