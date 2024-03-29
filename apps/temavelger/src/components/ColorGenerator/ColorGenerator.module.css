@@ -58,3 +58,8 @@
 .colorNumber {
   margin-top: 5px;
 }
+
+.errorMessage {
+  color: var(--fds-semantic-surface-danger-default);
+  font-size: 0.9rem;
+}
