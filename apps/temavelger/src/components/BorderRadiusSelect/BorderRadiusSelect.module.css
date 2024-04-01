@@ -33,4 +33,18 @@
 
 .resetButton {
   margin-left: auto;
+  color: var(--fds-colors-blue-700);
+  border-radius: 4px;
+}
+
+.resetButton:hover {
+  background-color: var(--fds-colors-blue-100) !important;
+  color: var(--fds-colors-blue-800);
+  border-radius: 4px;
+}
+
+.resetButton:active {
+  background-color: var(--fds-colors-blue-200) !important;
+  color: var(--fds-colors-blue-900);
+  border-radius: 4px;
 }
