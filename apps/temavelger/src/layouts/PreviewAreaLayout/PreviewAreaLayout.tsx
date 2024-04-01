@@ -1,7 +1,7 @@
-import ComponentLayout1 from './ComponentLayouts/ComponentLayout1/ComponentLayout1';
-import ComponentLayout2 from './ComponentLayouts/ComponentLayout2/ComponentLayout2';
-import ComponentLayout3 from './ComponentLayouts/ComponentLayout3/ComponentLayout3';
-import ComponentLayout4 from './ComponentLayouts/ComponentLayout4/ComponentLayout4';
+import ComponentLayout1 from '../../components/PageContainer/ComponentLayouts/ComponentLayout1/ComponentLayout1';
+import ComponentLayout2 from '../../components/PageContainer/ComponentLayouts/ComponentLayout2/ComponentLayout2';
+import ComponentLayout3 from '../../components/PageContainer/ComponentLayouts/ComponentLayout3/ComponentLayout3';
+import ComponentLayout4 from '../../components/PageContainer/ComponentLayouts/ComponentLayout4/ComponentLayout4';
 import styles from './PreviewAreaLayout.module.css';
 
 interface PreviewAreaLayoutProps {

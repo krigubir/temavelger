@@ -5,13 +5,19 @@
   margin: 1rem;
 }
 
+.toggleGroupContainer div {
+  border-radius: 4px !important;
+}
+
 .toggleGroupContainer .primary {
   background-color: var(--fds-colors-blue-700) !important;
+  border-radius: 4px !important;
 }
 
 .toggleGroupContainer .tertiary {
   background-color: var(--fds-colors-blue-100) !important;
   color: var(--fds-colors-blue-700) !important;
+  border-radius: 4px !important;
 }
 
 .toggleGroupContainer .primary:hover {

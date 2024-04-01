@@ -16,7 +16,7 @@ import {
 } from '@digdir/designsystemet-react';
 import { useState } from 'react';
 
-import CardComponentAlt1 from '../../../../components/CardComponentAlt1/CardComponentAlt1';
+import CardComponentAlt1 from '../../../CardComponentAlt1/CardComponentAlt1';
 
 import styles from './ComponentLayout2.module.css';
 

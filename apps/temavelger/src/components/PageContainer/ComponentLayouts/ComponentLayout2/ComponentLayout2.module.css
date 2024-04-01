@@ -16,6 +16,7 @@
 
 .componentSelect select {
   border: 1px solid var(--fds-colors-blue-900);
+  border-radius: 4px;
 }
 
 .componentSelect:hover select:not(:focus-visible, :disabled, [aria-disabled]):hover {
