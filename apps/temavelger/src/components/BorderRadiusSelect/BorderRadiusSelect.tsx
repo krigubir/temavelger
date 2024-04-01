@@ -1,5 +1,4 @@
 import { Button, HelpText } from '@digdir/designsystemet-react';
-import { useState } from 'react';
 
 import { RESET_BORDER_RADIUS_DATA } from '../../reducer/actions';
 import { useReducerContext } from '../../contexts/useReducerContext';
@@ -10,7 +9,6 @@ import styles from './BorderRadiusSelect.module.css';
 
 const BorderRadiusSelect = () => {
   const { dispatch } = useReducerContext();
-  const [borderRadius, setBorderRadius] = useState(0);
 
   const resetSettings = () => {
     dispatch({ type: RESET_BORDER_RADIUS_DATA });
@@ -40,10 +38,7 @@ const BorderRadiusSelect = () => {
           reset
         </Button>
       </div>
-      <BorderRadiusInput
-        borderRadius={borderRadius}
-        setBorderRadius={setBorderRadius}
-      />
+      <BorderRadiusInput />
     </div>
   );
 };

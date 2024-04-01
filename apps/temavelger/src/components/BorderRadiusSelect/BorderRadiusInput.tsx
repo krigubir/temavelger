@@ -6,19 +6,12 @@ import { UPDATE_BORDER_RADIUS_DATA } from '../../reducer/actions';
 
 import styles from './BorderRadiusSelect.module.css';
 
-interface BorderRadiusInputProps {
-  borderRadius: number;
-  setBorderRadius: React.Dispatch<React.SetStateAction<number>>;
-}
-const BorderRadiusInput: React.FC<BorderRadiusInputProps> = ({
-  borderRadius,
-  setBorderRadius,
-}) => {
-  const { dispatch } = useContext(ReducerContext);
+const BorderRadiusInput = () => {
+  const { state, dispatch } = useContext(ReducerContext);
 
   const handleBorderRadiusChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newBorderRadius = parseInt(e.target.value);
-    setBorderRadius(newBorderRadius);
+
     updateBorderRadiusData(newBorderRadius);
 
     dispatch({
@@ -34,7 +27,7 @@ const BorderRadiusInput: React.FC<BorderRadiusInputProps> = ({
         id={'borderRadiusSlider'}
         min='0'
         max='50'
-        value={borderRadius}
+        value={state.borderRadiusData}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           handleBorderRadiusChange(e)
         }
@@ -43,7 +36,7 @@ const BorderRadiusInput: React.FC<BorderRadiusInputProps> = ({
         className={styles.borderRadiusNumber}
         type='number'
         id={'borderRadiusNumber'}
-        value={borderRadius}
+        value={state.borderRadiusData}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           handleBorderRadiusChange(e)
         }
