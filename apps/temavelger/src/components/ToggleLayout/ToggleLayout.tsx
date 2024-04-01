@@ -1,4 +1,6 @@
 import { ToggleGroup } from '@digdir/designsystemet-react';
+import { useState } from 'react';
+
 import styles from './ToggleLayout.module.css';
 
 interface ToggleLayoutProps {
@@ -6,18 +8,36 @@ interface ToggleLayoutProps {
 }
 
 const ToggleLayout: React.FC<ToggleLayoutProps> = ({ handleLayoutChange }) => {
+  const [activeLayout, setActiveLayout] = useState<string>('layout1');
+
+  const handleClick = (layout: string) => {
+    handleLayoutChange(layout);
+    setActiveLayout(layout);
+  };
   return (
     <div className={styles.toggleGroupContainer}>
       <ToggleGroup
         defaultValue='layout1'
         name='toggle-group'
-        onChange={handleLayoutChange}
+        onChange={handleClick}
         size='small'
       >
-        <ToggleGroup.Item value='layout1'>Layout 1</ToggleGroup.Item>
-        <ToggleGroup.Item value='layout2'>Layout 2</ToggleGroup.Item>
-        <ToggleGroup.Item value='layout3'>Layout 3</ToggleGroup.Item>
-        <ToggleGroup.Item value='layout4'>Layout 4</ToggleGroup.Item>
+        <ToggleGroup.Item
+          className={
+            activeLayout === 'layout1' ? styles.primary : styles.tertiary
+          }
+          value='layout1'
+        >
+          Nettside
+        </ToggleGroup.Item>
+        <ToggleGroup.Item
+          className={
+            activeLayout === 'layout2' ? styles.primary : styles.tertiary
+          }
+          value='layout2'
+        >
+          Komponent
+        </ToggleGroup.Item>
       </ToggleGroup>
     </div>
   );

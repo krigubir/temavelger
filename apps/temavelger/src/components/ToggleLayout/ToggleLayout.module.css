@@ -4,3 +4,29 @@
   align-items: center;
   margin: 1rem;
 }
+
+.toggleGroupContainer .primary {
+  background-color: var(--fds-colors-blue-700) !important;
+}
+
+.toggleGroupContainer .tertiary {
+  background-color: var(--fds-colors-blue-100) !important;
+  color: var(--fds-colors-blue-700) !important;
+}
+
+.toggleGroupContainer .primary:hover {
+  background-color: var(--fds-colors-blue-800) !important;
+}
+
+.toggleGroupContainer .tertiary:hover {
+  background-color: var(--fds-colors-blue-200) !important;
+}
+
+.toggleGroupContainer .primary:active {
+  background-color: var(--fds-colors-blue-900) !important;
+}
+
+.toggleGroupContainer .tertiary:active {
+  background-color: var(--fds-colors-blue-700) !important;
+  color: white !important;
+}

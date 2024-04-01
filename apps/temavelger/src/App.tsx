@@ -7,7 +7,7 @@ import { ReducerProvider } from './contexts/ReducerContext';
 function App() {
   return (
     <ReducerProvider>
-      <FrontpageLayout></FrontpageLayout>;
+      <FrontpageLayout></FrontpageLayout>
     </ReducerProvider>
   );
 }

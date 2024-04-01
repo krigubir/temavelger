@@ -1,6 +1,7 @@
 .frontpage {
   display: flex;
   background: var(--tv-background-color);
+  height: 100vh;
 }
 
 @media (max-width: 768px) {

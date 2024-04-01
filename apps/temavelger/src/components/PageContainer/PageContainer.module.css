@@ -8,4 +8,5 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 999;
+  overflow-y: auto;
 }
