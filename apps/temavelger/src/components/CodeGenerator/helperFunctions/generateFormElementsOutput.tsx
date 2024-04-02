@@ -1,4 +1,4 @@
-import { State } from '../../../contexts/ReducerContext';
+import type { State } from '../../../contexts/ReducerContext';
 import { getFormElementTokens } from '../../../data/designTokens';
 import styles from '../CodeGenerator.module.css';
 
@@ -18,7 +18,7 @@ const generateFormElementOutput = (state: State) => {
       </div>,
     );
   }
-  output.push(<br></br>);
+  output.push(<br key='formElements'></br>);
   return output;
 };
 

@@ -18,7 +18,7 @@ const generateButtonSecondOutput = (state: State) => {
       </div>,
     );
   }
-  output.push(<br></br>);
+  output.push(<br key='buttonSecond'></br>);
   return output;
 };
 

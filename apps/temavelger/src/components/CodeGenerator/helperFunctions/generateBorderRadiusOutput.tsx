@@ -17,7 +17,7 @@ const generateBorderRadiusOutput = (state: State) => {
       </div>,
     );
   }
-  output.push(<br></br>);
+  output.push(<br key='borderRadius'></br>);
   return output;
 };
 

@@ -18,7 +18,7 @@ const generateButtonFirstOutput = (state: State) => {
       </div>,
     );
   }
-  output.push(<br></br>);
+  output.push(<br key='buttonFirst'></br>);
   return output;
 };
 
