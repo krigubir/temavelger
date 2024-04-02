@@ -9,4 +9,6 @@
   align-items: center;
   flex-grow: 999;
   overflow-y: auto;
+  background: var(--tv-background-color);
+  height: 100vh;
 }

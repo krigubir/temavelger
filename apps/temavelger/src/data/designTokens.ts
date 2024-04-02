@@ -30,6 +30,9 @@ export const getButtonFirstTokens = (
     '--fds-semantic-text-action-first-default': 5,
     '--fds-semantic-text-action-first-hover': 6,
     '--fds-semantic-text-action-first-active': 7,
+    '--fds-semantic-border-action-first-default': colorNuance,
+    '--fds-semantic-border-action-first-hover': 7,
+    '--fds-semantic-border-action-first-active': 8,
   };
 };
 
@@ -45,6 +48,9 @@ export const getButtonSecondTokens = (
     '--fds-semantic-text-action-second-default': 5,
     '--fds-semantic-text-action-second-hover': 6,
     '--fds-semantic-text-action-second-active': 7,
+    '--fds-semantic-border-action-second-default': colorNuance,
+    '--fds-semantic-border-action-second-hover': 7,
+    '--fds-semantic-border-action-second-active': 8,
   };
 };
 
