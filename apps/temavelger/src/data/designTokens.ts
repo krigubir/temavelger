@@ -18,6 +18,33 @@ export const getColorPickerBrandTokens = (
   };
 };
 
+export const getSurfaceFirstColorTokens = (
+  chosenColorIndex: number,
+): { [token: string]: number } => {
+  return {
+    '--fds-semantic-surface-first-light': chosenColorIndex,
+    '--fds-semantic-surface-first-light-hover': chosenColorIndex + 1,
+  };
+};
+
+export const getSurfaceSecondColorTokens = (
+  chosenColorIndex: number,
+): { [token: string]: number } => {
+  return {
+    '--fds-semantic-surface-second-light': chosenColorIndex,
+    '--fds-semantic-surface-second-light-hover': chosenColorIndex + 1,
+  };
+};
+
+export const getSurfaceThirdColorTokens = (
+  chosenColorIndex: number,
+): { [token: string]: number } => {
+  return {
+    '--fds-semantic-surface-third-light': chosenColorIndex,
+    '--fds-semantic-surface-third-light-hover': chosenColorIndex + 1,
+  };
+};
+
 export const getButtonFirstTokens = (
   colorNuance: number,
 ): { [token: string]: number } => {

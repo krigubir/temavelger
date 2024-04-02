@@ -75,3 +75,14 @@ export const getDefaultColorData = (): { [token: string]: string } => {
     '--fds-brand-alt3-900': '#125A91',
   };
 };
+
+export const getDefaultSurfaceColorTokens = (): { [token: string]: string } => {
+  return {
+    '--fds-semantic-surface-first-light': 'var(--fds-brand-alt1-200)',
+    '--fds-semantic-surface-first-light-hover': 'var(--fds-brand-alt1-300)',
+    '--fds-semantic-surface-second-light': 'var(--fds-brand-alt2-200)',
+    '--fds-semantic-surface-second-light-hover': 'var(--fds-brand-alt2-300)',
+    '--fds-semantic-surface-third-light': 'var(--fds-brand-alt3-200)',
+    '--fds-semantic-surface-third-light-hover': 'var(--fds-brand-alt3-300)',
+  };
+};

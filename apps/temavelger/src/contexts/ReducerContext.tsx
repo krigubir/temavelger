@@ -14,8 +14,14 @@ interface ActionColorData {
   actionColorScale: string[];
 }
 
+interface SurfaceColor {
+  chosenColorIndex: number;
+  altColorNumber: number;
+}
+
 export type State = {
   colorPickerList: ColorPicker[];
+  surfaceColorData: SurfaceColor[];
   buttonFirstData: ActionColorData;
   buttonSecondData: ActionColorData;
   formElementsData: ActionColorData;
@@ -37,6 +43,7 @@ interface ReducerContextProps {
 export const ReducerContext = createContext<ReducerContextProps>({
   state: {
     colorPickerList: [],
+    surfaceColorData: [],
     buttonFirstData: {
       chosenColorIndex: 0,
       actionColorScale: [],
@@ -57,6 +64,7 @@ export const ReducerContext = createContext<ReducerContextProps>({
 
 const defaultState = {
   colorPickerList: colorPickerData,
+  surfaceColorData: [],
   buttonFirstData: {
     chosenColorIndex: 0,
     actionColorScale: [],

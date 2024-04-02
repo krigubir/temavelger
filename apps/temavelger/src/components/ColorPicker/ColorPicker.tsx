@@ -4,8 +4,14 @@ import { TrashIcon } from '@navikt/aksel-icons';
 import ColorGenerator from '../ColorGenerator/ColorGenerator';
 import generateColorScaleHSL from '../../utils/generateColorScaleHSL';
 import { useReducerContext } from '../../contexts/useReducerContext';
-import { UPDATE_COLOR_PICKER_DATA } from '../../reducer/actions';
-import { updateColorTokens } from '../../utils/updateColorTokens';
+import {
+  RESET_SURFACE_COLOR_DATA,
+  UPDATE_COLOR_PICKER_DATA,
+} from '../../reducer/actions';
+import {
+  updateColorTokens,
+  updateSurfaceColorTokens,
+} from '../../utils/updateColorTokens';
 
 import styles from './ColorPicker.module.css';
 
@@ -37,7 +43,10 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
       payload: { altColorNumber, colorScale: newColorScale },
     });
 
+    dispatch({ type: RESET_SURFACE_COLOR_DATA, payload: { altColorNumber } });
+
     updateColorTokens(newColorScale, altColorNumber); // updates the DOM
+    updateSurfaceColorTokens(newColorScale, altColorNumber, 1); // updates the DOM
   };
 
   return (
@@ -76,6 +85,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
 
       <ColorGenerator
         colorScale={state.colorPickerList[altColorNumber - 1].colorScale}
+        altColorNumber={altColorNumber}
       ></ColorGenerator>
     </div>
   );

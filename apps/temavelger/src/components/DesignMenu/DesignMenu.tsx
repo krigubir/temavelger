@@ -6,6 +6,7 @@ import {
   ADD_COLOR_PICKER,
   REMOVE_COLOR_PICKER,
   RESET_ALL_COLOR_PICKER_DATA,
+  RESET_ALL_SURFACE_COLOR_DATA,
 } from '../../reducer/actions';
 import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
 import CodeGenerator from '../CodeGenerator/CodeGenerator';
@@ -15,7 +16,10 @@ import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
 import ButtonFirstColorSelect from '../ButtonFirstColorSelect/ButtonFirstColorSelect';
 import ButtonSecondColorSelect from '../ButtonSecondColorSelect/ButtonSecondColorSelect';
 import FormElementsColorSelect from '../FormElementsColorSelect/FormElementsColorSelect';
-import { resetBrandColorData } from '../../utils/resetBrandColorData';
+import {
+  resetBrandColorData,
+  resetSurfaceColorData,
+} from '../../utils/resetBrandColorData';
 
 import styles from './DesignMenu.module.css';
 
@@ -38,7 +42,9 @@ const DesignMenu = () => {
 
   const resetSettings = () => {
     dispatch({ type: RESET_ALL_COLOR_PICKER_DATA });
+    dispatch({ type: RESET_ALL_SURFACE_COLOR_DATA });
     resetBrandColorData();
+    resetSurfaceColorData();
   };
 
   return (

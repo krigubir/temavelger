@@ -4,17 +4,20 @@ import {
   ADD_COLOR_PICKER,
   REMOVE_COLOR_PICKER,
   RESET_ALL_COLOR_PICKER_DATA,
+  RESET_ALL_SURFACE_COLOR_DATA,
   RESET_BORDER_RADIUS_DATA,
   RESET_BUTTON_FIRST_DATA,
   RESET_BUTTON_SECOND_DATA,
   RESET_FONT_FAMILY_DATA,
   RESET_FORM_ELEMENTS_DATA,
+  RESET_SURFACE_COLOR_DATA,
   UPDATE_BORDER_RADIUS_DATA,
   UPDATE_BUTTON_FIRST_DATA,
   UPDATE_BUTTON_SECOND_DATA,
   UPDATE_COLOR_PICKER_DATA,
   UPDATE_FONT_FAMILY_DATA,
   UPDATE_FORM_ELEMENTS_DATA,
+  UPDATE_SURFACE_COLOR_DATA,
 } from './actions';
 import { addColorPicker } from './reducerFunctions/addColorPicker';
 import { removeColorPicker } from './reducerFunctions/removerColorPicker';
@@ -30,6 +33,9 @@ import { resetButtonFirstData } from './reducerFunctions/resetButtonFirstData';
 import { resetButtonSecondData } from './reducerFunctions/resetButtonSecondData';
 import { resetFontFamilyData } from './reducerFunctions/resetFontFamilyData';
 import { resetFormElementsData } from './reducerFunctions/resetFormElementsData';
+import { updateSurfaceColorData } from './reducerFunctions/updateSurfaceColorData';
+import { resetAllSurfaceColorData } from './reducerFunctions/resetAllSurfaceColorData';
+import { resetSurfaceColorData } from './reducerFunctions/resetSurfaceColorData';
 export type { State };
 
 /*
@@ -52,6 +58,27 @@ const reducer = (state: State, action: Action): State => {
     return updateColorPickerData(
       state,
       action.payload as { altColorNumber: number; colorScale: string[] },
+    );
+  }
+
+  if (action.type === UPDATE_SURFACE_COLOR_DATA) {
+    return updateSurfaceColorData(
+      state,
+      action.payload as {
+        chosenColorIndex: number;
+        altColorNumber: number;
+      },
+    );
+  }
+
+  if (action.type === RESET_ALL_SURFACE_COLOR_DATA) {
+    return resetAllSurfaceColorData(state);
+  }
+
+  if (action.type === RESET_SURFACE_COLOR_DATA) {
+    return resetSurfaceColorData(
+      state,
+      action.payload as { altColorNumber: number },
     );
   }
 

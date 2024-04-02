@@ -11,6 +11,7 @@ import generateFormElementsOutput from './helperFunctions/generateFormElementsOu
 import generateColorScaleOutput from './helperFunctions/generateColorScaleOutput';
 import generateBorderRadiusOutput from './helperFunctions/generateBorderRadiusOutput';
 import generateFontFamilyOutput from './helperFunctions/generateFontFamilyOutput';
+import generateSurfaceColorOutput from './helperFunctions/generateSurfaceColorOutput';
 
 const CodeGenerator = () => {
   const { state } = useReducerContext();
@@ -79,6 +80,7 @@ const CodeGenerator = () => {
             <div>
               :root {'{'}
               {generateColorScaleOutput(state)}
+              {generateSurfaceColorOutput(state)}
               {generateButtonFirstOutput(state)}
               {generateButtonSecondOutput(state)}
               {generateFormElementsOutput(state)}
