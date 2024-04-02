@@ -27,7 +27,7 @@ export const GenerateSelectedComponent = (component: string) => {
   switch (component) {
     case 'accordion':
       return (
-        <Accordion color='neutral'>
+        <Accordion color='first'>
           <Accordion.Item>
             <Accordion.Header level={3}>
               Hvem kan registrere seg i Frivillighetsregisteret?

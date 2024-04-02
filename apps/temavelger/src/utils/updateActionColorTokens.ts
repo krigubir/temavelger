@@ -20,13 +20,6 @@ export const updateButtonFirstColorTokens = (
   if (altColorNumber === -1) return;
   const tokenList = getButtonFirstTokens(chosenColorIndex);
   for (const token in tokenList) {
-    if (tokenList[token] > 7) {
-      document.documentElement.style.setProperty(
-        token,
-        state.colorPickerList[altColorNumber].colorScale[7],
-      );
-      continue;
-    }
     document.documentElement.style.setProperty(
       token,
       state.colorPickerList[altColorNumber].colorScale[tokenList[token]],
@@ -42,13 +35,6 @@ export const updateButtonSecondColorTokens = (
   if (altColorNumber === -1) return;
   const tokenList = getButtonSecondTokens(chosenColorIndex);
   for (const token in tokenList) {
-    if (tokenList[token] > 7) {
-      document.documentElement.style.setProperty(
-        token,
-        state.colorPickerList[altColorNumber].colorScale[7],
-      );
-      continue;
-    }
     document.documentElement.style.setProperty(
       token,
       state.colorPickerList[altColorNumber].colorScale[tokenList[token]],

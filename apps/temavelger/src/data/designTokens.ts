@@ -23,7 +23,8 @@ export const getSurfaceFirstColorTokens = (
 ): { [token: string]: number } => {
   return {
     '--fds-semantic-surface-first-light': chosenColorIndex,
-    '--fds-semantic-surface-first-light-hover': chosenColorIndex + 1,
+    '--fds-semantic-surface-first-light-hover':
+      chosenColorIndex + 1 < 8 ? chosenColorIndex + 1 : chosenColorIndex - 1,
   };
 };
 
@@ -32,7 +33,8 @@ export const getSurfaceSecondColorTokens = (
 ): { [token: string]: number } => {
   return {
     '--fds-semantic-surface-second-light': chosenColorIndex,
-    '--fds-semantic-surface-second-light-hover': chosenColorIndex + 1,
+    '--fds-semantic-surface-second-light-hover':
+      chosenColorIndex + 1 < 8 ? chosenColorIndex + 1 : chosenColorIndex - 1,
   };
 };
 
@@ -41,51 +43,56 @@ export const getSurfaceThirdColorTokens = (
 ): { [token: string]: number } => {
   return {
     '--fds-semantic-surface-third-light': chosenColorIndex,
-    '--fds-semantic-surface-third-light-hover': chosenColorIndex + 1,
+    '--fds-semantic-surface-third-light-hover':
+      chosenColorIndex + 1 < 8 ? chosenColorIndex + 1 : chosenColorIndex - 1,
   };
 };
 
 export const getButtonFirstTokens = (
-  colorNuance: number,
+  chosenColorIndex: number,
 ): { [token: string]: number } => {
   return {
-    '--fds-semantic-surface-action-first-default': colorNuance,
-    '--fds-semantic-surface-action-first-hover': colorNuance + 1,
-    '--fds-semantic-surface-action-first-active': colorNuance + 3,
+    '--fds-semantic-surface-action-first-default': chosenColorIndex,
+    '--fds-semantic-surface-action-first-hover':
+      chosenColorIndex + 1 < 8 ? chosenColorIndex + 1 : chosenColorIndex - 1,
+    '--fds-semantic-surface-action-first-active':
+      chosenColorIndex + 2 < 8 ? chosenColorIndex + 2 : chosenColorIndex - 2,
     '--fds-semantic-surface-action-first-no_fill-hover': 0,
     '--fds-semantic-surface-action-first-no_fill-active': 2,
     '--fds-semantic-text-action-first-default': 5,
     '--fds-semantic-text-action-first-hover': 6,
     '--fds-semantic-text-action-first-active': 7,
-    '--fds-semantic-border-action-first-default': colorNuance,
+    '--fds-semantic-border-action-first-default': chosenColorIndex,
     '--fds-semantic-border-action-first-hover': 7,
     '--fds-semantic-border-action-first-active': 8,
   };
 };
 
 export const getButtonSecondTokens = (
-  colorNuance: number,
+  chosenColorIndex: number,
 ): { [token: string]: number } => {
   return {
-    '--fds-semantic-surface-action-second-default': colorNuance,
-    '--fds-semantic-surface-action-second-hover': colorNuance + 1,
-    '--fds-semantic-surface-action-second-active': colorNuance + 3,
+    '--fds-semantic-surface-action-second-default': chosenColorIndex,
+    '--fds-semantic-surface-action-second-hover':
+      chosenColorIndex + 1 < 8 ? chosenColorIndex + 1 : chosenColorIndex - 1,
+    '--fds-semantic-surface-action-second-active':
+      chosenColorIndex + 2 < 8 ? chosenColorIndex + 2 : chosenColorIndex - 2,
     '--fds-semantic-surface-action-second-no_fill-hover': 0,
     '--fds-semantic-surface-action-second-no_fill-active': 2,
     '--fds-semantic-text-action-second-default': 5,
     '--fds-semantic-text-action-second-hover': 6,
     '--fds-semantic-text-action-second-active': 7,
-    '--fds-semantic-border-action-second-default': colorNuance,
+    '--fds-semantic-border-action-second-default': chosenColorIndex,
     '--fds-semantic-border-action-second-hover': 7,
     '--fds-semantic-border-action-second-active': 8,
   };
 };
 
 export const getFormElementTokens = (
-  colorNuance: number,
+  chosenColorIndex: number,
 ): { [token: string]: number } => {
   return {
-    '--fds-semantic-border-input-hover': colorNuance,
+    '--fds-semantic-border-input-hover': chosenColorIndex,
     '--fds-semantic-border-input-default': 8,
     '--fds-semantic-text-action-hover': 6,
     '--fds-semantic-surface-info-subtle-hover': 1,

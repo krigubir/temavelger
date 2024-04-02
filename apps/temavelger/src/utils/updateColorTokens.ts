@@ -30,13 +30,6 @@ export const updateSurfaceColorTokens = (
   if (altColorNumber === 1) {
     const surfaceTokens = getSurfaceFirstColorTokens(chosenColorIndex);
 
-    if (chosenColorIndex === 8) {
-      for (const token in surfaceTokens) {
-        document.documentElement.style.setProperty(token, colorScale[8]);
-      }
-      return;
-    }
-
     for (const token in surfaceTokens) {
       document.documentElement.style.setProperty(
         token,
@@ -48,13 +41,6 @@ export const updateSurfaceColorTokens = (
   if (altColorNumber === 2) {
     const surfaceTokens = getSurfaceSecondColorTokens(chosenColorIndex);
 
-    if (chosenColorIndex === 8) {
-      for (const token in surfaceTokens) {
-        document.documentElement.style.setProperty(token, colorScale[8]);
-      }
-      return;
-    }
-
     for (const token in surfaceTokens) {
       document.documentElement.style.setProperty(
         token,
@@ -65,13 +51,6 @@ export const updateSurfaceColorTokens = (
 
   if (altColorNumber === 3) {
     const surfaceTokens = getSurfaceThirdColorTokens(chosenColorIndex);
-
-    if (chosenColorIndex === 8) {
-      for (const token in surfaceTokens) {
-        document.documentElement.style.setProperty(token, colorScale[8]);
-      }
-      return;
-    }
 
     for (const token in surfaceTokens) {
       document.documentElement.style.setProperty(
