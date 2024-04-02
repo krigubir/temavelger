@@ -76,7 +76,7 @@ const ButtonSecondColorSelect = () => {
           onClick={resetSettings}
           className={styles.resetButton}
         >
-          reset
+          nullstill
         </Button>
       </div>
       <NativeSelect

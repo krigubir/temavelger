@@ -63,7 +63,7 @@ const DesignMenu = () => {
             onClick={resetSettings}
             className={styles.resetButton}
           >
-            reset
+            nullstill
           </Button>
         </div>
         {state.colorPickerList.map((colorPicker, index) => (

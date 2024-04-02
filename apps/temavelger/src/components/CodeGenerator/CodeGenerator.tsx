@@ -51,7 +51,7 @@ const CodeGenerator = () => {
             title='a11y-title'
             fontSize='1.5rem'
           />
-          Generate output
+          Generer CSS
         </Button>
       </div>
 
