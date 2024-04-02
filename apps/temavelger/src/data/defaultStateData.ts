@@ -19,18 +19,18 @@ export const getDefaultButtonFirstData = (): { [token: string]: string } => {
 export const getDefaultButtonSecondData = (): { [token: string]: string } => {
   return {
     '--fds-semantic-surface-action-second-default':
-      'var(--fds-colors-blue-700)',
+      'var(--fds-colors-blue-900)',
     '--fds-semantic-surface-action-second-hover': 'var(--fds-colors-blue-800)',
     '--fds-semantic-surface-action-second-active': 'var(--fds-colors-blue-900)',
     '--fds-semantic-surface-action-second-no_fill-hover':
       'var(--fds-colors-blue-100)',
     '--fds-semantic-surface-action-second-no_fill-active':
-      'var(--fds-colors-blue-200)',
-    '--fds-semantic-text-action-second-default': 'var(--fds-colors-blue-700)',
-    '--fds-semantic-text-action-second-hover': 'var(--fds-colors-blue-800)',
+      'var(--fds-colors-blue-100)',
+    '--fds-semantic-text-action-second-default': 'var(--fds-colors-blue-900)',
+    '--fds-semantic-text-action-second-hover': 'var(--fds-colors-blue-900)',
     '--fds-semantic-text-action-second-active': 'var(--fds-colors-blue-900)',
-    '--fds-semantic-border-action-second-default': 'var(--fds-colors-blue-700)',
-    '--fds-semantic-border-action-second-hover': 'var(--fds-colors-blue-800)',
+    '--fds-semantic-border-action-second-default': 'var(--fds-colors-blue-900)',
+    '--fds-semantic-border-action-second-hover': 'var(--fds-colors-blue-900)',
     '--fds-semantic-border-action-second-active': 'var(--fds-colors-blue-900)',
   };
 };

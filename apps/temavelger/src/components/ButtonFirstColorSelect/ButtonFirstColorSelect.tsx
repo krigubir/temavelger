@@ -67,7 +67,7 @@ const ButtonFirstColorSelect = () => {
           }
         </HelpText>
         <label htmlFor='buttonFirstColorSelect'>
-          Velg farge for <strong>Button First</strong>
+          Velg knappens primærfarge
         </label>
         <Button
           variant='tertiary'
@@ -78,7 +78,6 @@ const ButtonFirstColorSelect = () => {
           reset
         </Button>
       </div>
-
       <NativeSelect
         size='medium'
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>

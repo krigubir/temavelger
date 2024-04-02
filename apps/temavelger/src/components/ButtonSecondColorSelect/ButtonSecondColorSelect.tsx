@@ -68,7 +68,7 @@ const ButtonSecondColorSelect = () => {
           }
         </HelpText>
         <label htmlFor='buttonSecondColorSelect'>
-          Velg farge for <strong>Button Second</strong>
+          Velg knappens sekundærfarge
         </label>
         <Button
           variant='tertiary'

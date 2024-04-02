@@ -69,7 +69,7 @@ const FormElementsColorSelect = () => {
           }
         </HelpText>
         <label htmlFor='formElementsColorSelect'>
-          Velg farge for <strong>Form Elements</strong>
+          Velg farge for form elementer
         </label>
         <Button
           variant='tertiary'
