@@ -10,6 +10,9 @@ export const getDefaultButtonFirstData = (): { [token: string]: string } => {
     '--fds-semantic-text-action-first-default': 'var(--fds-colors-blue-700)',
     '--fds-semantic-text-action-first-hover': 'var(--fds-colors-blue-800)',
     '--fds-semantic-text-action-first-active': 'var(--fds-colors-blue-900)',
+    '--fds-semantic-border-action-first-default': 'var(--fds-colors-blue-700)',
+    '--fds-semantic-border-action-first-hover': 'var(--fds-colors-blue-800)',
+    '--fds-semantic-border-action-first-active': 'var(--fds-colors-blue-900)',
   };
 };
 
@@ -26,6 +29,9 @@ export const getDefaultButtonSecondData = (): { [token: string]: string } => {
     '--fds-semantic-text-action-second-default': 'var(--fds-colors-blue-700)',
     '--fds-semantic-text-action-second-hover': 'var(--fds-colors-blue-800)',
     '--fds-semantic-text-action-second-active': 'var(--fds-colors-blue-900)',
+    '--fds-semantic-border-action-second-default': 'var(--fds-colors-blue-700)',
+    '--fds-semantic-border-action-second-hover': 'var(--fds-colors-blue-800)',
+    '--fds-semantic-border-action-second-active': 'var(--fds-colors-blue-900)',
   };
 };
 
