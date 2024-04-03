@@ -94,7 +94,7 @@ export const getFormElementTokens = (
   return {
     '--fds-semantic-border-input-hover': chosenColorIndex,
     '--fds-semantic-border-input-default': 8,
-    '--fds-semantic-text-action-hover': 6,
+    '--fds-semantic-text-action-hover': chosenColorIndex,
     '--fds-semantic-surface-info-subtle-hover': 1,
   };
 };
