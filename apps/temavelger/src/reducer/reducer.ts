@@ -15,6 +15,7 @@ import {
   UPDATE_BUTTON_FIRST_DATA,
   UPDATE_BUTTON_SECOND_DATA,
   UPDATE_COLOR_PICKER_DATA,
+  UPDATE_FONT_COLOR_DATA,
   UPDATE_FONT_FAMILY_DATA,
   UPDATE_FORM_ELEMENTS_DATA,
   UPDATE_SURFACE_COLOR_DATA,
@@ -36,6 +37,7 @@ import { resetFormElementsData } from './reducerFunctions/resetFormElementsData'
 import { updateSurfaceColorData } from './reducerFunctions/updateSurfaceColorData';
 import { resetAllSurfaceColorData } from './reducerFunctions/resetAllSurfaceColorData';
 import { resetSurfaceColorData } from './reducerFunctions/resetSurfaceColorData';
+import { updateFontColorData } from './reducerFunctions/updateFontColorData';
 export type { State };
 
 /*
@@ -84,6 +86,11 @@ const reducer = (state: State, action: Action): State => {
 
   if (action.type === RESET_ALL_COLOR_PICKER_DATA) {
     return resetAllColorPickerData(state);
+  }
+
+  if (action.type === UPDATE_FONT_COLOR_DATA) {
+    console.log('reducer', action.payload);
+    return updateFontColorData(state, action.payload as string);
   }
 
   if (action.type === UPDATE_BUTTON_FIRST_DATA) {

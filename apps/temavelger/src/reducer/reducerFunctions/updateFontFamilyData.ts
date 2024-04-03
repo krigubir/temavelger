@@ -6,7 +6,6 @@ export const updateFontFamilyData = (
     fontFamily: string;
   },
 ): State => {
-  console.log(payload.fontFamily);
   return {
     ...state,
     fontFamilyData: payload.fontFamily,

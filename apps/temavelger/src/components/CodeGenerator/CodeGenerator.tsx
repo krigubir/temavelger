@@ -12,6 +12,7 @@ import generateColorScaleOutput from './helperFunctions/generateColorScaleOutput
 import generateBorderRadiusOutput from './helperFunctions/generateBorderRadiusOutput';
 import generateFontFamilyOutput from './helperFunctions/generateFontFamilyOutput';
 import generateSurfaceColorOutput from './helperFunctions/generateSurfaceColorOutput';
+import generateFontColorOutput from './helperFunctions/generateFontColorOutput';
 
 const CodeGenerator = () => {
   const { state } = useReducerContext();
@@ -86,6 +87,7 @@ const CodeGenerator = () => {
               {generateFormElementsOutput(state)}
               {generateBorderRadiusOutput(state)}
               {generateFontFamilyOutput(state)}
+              {generateFontColorOutput(state)}
               {'}'}
             </div>
             <div className={styles.copyToClipboard}>

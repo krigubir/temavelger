@@ -7,6 +7,7 @@ import {
   REMOVE_COLOR_PICKER,
   RESET_ALL_COLOR_PICKER_DATA,
   RESET_ALL_SURFACE_COLOR_DATA,
+  UPDATE_FONT_COLOR_DATA,
 } from '../../reducer/actions';
 import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
 import CodeGenerator from '../CodeGenerator/CodeGenerator';
@@ -45,6 +46,15 @@ const DesignMenu = () => {
     dispatch({ type: RESET_ALL_SURFACE_COLOR_DATA });
     resetBrandColorData();
     resetSurfaceColorData();
+  };
+
+  const changeFontColor = (color: string) => {
+    document.documentElement.style.setProperty(
+      '--fds-semantic-text-neutral-default',
+      color,
+    );
+
+    dispatch({ type: UPDATE_FONT_COLOR_DATA, payload: color });
   };
 
   return (
@@ -102,20 +112,15 @@ const DesignMenu = () => {
           <Radio.Group
             error=''
             legend='Velg font farge'
-            onChange={(e: string) =>
-              document.documentElement.style.setProperty(
-                '--fds-semantic-text-neutral-default',
-                e,
-              )
-            }
+            onChange={(color: string) => changeFontColor(color)}
             size='medium'
             inline={true}
           >
             <div className={styles.radio}>
-              <Radio value='var(--fds-colors-grey-800)'>Mørk</Radio>
+              <Radio value='#1e2b3c'>Mørk</Radio>
             </div>
             <div className={styles.radio}>
-              <Radio value='var(--fds-colors-white)'>Lys</Radio>
+              <Radio value='#ffffff'>Lys</Radio>
             </div>
           </Radio.Group>
         </div>
