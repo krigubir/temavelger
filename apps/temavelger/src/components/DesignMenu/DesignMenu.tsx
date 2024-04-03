@@ -1,4 +1,4 @@
-import { HelpText, Button } from '@digdir/designsystemet-react';
+import { HelpText, Button, Radio } from '@digdir/designsystemet-react';
 import { PlusIcon } from '@navikt/aksel-icons';
 
 import { useReducerContext } from '../../contexts/useReducerContext';
@@ -95,6 +95,29 @@ const DesignMenu = () => {
             />
             Legg til farge
           </Button>
+        </div>
+      </div>
+      <div className={styles.designMenuBox}>
+        <div className={styles.radioGroup}>
+          <Radio.Group
+            error=''
+            legend='Velg font farge'
+            onChange={(e: string) =>
+              document.documentElement.style.setProperty(
+                '--fds-semantic-text-neutral-default',
+                e,
+              )
+            }
+            size='medium'
+            inline={true}
+          >
+            <div className={styles.radio}>
+              <Radio value='var(--fds-colors-grey-800)'>Mørk</Radio>
+            </div>
+            <div className={styles.radio}>
+              <Radio value='var(--fds-colors-white)'>Lys</Radio>
+            </div>
+          </Radio.Group>
         </div>
       </div>
       <div className={styles.designMenuBox}>

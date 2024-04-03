@@ -19,6 +19,34 @@
   color: var(--tv-font-color);
 }
 
+.designMenuBox span {
+  color: var(--tv-font-color);
+}
+
+.designMenuBox input:hover + label span {
+  color: var(--fds-colors-blue-700) !important;
+}
+
+.designMenuBox label::before {
+  background: var(--fds-colors-white);
+  box-shadow: inset 0 0 0 2px var(--fds-colors-blue-900);
+}
+
+.designMenuBox input:hover:not(:checked) + label::before {
+  background: var(--fds-colors-white);
+  box-shadow: 0 0 0 6px var(--fds-colors-blue-200), inset 0 0 0 2px var(--fds-colors-blue-700), inset 0 0 0 6px var(--fds-colors-white) !important;
+}
+
+.designMenuBox input:checked:not(:focus-visible) + label::before {
+  background: var(--fds-colors-blue-700);
+  box-shadow: inset 0 0 0 2px var(--fds-colors-blue-700), inset 0 0 0 6px var(--fds-colors-white) !important;
+}
+
+.designMenuBox input:hover:checked:not(:focus-visible) + label::before {
+  background: var(--fds-colors-blue-700);
+  box-shadow: 0 0 0 6px var(--fds-colors-blue-200), inset 0 0 0 2px var(--fds-colors-blue-700), inset 0 0 0 6px var(--fds-colors-white) !important;
+}
+
 .helpText {
   place-self: end;
   align-self: center;
