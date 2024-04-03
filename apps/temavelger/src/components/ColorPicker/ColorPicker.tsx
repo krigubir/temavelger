@@ -14,6 +14,7 @@ import {
 } from '../../utils/updateColorTokens';
 
 import styles from './ColorPicker.module.css';
+import { setSurfaceColorOfSvg } from '../../utils/setSurfaceColorOfSvg';
 
 export type ColorPicker = {
   colorScale: string[];
@@ -47,6 +48,9 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
 
     updateColorTokens(newColorScale, altColorNumber); // updates the DOM
     updateSurfaceColorTokens(newColorScale, altColorNumber, 1); // updates the DOM
+    if (altColorNumber === 2) {
+      setSurfaceColorOfSvg(newColorScale, 2);
+    }
   };
 
   return (

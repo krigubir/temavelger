@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import checkColorContrast from '../../utils/checkColorContrast';
-
-import styles from './ColorGenerator.module.css';
+import { setSurfaceColorOfSvg } from '../../utils/setSurfaceColorOfSvg';
+import { UPDATE_SURFACE_COLOR_DATA } from '../../reducer/actions';
 import { updateSurfaceColorTokens } from '../../utils/updateColorTokens';
 import { useReducerContext } from '../../contexts/useReducerContext';
-import { UPDATE_SURFACE_COLOR_DATA } from '../../reducer/actions';
+
+import styles from './ColorGenerator.module.css';
 
 interface ColorGeneratorProps {
   colorScale: string[];
@@ -55,6 +56,9 @@ const ColorGenerator: React.FC<ColorGeneratorProps> = ({
 
     // change surface color
     updateSurfaceColorTokens(colorScale, altColorNumber, chosenColorIndex);
+    if (altColorNumber === 2) {
+      setSurfaceColorOfSvg(colorScale, chosenColorIndex);
+    }
   };
 
   return (

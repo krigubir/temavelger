@@ -6,6 +6,8 @@
   --tv-border-color: #c4c4c4;
   --tv-font-color: #1e2b3c;
   --tv-background-color: #f5f5f5ef;
+  --tv-composite-component-color-1: var(--fds-brand-alt2-300);
+  --tv-composite-component-color-2: var(--fds-brand-alt2-400);
 }
 
 body {

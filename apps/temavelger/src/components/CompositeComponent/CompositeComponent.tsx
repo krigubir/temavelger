@@ -1,4 +1,5 @@
 import { Button, Radio, Textfield } from '@digdir/designsystemet-react';
+
 import styles from './CompositeComponent.module.css';
 
 const CompositeComponent = () => {
@@ -38,7 +39,7 @@ const CompositeComponent = () => {
         >
           <path
             d='M320 -11V435H0L320 -11Z'
-            fill={'var(--fds-brand-alt2-200)'}
+            fill={'var(--tv-composite-component-color-1)'}
           />
         </svg>
       </div>
@@ -53,7 +54,7 @@ const CompositeComponent = () => {
         >
           <path
             d='M217 0V431H0L217 0Z'
-            fill={'var(--fds-brand-alt2-300)'}
+            fill={'var(--tv-composite-component-color-2)'}
           />
         </svg>
       </div>
