@@ -10,11 +10,14 @@ const AccordionComponent: React.FC<AccordionComponentProps> = ({ color }) => {
   return (
     <div className={styles.accordionComponent}>
       <Accordion
+        border
         color={color}
-        style={{ borderRadius: 'var(--fds-border_radius-medium)' }}
       >
         <AccordionItem>
-          <Accordion.Header level={3}>{`${color} color`}</Accordion.Header>
+          <Accordion.Header level={3}>{`${color} color`} </Accordion.Header>
+          <Accordion.Content>
+            Velkommen til brukertest. Dine tilbakemeldinger er viktige for oss.
+          </Accordion.Content>
         </AccordionItem>
       </Accordion>
     </div>

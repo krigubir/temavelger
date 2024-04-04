@@ -1,6 +1,6 @@
 import { getBorderRadiusTokens } from '../data/designTokens';
 
-export const updateBorderRadiusData = (borderRadiusValue: number) => {
+export const updateBorderRadiusTokens = (borderRadiusValue: number) => {
   const tokenList: string[] = getBorderRadiusTokens();
 
   for (const token of tokenList) {

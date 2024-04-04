@@ -109,5 +109,6 @@ export const getBorderRadiusTokens = (): string[] => {
     '--fds-border_radius-xxxlarge',
     '--fds-border_radius-xxxxlarge',
     '--fds-border_radius-interactive',
+    '--fdsc-accordion-border-radius',
   ];
 };

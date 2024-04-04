@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { updateBorderRadiusData } from '../../utils/updateBorderRadiusTokens';
+import { updateBorderRadiusTokens } from '../../utils/updateBorderRadiusTokens';
 import { ReducerContext } from '../../contexts/ReducerContext';
 import { UPDATE_BORDER_RADIUS_DATA } from '../../reducer/actions';
 
@@ -12,7 +12,7 @@ const BorderRadiusInput = () => {
   const handleBorderRadiusChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newBorderRadius = parseInt(e.target.value);
 
-    updateBorderRadiusData(newBorderRadius);
+    updateBorderRadiusTokens(newBorderRadius);
 
     dispatch({
       type: UPDATE_BORDER_RADIUS_DATA,
