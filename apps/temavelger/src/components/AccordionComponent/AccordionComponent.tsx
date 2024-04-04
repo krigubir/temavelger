@@ -1,4 +1,5 @@
 import { Accordion, AccordionItem } from '@digdir/designsystemet-react';
+
 import styles from './AccordionComponent.module.css';
 
 interface AccordionComponentProps {

@@ -25,7 +25,7 @@ const BorderRadiusSelect = () => {
           portal={true}
         >
           {
-            'Juster border-radius for å se hvordan det påvirker elementene i designet. Verdien kan endres ved å skrive inn et tall i feltet eller ved å dra slideren. Verdien er representerert i pixler.'
+            'Verdien kan endres ved å skrive inn et tall i feltet eller ved å dra slideren. Verdien er representerert i pixler.'
           }
         </HelpText>
         <label htmlFor='borderRadiusSlider'>{'Velg border-radius'}</label>
