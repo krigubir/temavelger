@@ -1,7 +1,5 @@
-import ComponentLayout1 from '../../components/PageContainer/ComponentLayouts/ComponentLayout1/ComponentLayout1';
-import ComponentLayout2 from '../../components/PageContainer/ComponentLayouts/ComponentLayout2/ComponentLayout2';
-import ComponentLayout3 from '../../components/PageContainer/ComponentLayouts/ComponentLayout3/ComponentLayout3';
-import ComponentLayout4 from '../../components/PageContainer/ComponentLayouts/ComponentLayout4/ComponentLayout4';
+import Komponent from '../../components/PreviewAreaPages/Komponent/Komponent';
+import Nettside from '../../components/PreviewAreaPages/Nettside/Nettside';
 
 import styles from './PreviewAreaLayout.module.css';
 
@@ -12,22 +10,14 @@ interface PreviewAreaLayoutProps {
 const PreviewAreaLayout: React.FC<PreviewAreaLayoutProps> = ({
   activeLayout,
 }) => {
-  let componentPreviewLayout: React.ReactNode = (
-    <ComponentLayout1></ComponentLayout1>
-  );
+  let componentPreviewLayout: React.ReactNode = <Nettside></Nettside>;
 
   switch (activeLayout) {
-    case 'layout1':
-      componentPreviewLayout = <ComponentLayout1></ComponentLayout1>;
+    case 'nettside':
+      componentPreviewLayout = <Nettside></Nettside>;
       break;
-    case 'layout2':
-      componentPreviewLayout = <ComponentLayout2></ComponentLayout2>;
-      break;
-    case 'layout3':
-      componentPreviewLayout = <ComponentLayout3></ComponentLayout3>;
-      break;
-    case 'layout4':
-      componentPreviewLayout = <ComponentLayout4></ComponentLayout4>;
+    case 'komponent':
+      componentPreviewLayout = <Komponent></Komponent>;
       break;
   }
 

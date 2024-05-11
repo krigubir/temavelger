@@ -9,14 +9,14 @@ import {
   RESET_ALL_SURFACE_COLOR_DATA,
   UPDATE_FONT_COLOR_DATA,
 } from '../../reducer/actions';
-import BorderRadiusSelect from '../BorderRadiusSelect/BorderRadiusSelect';
-import CodeGenerator from '../CodeGenerator/CodeGenerator';
-import ColorPicker from '../ColorPicker/ColorPicker';
+import BorderRadiusSelect from '../DesignMenuTools/BorderRadiusSelect/BorderRadiusSelect';
+import CodeGenerator from '../DesignMenuTools/CodeGenerator/CodeGenerator';
+import ColorPicker from '../DesignMenuTools/ColorPicker/ColorPicker';
 import DesignMenuHeader from '../DesignMenuHeader/DesignMenuHeader';
-import FontFamilySelector from '../FontFamilySelect/FontFamilySelect';
-import ButtonFirstColorSelect from '../ButtonFirstColorSelect/ButtonFirstColorSelect';
-import ButtonSecondColorSelect from '../ButtonSecondColorSelect/ButtonSecondColorSelect';
-import FormElementsColorSelect from '../FormElementsColorSelect/FormElementsColorSelect';
+import FontFamilySelector from '../DesignMenuTools/FontFamilySelect/FontFamilySelect';
+import ButtonFirstColorSelect from '../DesignMenuTools/ButtonFirstColorSelect/ButtonFirstColorSelect';
+import ButtonSecondColorSelect from '../DesignMenuTools/ButtonSecondColorSelect/ButtonSecondColorSelect';
+import FormElementsColorSelect from '../DesignMenuTools/FormElementsColorSelect/FormElementsColorSelect';
 import {
   resetBrandColorData,
   resetSurfaceColorData,
@@ -25,9 +25,15 @@ import {
 import styles from './DesignMenu.module.css';
 
 /*
-  Responsible for:
-   - rendering the design menu
-   - adding and removing color pickers
+  This component is the main container for all design tools.
+  It contains the following components:
+    - ColorPicker
+    - ButtonFirstColorSelect
+    - ButtonSecondColorSelect
+    - FormElementsColorSelect
+    - BorderRadiusSelect
+    - FontFamilySelector
+    - CodeGenerator
 */
 
 const DesignMenu = () => {

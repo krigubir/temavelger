@@ -2,7 +2,7 @@ import {
   getDefaultButtonFirstData,
   getDefaultButtonSecondData,
   getDefaultFormElementData,
-} from '../data/defaultStateData';
+} from '../data/defaultToolSettingsData';
 
 export const resetButtonFirstDOM = () => {
   const tokenList = getDefaultButtonFirstData();

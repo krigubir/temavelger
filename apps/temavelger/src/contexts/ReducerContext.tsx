@@ -1,12 +1,16 @@
 import { createContext, useReducer } from 'react';
 
 import reducer from '../reducer/reducer';
-import colorPickerData from '../data/colorPickerData';
-import type { ColorPicker } from '../components/ColorPicker/ColorPicker';
+import type { ColorPicker } from '../components/DesignMenuTools/ColorPicker/ColorPicker';
+import { defaultState } from '../data/defaultStateData';
 
 /*
-  Responsible for defining the state-interface and distribute both the state and
-  the reducer to child components. 
+  This file contains the following functions and objects:
+  - State: an object containing the data that is shared between components
+  - Action: an object containing the type of action that is dispatched to the reducer function
+  - ReducerContextProps: an object containing the state and dispatch function
+  - ReducerContext: a context object containing the state and dispatch function
+  - ReducerProvider: a wrapper component necessary to distribute the state and dispatch function to child components
 */
 
 interface ActionColorData {
@@ -35,12 +39,12 @@ export type Action = {
   payload?: unknown;
 };
 
-// create context
 interface ReducerContextProps {
   state: State;
   dispatch: React.Dispatch<Action>;
 }
 
+// Creates a context object with containing the state and dispatch function
 export const ReducerContext = createContext<ReducerContextProps>({
   state: {
     colorPickerList: [],
@@ -64,26 +68,10 @@ export const ReducerContext = createContext<ReducerContextProps>({
   dispatch: () => {},
 });
 
-const defaultState = {
-  colorPickerList: colorPickerData,
-  surfaceColorData: [],
-  fontColor: '',
-  buttonFirstData: {
-    chosenColorIndex: 0,
-    actionColorScale: [],
-  },
-  buttonSecondData: {
-    chosenColorIndex: 0,
-    actionColorScale: [],
-  },
-  formElementsData: {
-    chosenColorIndex: 0,
-    actionColorScale: [],
-  },
-  borderRadiusData: 0,
-  fontFamilyData: '',
-};
-
+/*
+  ReducerProvider is a wrapper component necessary to distribute the state and dispatch
+  function to child components. This wrapper component is used in the App.tsx 
+*/
 export const ReducerProvider = ({
   children,
 }: {

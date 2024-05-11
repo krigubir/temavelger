@@ -1,7 +1,7 @@
 import {
   getDefaultColorData,
   getDefaultSurfaceColorTokens,
-} from '../data/defaultStateData';
+} from '../data/defaultToolSettingsData';
 
 export const resetBrandColorData = () => {
   const tokensList = getDefaultColorData();

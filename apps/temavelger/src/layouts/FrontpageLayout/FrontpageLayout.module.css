@@ -4,6 +4,21 @@
   height: 100vh;
 }
 
+.aside {
+  min-width: 35%;
+  background: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 999;
+  overflow-y: auto;
+  background: var(--tv-background-color);
+  height: 100vh;
+}
+
 @media (max-width: 768px) {
   .frontpage {
     flex-direction: column;

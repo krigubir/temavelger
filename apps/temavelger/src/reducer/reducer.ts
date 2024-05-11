@@ -20,24 +20,28 @@ import {
   UPDATE_FORM_ELEMENTS_DATA,
   UPDATE_SURFACE_COLOR_DATA,
 } from './actions';
-import { addColorPicker } from './reducerFunctions/addColorPicker';
-import { removeColorPicker } from './reducerFunctions/removerColorPicker';
-import { updateBorderRadiusData } from './reducerFunctions/updateBorderRadiusData';
-import { updateButtonFirstData } from './reducerFunctions/updateButtonFirstData';
-import { updateButtonSecondData } from './reducerFunctions/updateButtonSecondData';
-import { updateFormElementsData } from './reducerFunctions/updateFormElementsData';
-import { updateFontFamilyData } from './reducerFunctions/updateFontFamilyData';
-import { updateColorPickerData } from './reducerFunctions/updateColorPickerData';
-import { resetAllColorPickerData } from './reducerFunctions/resetAllColorPickerData';
-import { resetBorderRadiusData } from './reducerFunctions/resetBorderRadiusData';
-import { resetButtonFirstData } from './reducerFunctions/resetButtonFirstData';
-import { resetButtonSecondData } from './reducerFunctions/resetButtonSecondData';
-import { resetFontFamilyData } from './reducerFunctions/resetFontFamilyData';
-import { resetFormElementsData } from './reducerFunctions/resetFormElementsData';
-import { updateSurfaceColorData } from './reducerFunctions/updateSurfaceColorData';
-import { resetAllSurfaceColorData } from './reducerFunctions/resetAllSurfaceColorData';
-import { resetSurfaceColorData } from './reducerFunctions/resetSurfaceColorData';
-import { updateFontColorData } from './reducerFunctions/updateFontColorData';
+
+import {
+  addColorPicker,
+  removeColorPicker,
+  resetAllColorPickerData,
+  resetAllSurfaceColorData,
+  resetBorderRadiusData,
+  resetButtonFirstData,
+  resetButtonSecondData,
+  resetFontFamilyData,
+  resetFormElementsData,
+  resetSurfaceColorData,
+  updateBorderRadiusData,
+  updateButtonFirstData,
+  updateButtonSecondData,
+  updateColorPickerData,
+  updateFontColorData,
+  updateFontFamilyData,
+  updateFormElementsData,
+  updateSurfaceColorData,
+} from './index';
+
 export type { State };
 
 /*
