@@ -2,13 +2,18 @@
   This file keeps track of the design tokens and their 
   corresponding values used in the application
 
-  The design tokens are mapped to a color in the color scale
-  and are used in DOM manipulation and in the state of the application
+  The functions in this file are used to return design tokens.
+  Some function also return an index value. The index value is used to determine
+  which color in the color palette to use for the design token.
 
   This is the place to add new design tokens and their corresponding colors
   This is the one source of truth for which design tokens are used in the application
 */
 
+/*
+  @param {number} colorIndex - The index of the color in the color palette
+  @returns {object} - The design tokens for the color
+*/
 export const getColorPickerBrandTokens = (
   altColorNumber: number,
   colorNuance: number,

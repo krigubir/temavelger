@@ -64,6 +64,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
             {`alt ${altColorNumber}`}
           </Tag>
         </label>
+
         <input
           id={`colorPicker${altColorNumber}`}
           className={styles.colorPickerInput}
