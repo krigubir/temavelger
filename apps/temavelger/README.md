@@ -1,34 +1,11 @@
-# Temavelgeren
+# Temavelger
 
 Uncertain about how **Designsystemet** can adapt to your needs? **Temavelgeren** is a tool for those who want to utilize Designsystemet with their own brand. This tool will allow you to explore various adjustments such as brand-color, action-color, border-radius settings, and more. Temavelgeren enables you to see how your choices will affect Designsystemets components in real-time. Subsequently, a CSS file is generated which you can easily incorporate into your own project.
 
 ## 🚀 Get started
+Visit this link to check out the tool: https://temavelger.netlify.app/
 
-Follow these steps to try out **temavelgeren**
-
-### 1. Clone the repo
-
-Clone this repo to your local machine:
-
-```
-git clone https://github.com/krigubir/temavelger.git
-```
-
-### 2. cd into apps/temavelger
-
-### 3. Install dependencies and build
-
-Install dependencies
-
-```
-yarn install && yarn build
-```
-
-### 3. Run application in devmode
-
-```
-yarn dev
-```
+To get started using the components from Designsystemet, navigate to root-folder's README.md
 
 ## 📖 Guidelines
 
@@ -68,7 +45,7 @@ When you are happy with the design, click on the _Generate ouput_ button. This w
 
 ### Purpose
 
-**Temavelgeren** is a tool that allows you to explore and customize components from Designsystemet. It's purpose is to make it easy for users to adopt the design system and tailor it to their own brand. The tool presents the user with a range of adjustment options that will affect a selection of components in real-time. Subsequently, the decisions will be available as an automatically generated CSS file, which the user can easily incorporate into their own project. Temavelgeren functions as a creative tool that helps maintain identity while showcasing all customizable components of the design system.
+**Temavelgeren** is a tool that allows you to explore and customize components from Designsystemet. It's purpose is to make it easy for users to adopt Designsystemet and tailor it to their own brand. The tool presents the user with a range of adjustment options that will affect a selection of components in real-time. Subsequently, the decisions will be available as an automatically generated CSS file, which the user can easily incorporate into their own project. Temavelgeren functions as a creative tool that helps maintain identity while showcasing all customizable components of Designsystemet.
 
 ### Technology and Tools
 
